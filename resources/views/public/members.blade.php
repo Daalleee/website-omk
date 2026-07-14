@@ -30,24 +30,21 @@
         @if($members->count() > 0)
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;margin-bottom:2rem;">
             @foreach($members as $member)
-            <div class="card fade-in" style="text-align:center;padding:1.75rem 1.25rem;border-radius:16px;">
-                <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:3px solid var(--green-200);background:var(--gray-100);">
+            <div class="fade-in" style="text-align:center;">
+                <div style="width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;margin:0 auto 1.25rem;background:var(--green-50);box-shadow:0 8px 20px rgba(108,123,28,0.12);">
                     @if($member->photo)
                         <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->name }}" style="width:100%;height:100%;object-fit:cover;">
                     @else
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--gray-400);">
-                            <i class="bi bi-person-fill"></i>
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:var(--gray-400);">
+                            <i class="bi bi-person-bounding-box"></i>
                         </div>
                     @endif
                 </div>
-                <h4 style="color:var(--gray-900);font-size:0.9rem;font-weight:700;margin-bottom:0.35rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ $member->name }}</h4>
-                @if($member->division)
-                <p style="color:var(--green-600);font-size:0.75rem;font-weight:500;margin-bottom:0.5rem;">{{ $member->division }}</p>
-                @endif
-                <span style="display:inline-block;padding:0.2rem 0.7rem;border-radius:50px;font-size:0.72rem;font-weight:600;
-                    {{ $member->status === 'aktif' ? 'background:var(--green-100);color:var(--green-700);border:1px solid var(--green-200);' : 'background:#fee2e2;color:#b91c1c;border:1px solid #fecaca;' }}">
-                    {{ ucfirst($member->status) }}
-                </span>
+                    <h4 style="color:var(--gray-900);font-size:1rem;font-weight:700;margin-bottom:0.5rem;">{{ $member->name }}</h4>
+                    <span style="display:inline-block;background:var(--green-100);color:var(--green-700);border:1px solid var(--green-300);font-size:0.75rem;font-weight:600;padding:0.2rem 0.85rem;border-radius:50px;">Anggota</span>
+                    @if($member->period)
+                    <p style="color:var(--gray-400);font-size:0.75rem;margin-top:0.5rem;"><i class="bi bi-calendar3"></i> {{ $member->period }}</p>
+                    @endif
             </div>
             @endforeach
         </div>

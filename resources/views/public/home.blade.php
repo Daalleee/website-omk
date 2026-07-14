@@ -36,14 +36,18 @@
         position: relative;
         z-index: 2;
         width: 100%;
-        max-width: 900px;
+        max-width: 1300px;
         margin: 0 auto;
-        padding: 0 2rem;
-        padding-top: 5rem;
-        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    .hero-text-container {
+        text-align: center;
     }
 
     .hero-badge {
@@ -121,40 +125,49 @@
         border-color: white;
     }
 
-    /* STATS SECTION */
-    .stats-section {
-        background: linear-gradient(135deg, var(--green-950), var(--green-900));
-        padding: 4rem 0;
-        border-top: 4px solid var(--green-600);
+    /* STATS GLASSMORPHISM */
+    .hero-stats-wrapper {
+        position: absolute;
+        right: 2rem;
+        bottom: 2.5rem;
+    }
+
+    .stats-glass {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        width: auto;
+        min-width: 220px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
 
     .stats-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem 0.75rem;
     }
 
     .stat-item {
         text-align: center;
-        padding: 1.5rem;
+        padding: 0;
     }
 
     .stat-item .num {
-        font-size: 3rem;
+        font-size: 1.5rem;
         font-weight: 800;
         color: var(--green-400);
         line-height: 1;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.2rem;
+        text-shadow: 0 2px 8px rgba(162, 180, 53, 0.3);
     }
 
     .stat-item .label {
         color: rgba(255,255,255,0.8);
-        font-size: 1rem;
+        font-size: 0.75rem;
         font-weight: 500;
-    }
-
-    .stat-divider {
-        border-left: 1px solid rgba(255,255,255,0.15);
     }
 
     /* WELCOME */
@@ -392,18 +405,18 @@
 
     @media (max-width: 1024px) {
         .hero-title { font-size: 3rem; }
+        .hero-stats-wrapper { position: static; margin-top: 3rem; }
+        .stats-glass { margin: 0 auto; max-width: 600px; min-width: 0; }
         .activities-grid { grid-template-columns: 1fr 1fr; }
         .gallery-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 768px) {
-        .hero-content { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
         .hero-title { font-size: 2.5rem; }
-        .hero-subtitle { margin: 0 auto 2rem; }
-        .hero-cta { justify-content: center; }
         .hero-visual { display: none; }
-        .stats-grid { grid-template-columns: repeat(2, 1fr); }
-        .stat-divider:nth-child(2) { border-left: none; }
+        .stats-glass { padding: 1.5rem; border-radius: 20px; }
+        .stats-grid { gap: 1.5rem 1rem; }
+        .stat-item .num { font-size: 2.5rem; }
         .welcome-grid { grid-template-columns: 1fr; gap: 2.5rem; }
         .activities-grid { grid-template-columns: 1fr; }
         .gallery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -421,53 +434,48 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-        <div class="hero-badge fade-in">
-            <span class="dot"></span>
-            Organisasi Resmi Paroki
+        <div class="hero-text-container">
+            <div class="hero-badge fade-in">
+                <span class="dot"></span>
+                Organisasi Resmi Paroki
+            </div>
+            <h1 class="hero-title fade-in" style="transition-delay: 0.1s;">
+                {{ $home?->hero_title ?? 'Orang Muda' }}<br>
+                <span class="highlight">{{ 'Katolik' }}</span>
+            </h1>
+            <p class="hero-subtitle fade-in" style="transition-delay: 0.2s;">
+                {{ $home?->hero_subtitle ?? 'Bersama dalam Iman, Tumbuh dalam Kasih, Bergerak untuk Sesama.' }}
+            </p>
+            <div class="hero-cta fade-in" style="transition-delay: 0.3s;">
+                <a href="#tentang" class="btn btn-primary" style="padding: 0.875rem 2.25rem; font-size: 1rem;">
+                    <i class="bi bi-info-circle"></i> Tentang Kami
+                </a>
+                <a href="#kegiatan" class="btn btn-hero-outline" style="padding: 0.875rem 2.25rem; font-size: 1rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.25s ease;">
+                    <i class="bi bi-calendar-event"></i> Kegiatan Terbaru
+                </a>
+            </div>
         </div>
-        <h1 class="hero-title fade-in" style="transition-delay: 0.1s;">
-            {{ $home?->hero_title ?? 'Orang Muda' }}<br>
-            <span class="highlight">{{ 'Katolik' }}</span>
-        </h1>
-        <p class="hero-subtitle fade-in" style="transition-delay: 0.2s;">
-            {{ $home?->hero_subtitle ?? 'Bersama dalam Iman, Tumbuh dalam Kasih, Bergerak untuk Sesama.' }}
-        </p>
-        <div class="hero-cta fade-in" style="transition-delay: 0.3s;">
-            <a href="#tentang" class="btn btn-primary" style="padding: 0.875rem 2.25rem; font-size: 1rem;">
-                <i class="bi bi-info-circle"></i> Tentang Kami
-            </a>
-            <a href="#kegiatan" class="btn btn-hero-outline" style="padding: 0.875rem 2.25rem; font-size: 1rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.25s ease;">
-                <i class="bi bi-calendar-event"></i> Kegiatan Terbaru
-            </a>
-        </div>
-    </div>
 
-    <div style="position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;animation:float 2s ease-in-out infinite;">
-        <a href="#statistik" style="color:rgba(255,255,255,0.7);font-size:2rem;text-decoration:none;transition:color 0.2s;">
-            <i class="bi bi-chevron-double-down"></i>
-        </a>
-    </div>
-</section>
-
-<!-- STATS SECTION -->
-<section class="stats-section" id="statistik">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item fade-in">
-                <div class="num">{{ $leaders->count() ?? 15 }}+</div>
-                <div class="label"><i class="bi bi-people-fill" style="color:#a2b435;margin-right:8px;"></i>Pengurus</div>
-            </div>
-            <div class="stat-item stat-divider fade-in">
-                <div class="num">{{ $home?->statistic_member ?? 50 }}+</div>
-                <div class="label"><i class="bi bi-person-fill" style="color:#a2b435;margin-right:8px;"></i>Anggota</div>
-            </div>
-            <div class="stat-item stat-divider fade-in">
-                <div class="num">{{ $home?->statistic_activity ?? 25 }}+</div>
-                <div class="label"><i class="bi bi-calendar-check-fill" style="color:#a2b435;margin-right:8px;"></i>Kegiatan</div>
-            </div>
-            <div class="stat-item stat-divider fade-in">
-                <div class="num">{{ $galleries->count() ?? 100 }}+</div>
-                <div class="label"><i class="bi bi-images" style="color:#a2b435;margin-right:8px;"></i>Foto Dokumentasi</div>
+        <div class="hero-stats-wrapper fade-in" style="transition-delay: 0.4s;">
+            <div class="stats-glass">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="num">{{ $leaders->count() }}</div>
+                        <div class="label"><i class="bi bi-people-fill" style="color:#a2b435;margin-right:8px;"></i>Pengurus</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="num">{{ $members->count() }}</div>
+                        <div class="label"><i class="bi bi-person-fill" style="color:#a2b435;margin-right:8px;"></i>Anggota</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="num">{{ $activities->count() }}</div>
+                        <div class="label"><i class="bi bi-calendar-check-fill" style="color:#a2b435;margin-right:8px;"></i>Kegiatan</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="num">{{ $galleries->count() }}</div>
+                        <div class="label"><i class="bi bi-images" style="color:#a2b435;margin-right:8px;"></i>Foto</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -509,54 +517,78 @@
 
 <!-- TENTANG SECTION -->
 @if($about)
-<section class="section tentang-section" id="tentang">
+<!-- SEJARAH -->
+<section class="section" style="background:var(--white);" id="tentang">
     <div class="container">
-        <div class="section-title fade-in">
-            <div class="section-badge">Identitas Kami</div>
-            <h2>Tentang OMK</h2>
-            <div class="divider"></div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;" class="fade-in">
-            <div>
-                <h3 style="font-size:1.75rem;font-weight:800;color:var(--green-950);margin-bottom:1.5rem;">Sejarah Singkat</h3>
-                <div style="color:var(--gray-600);line-height:1.9;font-size:1rem;margin-bottom:2rem;">
-                    {!! nl2br(e(Str::limit($about->history, 800))) !!}
-                </div>
-                <div style="display:flex;gap:1rem;">
-                    @if($about->vision)
-                    <div style="background:var(--white);border:1px solid var(--green-200);border-radius:12px;padding:1.5rem;flex:1;box-shadow:0 4px 15px rgba(0,0,0,0.02);">
-                        <h4 style="color:var(--green-700);font-size:1rem;font-weight:700;margin-bottom:0.5rem;"><i class="bi bi-bullseye"></i> Visi</h4>
-                        <p style="color:var(--gray-600);font-size:0.9rem;line-height:1.7;">{{ $about->vision }}</p>
-                    </div>
-                    @endif
-                </div>
-            </div>
-            <div style="position:relative;">
-                @if($about->logo)
-                <img src="{{ Storage::url($about->logo) }}" alt="Logo OMK" style="width:100%;max-width:380px;margin:0 auto;display:block;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,0.06);">
-                @else
-                <div style="width:300px;height:300px;background:linear-gradient(135deg,var(--green-700),var(--green-600));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8rem;font-weight:900;color:white;margin:0 auto;box-shadow:0 15px 40px rgba(108,123,28,0.2);">OMK</div>
-                @endif
-                
-                @if($about->pastor_name)
-                <div style="background:var(--white);border:1px solid var(--green-200);border-radius:12px;padding:1.25rem;margin-top:1.5rem;display:flex;align-items:center;gap:1.25rem;box-shadow:0 10px 20px rgba(0,0,0,0.04);">
-                    <div style="width:60px;height:60px;border-radius:50%;overflow:hidden;border:3px solid var(--green-500);flex-shrink:0;">
-                        @if($about->pastor_photo)
-                            <img src="{{ Storage::url($about->pastor_photo) }}" alt="Pastor" style="width:100%;height:100%;object-fit:cover;">
-                        @else
-                            <div style="width:100%;height:100%;background:var(--green-100);display:flex;align-items:center;justify-content:center;color:var(--green-700);font-size:1.5rem;"><i class="bi bi-person-fill"></i></div>
-                        @endif
-                    </div>
-                    <div>
-                        <h4 style="color:var(--gray-900);font-size:1.05rem;font-weight:700;margin-bottom:0.2rem;">{{ $about->pastor_name }}</h4>
-                        <p style="color:var(--green-600);font-size:0.85rem;font-weight:500;">Pastor Pendamping OMK</p>
-                    </div>
-                </div>
-                @endif
+        <div style="max-width:800px;margin:0 auto;text-align:center;" class="fade-in">
+            <div class="section-badge" style="margin:0 auto 1rem;">Sejarah</div>
+            <h2 style="font-size:2.5rem;font-weight:800;color:var(--green-950);margin-bottom:1.5rem;">Perjalanan Kami</h2>
+            <div style="color:var(--gray-600);line-height:1.9;font-size:1rem;text-align:justify;">
+                {!! nl2br(e($about->history)) !!}
             </div>
         </div>
     </div>
 </section>
+
+<!-- VISI MISI -->
+<section class="section" style="background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);" id="visi">
+    <div class="container">
+        <div class="section-title fade-in">
+            <div class="section-badge">Identitas</div>
+            <h2>Visi &amp; Misi</h2>
+            <div class="divider"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="fade-in">
+            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2.5rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
+                <h3 style="color:var(--green-800);font-size:1.75rem;font-weight:800;margin-bottom:1rem;text-align:center;">Visi</h3>
+                <div style="color:var(--gray-600);line-height:1.8;text-align:left;font-size:1rem;" class="editor-content">
+                    {!! $about->vision !!}
+                </div>
+            </div>
+            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2.5rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
+                <h3 style="color:var(--green-800);font-size:1.75rem;font-weight:800;margin-bottom:1rem;text-align:center;">Misi</h3>
+                <div style="color:var(--gray-600);line-height:1.8;text-align:left;font-size:1rem;" class="editor-content">
+                    {!! $about->mission !!}
+                </div>
+            </div>
+        </div>
+        <style>
+            .editor-content ul { padding-left: 1.5rem; list-style-type: disc; margin-bottom: 1rem; }
+            .editor-content ol { padding-left: 1.5rem; list-style-type: decimal; margin-bottom: 1rem; }
+            .editor-content p { margin-bottom: 0.75rem; }
+            .editor-content strong, .editor-content b { font-weight: bold; color: var(--gray-900); }
+        </style>
+    </div>
+</section>
+
+<!-- BAPAK PENDAMPING -->
+@if($about->pastor_name)
+<section class="section" style="background:var(--white);">
+    <div class="container">
+        <div class="section-title fade-in">
+            <div class="section-badge">Pembimbing</div>
+            <h2>Bapak Pendamping</h2>
+            <div class="divider"></div>
+        </div>
+        <div style="max-width:280px;margin:0 auto;text-align:center;" class="fade-in">
+            <div style="width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;margin:0 auto 1.5rem;background:var(--green-50);box-shadow:0 8px 20px rgba(108,123,28,0.12);">
+                @if($about->pastor_photo)
+                    <img src="{{ Storage::url($about->pastor_photo) }}" alt="{{ $about->pastor_name }}" style="width:100%;height:100%;object-fit:cover;">
+                @else
+                    <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;color:var(--gray-300);">
+                        <i class="bi bi-person-bounding-box"></i>
+                    </div>
+                @endif
+            </div>
+            <h3 style="color:var(--green-950);font-size:1.35rem;font-weight:700;margin-bottom:0.25rem;">{{ $about->pastor_name }}</h3>
+            <p style="color:var(--green-600);font-size:0.9rem;margin-bottom:1rem;font-weight:600;">Bapak Pendamping OMK</p>
+            @if($about->pastor_bio)
+            <p style="color:var(--gray-600);font-size:0.9rem;line-height:1.7;">{{ $about->pastor_bio }}</p>
+            @endif
+        </div>
+    </div>
+</section>
+@endif
 @endif
 
 <!-- PENGURUS SECTION -->
@@ -570,33 +602,54 @@
         </div>
         
         @if($leaders->count() > 0)
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;">
-            @foreach($leaders->take(4) as $index => $leader)
-            <div class="card fade-in" style="text-align:center;padding:2.5rem 1.5rem;border-radius:20px;
-                {{ $index === 0 ? 'border-color:var(--green-300);background:var(--green-50);box-shadow:0 10px 30px rgba(108,123,28,0.1);' : '' }}">
-                <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;border:4px solid {{ $index === 0 ? 'var(--green-500)' : 'var(--green-200)' }};background:var(--white);">
-                    @if($leader->photo)
-                        <img src="{{ Storage::url($leader->photo) }}" alt="{{ $leader->name }}" style="width:100%;height:100%;object-fit:cover;">
-                    @else
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--gray-300);">
-                            <i class="bi bi-person-fill"></i>
-                        </div>
+        <div style="display:flex;flex-direction:column;gap:3rem;">
+            <!-- Baris 1: Ketua & Wakil -->
+            <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;">
+                @foreach($leaders->take(2) as $index => $leader)
+                 <div class="fade-in" style="text-align:center;width:100%;max-width:260px;">
+                    <div style="width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;margin:0 auto 1.25rem;background:var(--green-50);box-shadow:0 8px 20px rgba(108,123,28,0.12);">
+                        @if($leader->photo)
+                            <img src="{{ Storage::url($leader->photo) }}" alt="{{ $leader->name }}" style="width:100%;height:100%;object-fit:cover;">
+                        @else
+                            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;color:var(--gray-300);">
+                                <i class="bi bi-person-bounding-box"></i>
+                            </div>
+                        @endif
+                    </div>
+
+                    <h3 style="color:var(--gray-900);font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;">{{ $leader->name }}</h3>
+                    <span style="display:inline-block;background:var(--green-100);color:var(--green-800);border:1px solid var(--green-300);font-size:0.75rem;font-weight:600;padding:0.3rem 1rem;border-radius:50px;">{{ $leader->position }}</span>
+                    @if($leader->period)
+                    <p style="color:var(--gray-400);font-size:0.75rem;margin-top:0.5rem;"><i class="bi bi-calendar3"></i> {{ $leader->period }}</p>
                     @endif
                 </div>
-                
-                @if($index === 0)
-                <div style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;font-size:0.75rem;font-weight:700;padding:0.25rem 1rem;border-radius:50px;margin-bottom:1rem;letter-spacing:0.05em;box-shadow:0 4px 10px rgba(212,175,55,0.3);">
-                    ★ KETUA
-                </div>
-                @endif
-                
-                <h3 style="color:var(--gray-900);font-size:1.1rem;font-weight:700;margin-bottom:0.4rem;">{{ $leader->name }}</h3>
-                <p style="color:var(--green-600);font-size:0.9rem;font-weight:600;margin-bottom:0.5rem;">{{ $leader->position }}</p>
-                @if($leader->period)
-                <p style="color:var(--gray-500);font-size:0.8rem;"><i class="bi bi-calendar3"></i> {{ $leader->period }}</p>
-                @endif
+                @endforeach
             </div>
-            @endforeach
+
+            <!-- Baris 2: Sekretaris, Bendahara, dll -->
+            @if($leaders->count() > 2)
+            <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;">
+                @foreach($leaders->skip(2)->take(4) as $leader)
+                <div class="fade-in" style="text-align:center;width:100%;max-width:240px;">
+                    <div style="width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;margin:0 auto 1.25rem;background:var(--green-50);box-shadow:0 8px 20px rgba(108,123,28,0.12);">
+                        @if($leader->photo)
+                            <img src="{{ Storage::url($leader->photo) }}" alt="{{ $leader->name }}" style="width:100%;height:100%;object-fit:cover;">
+                        @else
+                            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;color:var(--gray-300);">
+                                <i class="bi bi-person-bounding-box"></i>
+                            </div>
+                        @endif
+                    </div>
+
+                    <h3 style="color:var(--gray-900);font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;">{{ $leader->name }}</h3>
+                    <span style="display:inline-block;background:var(--green-100);color:var(--green-800);border:1px solid var(--green-300);font-size:0.72rem;font-weight:600;padding:0.3rem 1rem;border-radius:50px;letter-spacing:0.03em;">{{ $leader->position }}</span>
+                    @if($leader->period)
+                    <p style="color:var(--gray-400);font-size:0.75rem;margin-top:0.5rem;"><i class="bi bi-calendar3"></i> {{ $leader->period }}</p>
+                    @endif
+                </div>
+                @endforeach
+            </div>
+            @endif
         </div>
         
         @if($leaders->count() > 4)
@@ -623,25 +676,26 @@
         @if($members->count() > 0)
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;margin-bottom:2rem;">
             @foreach($members->take(5) as $member)
-            <div class="card fade-in" style="text-align:center;padding:2rem 1rem;">
-                <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin:0 auto 1.25rem;border:3px solid var(--green-200);background:var(--gray-100);">
+            <div class="fade-in" style="text-align:center;">
+                <div style="width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;margin:0 auto 1.25rem;background:var(--green-50);box-shadow:0 8px 20px rgba(108,123,28,0.12);">
                     @if($member->photo)
                         <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->name }}" style="width:100%;height:100%;object-fit:cover;">
                     @else
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--gray-400);">
-                            <i class="bi bi-person-fill"></i>
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--gray-400);">
+                            <i class="bi bi-person-bounding-box"></i>
                         </div>
                     @endif
                 </div>
-                <h4 style="color:var(--gray-900);font-size:0.95rem;font-weight:700;margin-bottom:0.35rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ $member->name }}</h4>
-                @if($member->division)
-                <p style="color:var(--green-600);font-size:0.8rem;font-weight:500;">{{ $member->division }}</p>
+                <h4 style="color:var(--gray-900);font-size:1rem;font-weight:700;margin-bottom:0.5rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ $member->name }}</h4>
+                <span style="display:inline-block;background:var(--green-100);color:var(--green-700);border:1px solid var(--green-300);font-size:0.75rem;font-weight:600;padding:0.2rem 0.85rem;border-radius:50px;">Anggota</span>
+                @if($member->period)
+                <p style="color:var(--gray-400);font-size:0.75rem;margin-top:0.5rem;"><i class="bi bi-calendar3"></i> {{ $member->period }}</p>
                 @endif
             </div>
             @endforeach
             @if($members->count() > 5)
-            <a href="{{ route('members') }}" class="card fade-in" style="text-align:center;padding:2rem 1rem;background:var(--green-50);border:2px dashed var(--green-300);display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--green-700);">
-                <div style="width:70px;height:70px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin-bottom:0.75rem;box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+            <a href="{{ route('members') }}" class="fade-in" style="text-align:center;text-decoration:none;color:var(--green-700);">
+                <div style="width:100%;aspect-ratio:3/4;border-radius:16px;border:4px dashed var(--green-300);background:var(--green-50);display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1.25rem;box-shadow:0 8px 20px rgba(108,123,28,0.05);">
                     +{{ $members->count() - 5 }}
                 </div>
                 <span style="font-size:0.9rem;font-weight:700;">Lihat Semua</span>

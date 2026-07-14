@@ -21,9 +21,7 @@
                     </form>
                 </div>
                 <div style="padding:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.7);">
-                    <div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:0.25rem;">
-                        <strong>Kegiatan:</strong> {{ $photo->activity ? $photo->activity->title : 'Umum' }}
-                    </div>
+
                     @if($photo->caption)
                     <div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:rgba(255,255,255,0.5);">
                         {{ $photo->caption }}

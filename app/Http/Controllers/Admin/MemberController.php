@@ -30,16 +30,11 @@ class MemberController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'gender' => 'nullable|in:L,P',
-            'birth_place' => 'nullable|string|max:255',
-            'birth_date' => 'nullable|date',
-            'address' => 'nullable|string',
-            'phone' => 'nullable|string|max:20',
-            'division' => 'nullable|string|max:255',
-            'status' => 'nullable|string',
+            'period' => 'nullable|string|max:255',
+            'photo' => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->except(['_token', 'photo']);
+        $data = ['name' => $request->name, 'period' => $request->period, 'status' => 'aktif'];
         if ($request->hasFile('photo')) {
             $data['photo'] = $request->file('photo')->store('members', 'public');
         }
@@ -57,9 +52,11 @@ class MemberController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'period' => 'nullable|string|max:255',
+            'photo' => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->except(['_token', '_method', 'photo']);
+        $data = ['name' => $request->name, 'period' => $request->period, 'status' => 'aktif'];
         if ($request->hasFile('photo')) {
             $data['photo'] = $request->file('photo')->store('members', 'public');
         }

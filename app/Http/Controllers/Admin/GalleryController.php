@@ -25,15 +25,12 @@ class GalleryController extends Controller
     {
         $request->validate([
             'images.*' => 'required|image|max:5120',
-            'album_name' => 'nullable|string|max:255',
-            'activity_id' => 'nullable|exists:activities,id',
+            'caption' => 'nullable|string|max:255',
         ]);
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 Gallery::create([
-                    'activity_id' => $request->activity_id,
-                    'album_name' => $request->album_name,
                     'image' => $image->store('gallery', 'public'),
                     'caption' => $request->caption,
                 ]);

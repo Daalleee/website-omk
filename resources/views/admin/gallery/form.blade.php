@@ -16,17 +16,6 @@
             @csrf
 
             <div class="form-group">
-                <label class="form-label">Kegiatan Terkait (Opsional)</label>
-                <select name="activity_id" class="form-input">
-                    <option value="">-- Pilih Kegiatan --</option>
-                    @foreach($activities as $act)
-                    <option value="{{ $act->id }}">{{ $act->title }} ({{ $act->activity_date ? $act->activity_date->format('Y') : '-' }})</option>
-                    @endforeach
-                </select>
-                <div class="form-hint">Pilih kegiatan jika foto-foto ini merupakan dokumentasi dari sebuah kegiatan tertentu.</div>
-            </div>
-
-            <div class="form-group">
                 <label class="form-label">Pilih Foto <span style="color:#f87171;">*</span></label>
                 <input type="file" name="images[]" class="form-input" accept="image/*" multiple required>
                 <div class="form-hint">Anda bisa memilih lebih dari satu foto sekaligus (Multiple Upload). Maksimal ukuran per foto 5MB.</div>

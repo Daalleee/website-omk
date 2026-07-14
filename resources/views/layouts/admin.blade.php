@@ -104,6 +104,20 @@
         .sidebar-link i { font-size: 1.05rem; width: 1.25rem; text-align: center; color: var(--green-400); }
         .sidebar-link.active i { color: white; }
 
+        .sidebar-submenu {
+            display: flex; flex-direction: column; gap: 0.25rem;
+            margin-left: 2.75rem; margin-bottom: 0.5rem; margin-top: -0.25rem;
+        }
+        .submenu-link {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none; font-size: 0.8rem;
+            padding: 0.35rem 0.75rem; border-radius: 6px;
+            transition: all 0.2s; display: block;
+        }
+        .submenu-link:hover, .submenu-link.active {
+            color: white; background: rgba(255,255,255,0.05);
+        }
+
         .sidebar-footer {
             padding: 1rem 0.75rem;
             border-top: 1px solid rgba(255,255,255,0.08);
@@ -314,6 +328,7 @@
             <a href="{{ route('admin.contact.index') }}" class="sidebar-link {{ request()->routeIs('admin.contact.*') ? 'active' : '' }}">
                 <i class="bi bi-telephone-fill"></i> Kontak
             </a>
+
 
             @if(auth()->user()->isAdmin())
             <div class="sidebar-section-title">Sistem</div>

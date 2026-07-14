@@ -23,8 +23,54 @@
 
             <div class="form-group">
                 <label class="form-label">Jabatan <span style="color:#f87171;">*</span></label>
-                <input type="text" name="position" class="form-input" value="{{ old('position', $leader->position) }}" required placeholder="Contoh: Ketua, Sekretaris, Koordinator Bidang Kerohanian">
+                <select name="position" id="position-select" class="form-input" required onchange="toggleCustomPosition(this)">
+                    <option value="">-- Pilih Jabatan --</option>
+                    @php
+                        $jabatanList = ['Ketua','Wakil Ketua','Sekretaris I','Sekretaris II','Bendahara I','Bendahara II','Koordinator Bidang Kerohanian','Koordinator Bidang Sosial','Koordinator Bidang Seni & Budaya','Koordinator Bidang Olahraga','Anggota Bidang Kerohanian','Anggota Bidang Sosial','Anggota Bidang Seni & Budaya','Anggota Bidang Olahraga','Lainnya'];
+                        $currentPosition = old('position', $leader->position);
+                        $isCustom = $currentPosition && !in_array($currentPosition, $jabatanList);
+                    @endphp
+                    @foreach($jabatanList as $jabatan)
+                    <option value="{{ $jabatan }}" {{ $currentPosition === $jabatan ? 'selected' : '' }}>{{ $jabatan }}</option>
+                    @endforeach
+                    @if($isCustom)
+                    <option value="{{ $currentPosition }}" selected>{{ $currentPosition }}</option>
+                    @endif
+                </select>
+                <div id="custom-position-wrap" style="margin-top:0.75rem;display:{{ $isCustom ? 'block' : 'none' }};">
+                    <input type="text" id="custom-position-input" class="form-input" placeholder="Tulis jabatan kustom..." value="{{ $isCustom ? $currentPosition : '' }}" oninput="document.querySelector('[name=position_custom]').value=this.value">
+                    <input type="hidden" name="position_custom" value="{{ $isCustom ? $currentPosition : '' }}">
+                    <div class="form-hint">Jabatan kustom yang Anda tulis akan digunakan sebagai jabatan.</div>
+                </div>
             </div>
+            <script>
+            function toggleCustomPosition(sel) {
+                const wrap = document.getElementById('custom-position-wrap');
+                const customInput = document.getElementById('custom-position-input');
+                if (sel.value === 'Lainnya') {
+                    wrap.style.display = 'block';
+                    customInput.focus();
+                } else {
+                    wrap.style.display = 'none';
+                    customInput.value = '';
+                    document.querySelector('[name=position_custom]').value = '';
+                }
+            }
+            // On submit, if Lainnya is selected, override position value with custom input
+            document.querySelector('form').addEventListener('submit', function(e) {
+                const sel = document.getElementById('position-select');
+                if (sel.value === 'Lainnya') {
+                    const custom = document.querySelector('[name=position_custom]').value.trim();
+                    if (!custom) {
+                        e.preventDefault();
+                        alert('Harap isi jabatan kustom.');
+                        return;
+                    }
+                    sel.value = custom;
+                }
+            });
+            </script>
+
 
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
                 <div class="form-group">

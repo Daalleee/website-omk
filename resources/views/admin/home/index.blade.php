@@ -61,20 +61,6 @@
                 <input type="file" name="welcome_photo" class="form-input" accept="image/*">
             </div>
 
-            <h3 style="color:var(--green-400);font-size:1rem;margin:2rem 0 1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Statistik Manual (Opsional)</h3>
-            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Angka ini akan ditampilkan di halaman depan jika diisi.</p>
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-                <div class="form-group">
-                    <label class="form-label">Statistik Anggota</label>
-                    <input type="number" name="statistic_member" class="form-input" value="{{ old('statistic_member', $home->statistic_member) }}">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Statistik Kegiatan</label>
-                    <input type="number" name="statistic_activity" class="form-input" value="{{ old('statistic_activity', $home->statistic_activity) }}">
-                </div>
-            </div>
-
             <div style="margin-top:2rem;">
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Simpan Perubahan</button>
             </div>
