@@ -17,7 +17,7 @@
                 <div style="display:flex;flex-direction:column;gap:1.5rem;">
                     @if($contact?->address)
                     <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:48px;height:48px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
+                        <div style="width:48px;height:48px;background:rgba(134,151,34,0.12);border:1px solid rgba(134,151,34,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
                             <i class="bi bi-geo-alt-fill"></i>
                         </div>
                         <div>
@@ -28,7 +28,7 @@
                     @endif
                     @if($contact?->phone)
                     <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:48px;height:48px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
+                        <div style="width:48px;height:48px;background:rgba(134,151,34,0.12);border:1px solid rgba(134,151,34,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
                             <i class="bi bi-whatsapp"></i>
                         </div>
                         <div>
@@ -39,7 +39,7 @@
                     @endif
                     @if($contact?->email)
                     <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:48px;height:48px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
+                        <div style="width:48px;height:48px;background:rgba(134,151,34,0.12);border:1px solid rgba(134,151,34,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
                             <i class="bi bi-envelope-fill"></i>
                         </div>
                         <div>
@@ -50,7 +50,7 @@
                     @endif
                     @if($contact?->instagram)
                     <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:48px;height:48px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
+                        <div style="width:48px;height:48px;background:rgba(134,151,34,0.12);border:1px solid rgba(134,151,34,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
                             <i class="bi bi-instagram"></i>
                         </div>
                         <div>
@@ -61,7 +61,7 @@
                     @endif
                     @if($contact?->facebook)
                     <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:48px;height:48px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
+                        <div style="width:48px;height:48px;background:rgba(134,151,34,0.12);border:1px solid rgba(134,151,34,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
                             <i class="bi bi-facebook"></i>
                         </div>
                         <div>
@@ -76,11 +76,11 @@
             <!-- Maps / Join CTA -->
             <div class="fade-in">
                 @if($contact?->maps)
-                <div style="border-radius:16px;overflow:hidden;margin-bottom:1.5rem;border:1px solid rgba(34,197,94,0.2);">
+                <div style="border-radius:16px;overflow:hidden;margin-bottom:1.5rem;border:1px solid rgba(134,151,34,0.2);">
                     <iframe src="{{ $contact->maps }}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 @endif
-                <div style="background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:2rem;text-align:center;">
+                <div style="background:rgba(134,151,34,0.07);border:1px solid rgba(134,151,34,0.2);border-radius:16px;padding:2rem;text-align:center;">
                     <div style="font-size:2.5rem;margin-bottom:1rem;">🤝</div>
                     <h3 style="color:white;font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;">Bergabung Bersama Kami</h3>
                     <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:1.5rem;line-height:1.7;">Kami selalu terbuka untuk menyambut anggota baru yang ingin berkarya bersama dalam pelayanan gereja dan masyarakat.</p>

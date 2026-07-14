@@ -16,7 +16,7 @@
         @endif
 
         <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem;">
-            @if($activity->category)<span style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.25);color:var(--green-400);padding:0.35rem 0.875rem;border-radius:50px;font-size:0.8rem;font-weight:600;">{{ $activity->category->name }}</span>@endif
+            @if($activity->category)<span style="background:rgba(134,151,34,0.12);border:1px solid rgba(134,151,34,0.25);color:var(--green-400);padding:0.35rem 0.875rem;border-radius:50px;font-size:0.8rem;font-weight:600;">{{ $activity->category->name }}</span>@endif
             @if($activity->activity_date)<span style="color:rgba(255,255,255,0.55);font-size:0.875rem;"><i class="bi bi-calendar3" style="color:var(--green-500);"></i> {{ $activity->activity_date->format('d F Y') }}</span>@endif
             @if($activity->location)<span style="color:rgba(255,255,255,0.55);font-size:0.875rem;"><i class="bi bi-geo-alt-fill" style="color:var(--green-500);"></i> {{ $activity->location }}</span>@endif
         </div>
@@ -28,7 +28,7 @@
         @endif
 
         @if($activity->galleries->count() > 0)
-        <h3 style="color:white;font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;border-bottom:1px solid rgba(34,197,94,0.2);padding-bottom:0.75rem;">
+        <h3 style="color:white;font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;border-bottom:1px solid rgba(134,151,34,0.2);padding-bottom:0.75rem;">
             <i class="bi bi-images" style="color:var(--green-400);"></i> Galeri Kegiatan
         </h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.75rem;">

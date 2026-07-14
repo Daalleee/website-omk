@@ -17,12 +17,12 @@
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;">
             @foreach($leaders as $index => $leader)
             <div class="card fade-in" style="text-align:center;padding:2rem 1.5rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:20px;transition:all 0.3s;
-                {{ $index === 0 ? 'border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.06);' : '' }}">
-                <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;margin:0 auto 1.25rem;border:3px solid {{ $index === 0 ? 'var(--green-500)' : 'rgba(34,197,94,0.2)' }};background:rgba(22,101,52,0.3);">
+                {{ $index === 0 ? 'border-color:rgba(134,151,34,0.3);background:rgba(134,151,34,0.06);' : '' }}">
+                <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;margin:0 auto 1.25rem;border:3px solid {{ $index === 0 ? 'var(--green-500)' : 'rgba(134,151,34,0.2)' }};background:rgba(22,101,52,0.3);">
                     @if($leader->photo)
                         <img src="{{ Storage::url($leader->photo) }}" alt="{{ $leader->name }}" style="width:100%;height:100%;object-fit:cover;">
                     @else
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:rgba(34,197,94,0.4);">
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:rgba(134,151,34,0.4);">
                             <i class="bi bi-person-fill"></i>
                         </div>
                     @endif

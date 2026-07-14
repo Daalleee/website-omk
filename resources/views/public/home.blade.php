@@ -12,24 +12,24 @@
         display: flex;
         align-items: center;
         overflow: hidden;
-        background: linear-gradient(135deg, #020d04 0%, #052e16 40%, #0a1f0f 70%, #000 100%);
+        background: linear-gradient(135deg, #ffffff 0%, var(--green-50) 100%);
     }
 
     .hero-bg-pattern {
         position: absolute;
         inset: 0;
         background-image: 
-            radial-gradient(ellipse at 20% 50%, rgba(22, 163, 74, 0.12) 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
-            radial-gradient(ellipse at 60% 80%, rgba(5, 46, 22, 0.6) 0%, transparent 50%);
+            radial-gradient(ellipse at 20% 50%, rgba(134, 151, 34, 0.05) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 20%, rgba(108, 123, 28, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse at 60% 80%, rgba(63, 71, 16, 0.03) 0%, transparent 50%);
     }
 
     .hero-grid-overlay {
         position: absolute;
         inset: 0;
         background-image: 
-            linear-gradient(rgba(34, 197, 94, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(34, 197, 94, 0.04) 1px, transparent 1px);
+            linear-gradient(rgba(134, 151, 34, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(134, 151, 34, 0.05) 1px, transparent 1px);
         background-size: 50px 50px;
     }
 
@@ -42,14 +42,14 @@
 
     .hero-orb-1 {
         width: 500px; height: 500px;
-        background: rgba(22, 163, 74, 0.08);
+        background: rgba(134, 151, 34, 0.08);
         top: -100px; right: -100px;
         animation-delay: 0s;
     }
 
     .hero-orb-2 {
         width: 350px; height: 350px;
-        background: rgba(34, 197, 94, 0.06);
+        background: rgba(108, 123, 28, 0.06);
         bottom: 0; left: -50px;
         animation-delay: 4s;
     }
@@ -63,8 +63,8 @@
         position: relative;
         z-index: 2;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5rem;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 4rem;
         align-items: center;
         width: 100%;
         max-width: 1200px;
@@ -77,20 +77,20 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        background: rgba(34, 197, 94, 0.1);
-        border: 1px solid rgba(34, 197, 94, 0.25);
-        color: var(--green-400);
+        background: rgba(134, 151, 34, 0.1);
+        border: 1px solid rgba(134, 151, 34, 0.2);
+        color: var(--green-700);
         padding: 0.4rem 1rem;
         border-radius: 50px;
-        font-size: 0.78rem;
-        font-weight: 600;
+        font-size: 0.8rem;
+        font-weight: 700;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         margin-bottom: 1.5rem;
     }
 
     .hero-badge .dot {
-        width: 6px; height: 6px;
+        width: 8px; height: 8px;
         background: var(--green-500);
         border-radius: 50%;
         animation: pulse-dot 2s infinite;
@@ -102,26 +102,26 @@
     }
 
     .hero-title {
-        font-size: 3.75rem;
+        font-size: 4rem;
         font-weight: 800;
-        line-height: 1.1;
-        color: var(--white);
-        margin-bottom: 1rem;
+        line-height: 1.15;
+        color: var(--green-950);
+        margin-bottom: 1.25rem;
     }
 
     .hero-title .highlight {
-        background: linear-gradient(135deg, var(--green-400), var(--green-300));
+        background: linear-gradient(135deg, var(--green-700), var(--green-500));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
-        color: rgba(255,255,255,0.65);
+        font-size: 1.15rem;
+        color: var(--gray-600);
         margin-bottom: 2.5rem;
         line-height: 1.7;
-        max-width: 480px;
+        max-width: 500px;
     }
 
     .hero-cta {
@@ -138,16 +138,17 @@
     }
 
     .hero-card-center {
-        width: 300px;
-        height: 300px;
+        width: 320px;
+        height: 320px;
         border-radius: 50%;
-        background: linear-gradient(135deg, rgba(22, 163, 74, 0.15), rgba(5, 46, 22, 0.6));
-        border: 1px solid rgba(34, 197, 94, 0.2);
+        background: linear-gradient(135deg, var(--white), var(--green-50));
+        border: 2px dashed rgba(134, 151, 34, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        animation: spin-slow 20s linear infinite;
+        animation: spin-slow 30s linear infinite;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.05);
     }
 
     @keyframes spin-slow {
@@ -156,8 +157,8 @@
     }
 
     .hero-logo-inner {
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 240px;
         border-radius: 50%;
         background: linear-gradient(135deg, var(--green-800), var(--green-700));
         display: flex;
@@ -165,42 +166,42 @@
         justify-content: center;
         font-size: 5rem;
         font-weight: 900;
-        color: rgba(255,255,255,0.9);
-        animation: spin-slow 20s linear infinite reverse;
-        box-shadow: 0 0 60px rgba(22, 163, 74, 0.3), inset 0 0 40px rgba(0,0,0,0.2);
+        color: var(--white);
+        animation: spin-slow 30s linear infinite reverse;
+        box-shadow: 0 10px 40px rgba(108, 123, 28, 0.3), inset 0 0 40px rgba(0,0,0,0.2);
     }
 
     .hero-floating-stat {
         position: absolute;
-        background: rgba(5, 46, 22, 0.9);
-        border: 1px solid rgba(34, 197, 94, 0.25);
+        background: var(--white);
+        border: 1px solid var(--green-100);
         border-radius: 12px;
         padding: 0.75rem 1.25rem;
-        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     .hero-floating-stat .stat-num {
         font-size: 1.5rem;
         font-weight: 800;
-        color: var(--green-400);
+        color: var(--green-700);
         line-height: 1;
     }
 
     .hero-floating-stat .stat-label {
-        font-size: 0.7rem;
-        color: rgba(255,255,255,0.6);
+        font-size: 0.75rem;
+        color: var(--gray-600);
         margin-top: 2px;
+        font-weight: 500;
     }
 
-    .stat-1 { top: 10%; left: -20px; }
-    .stat-2 { bottom: 10%; right: -20px; }
+    .stat-1 { top: 5%; left: -30px; }
+    .stat-2 { bottom: 10%; right: -30px; }
 
     /* STATS SECTION */
     .stats-section {
-        background: linear-gradient(135deg, var(--green-900), var(--green-800));
-        padding: 3.5rem 0;
-        border-top: 1px solid rgba(34, 197, 94, 0.2);
-        border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+        background: linear-gradient(135deg, var(--green-950), var(--green-900));
+        padding: 4rem 0;
+        border-top: 4px solid var(--green-600);
     }
 
     .stats-grid {
@@ -215,26 +216,26 @@
     }
 
     .stat-item .num {
-        font-size: 2.75rem;
+        font-size: 3rem;
         font-weight: 800;
-        color: var(--green-300);
+        color: var(--green-400);
         line-height: 1;
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.5rem;
     }
 
     .stat-item .label {
-        color: rgba(255,255,255,0.7);
-        font-size: 0.9rem;
+        color: rgba(255,255,255,0.8);
+        font-size: 1rem;
         font-weight: 500;
     }
 
     .stat-divider {
-        border-left: 1px solid rgba(255,255,255,0.1);
+        border-left: 1px solid rgba(255,255,255,0.15);
     }
 
     /* WELCOME */
     .welcome-section {
-        background: linear-gradient(135deg, #0a1a0e 0%, #0f2a15 100%);
+        background: var(--white);
     }
 
     .welcome-grid {
@@ -253,9 +254,10 @@
         aspect-ratio: 4/5;
         border-radius: 20px;
         overflow: hidden;
-        border: 2px solid rgba(34, 197, 94, 0.2);
-        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--gray-200);
+        background: var(--gray-50);
         position: relative;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.05);
     }
 
     .photo-frame img {
@@ -269,32 +271,30 @@
         align-items: center;
         justify-content: center;
         font-size: 5rem;
-        color: rgba(34, 197, 94, 0.3);
+        color: var(--gray-300);
     }
 
     .photo-accent {
         position: absolute;
         width: 120px; height: 120px;
-        border: 2px solid var(--green-700);
+        border: 3px solid var(--green-500);
         border-radius: 12px;
         bottom: -20px;
         right: -20px;
         z-index: -1;
     }
 
-    .welcome-content .section-badge { margin-bottom: 1rem; }
-
     .welcome-content h2 {
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--white);
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: var(--green-950);
         margin-bottom: 0.5rem;
     }
 
     .ketua-name {
-        color: var(--green-400);
+        color: var(--green-700);
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-bottom: 1.5rem;
         display: flex;
         align-items: center;
@@ -302,15 +302,22 @@
     }
 
     .welcome-text {
-        color: rgba(255,255,255,0.7);
+        color: var(--gray-600);
         line-height: 1.8;
-        font-size: 0.95rem;
+        font-size: 1rem;
         margin-bottom: 2rem;
+    }
+
+    /* TENTANG */
+    .tentang-section {
+        background: var(--gray-50);
+        border-top: 1px solid var(--gray-200);
+        border-bottom: 1px solid var(--gray-200);
     }
 
     /* ACTIVITIES */
     .activities-section {
-        background: #080f09;
+        background: var(--white);
     }
 
     .activities-grid {
@@ -320,32 +327,33 @@
     }
 
     .activity-card {
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.08);
+        background: var(--white);
+        border: 1px solid var(--gray-200);
         border-radius: 16px;
         overflow: hidden;
         transition: all 0.3s ease;
         text-decoration: none;
         color: inherit;
         display: block;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     }
 
     .activity-card:hover {
         transform: translateY(-6px);
-        border-color: rgba(34, 197, 94, 0.3);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(34, 197, 94, 0.08);
+        border-color: var(--green-300);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08), 0 0 0 1px var(--green-300);
         color: inherit;
     }
 
     .activity-thumb {
         width: 100%;
-        height: 200px;
+        height: 220px;
         object-fit: cover;
-        background: linear-gradient(135deg, var(--green-900), var(--green-800));
+        background: var(--gray-100);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: rgba(255,255,255,0.3);
+        color: var(--gray-300);
         font-size: 2.5rem;
         position: relative;
         overflow: hidden;
@@ -358,40 +366,40 @@
     .activity-category {
         position: absolute;
         top: 12px; left: 12px;
-        background: rgba(5, 46, 22, 0.85);
-        border: 1px solid rgba(34, 197, 94, 0.3);
-        color: var(--green-400);
-        font-size: 0.7rem;
-        font-weight: 600;
-        padding: 0.25rem 0.6rem;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid var(--green-200);
+        color: var(--green-700);
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 0.35rem 0.8rem;
         border-radius: 50px;
-        backdrop-filter: blur(5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .activity-body { padding: 1.25rem; }
+    .activity-body { padding: 1.5rem; }
 
     .activity-meta {
         display: flex;
         align-items: center;
         gap: 1rem;
-        font-size: 0.78rem;
-        color: rgba(255,255,255,0.45);
+        font-size: 0.8rem;
+        color: var(--gray-500);
         margin-bottom: 0.75rem;
     }
 
-    .activity-meta i { color: var(--green-500); }
+    .activity-meta i { color: var(--green-600); }
 
     .activity-title {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--white);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--gray-900);
         margin-bottom: 0.75rem;
         line-height: 1.4;
     }
 
     .activity-desc {
-        font-size: 0.84rem;
-        color: rgba(255,255,255,0.5);
+        font-size: 0.9rem;
+        color: var(--gray-600);
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
@@ -400,22 +408,24 @@
 
     /* GALLERY */
     .gallery-section {
-        background: linear-gradient(135deg, #0a1a0e 0%, #0f2a15 100%);
+        background: var(--gray-50);
+        border-top: 1px solid var(--gray-200);
     }
 
     .gallery-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 0.75rem;
+        gap: 1rem;
     }
 
     .gallery-item {
-        border-radius: 12px;
+        border-radius: 16px;
         overflow: hidden;
         aspect-ratio: 1;
         cursor: pointer;
         position: relative;
-        background: rgba(22, 101, 52, 0.3);
+        background: var(--gray-200);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
     .gallery-item:first-child {
@@ -426,7 +436,7 @@
     .gallery-item img {
         width: 100%; height: 100%;
         object-fit: cover;
-        transition: transform 0.4s ease;
+        transition: transform 0.5s ease;
     }
 
     .gallery-item:hover img { transform: scale(1.08); }
@@ -434,13 +444,13 @@
     .gallery-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(5, 46, 22, 0.7);
+        background: rgba(85, 96, 23, 0.7);
         display: flex;
         align-items: center;
         justify-content: center;
         opacity: 0;
         transition: opacity 0.3s;
-        font-size: 1.75rem;
+        font-size: 2rem;
         color: white;
     }
 
@@ -448,28 +458,23 @@
 
     .gallery-placeholder {
         width: 100%; height: 100%;
-        background: linear-gradient(135deg, rgba(22, 101, 52, 0.4), rgba(5, 46, 22, 0.6));
+        background: var(--gray-100);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 2rem;
-        color: rgba(34, 197, 94, 0.3);
-    }
-
-    /* SCROLL MARGIN FOR NAVBAR */
-    section[id] {
-        scroll-margin-top: 80px;
+        color: var(--gray-300);
     }
 
     @media (max-width: 1024px) {
-        .hero-title { font-size: 2.75rem; }
+        .hero-title { font-size: 3rem; }
         .activities-grid { grid-template-columns: 1fr 1fr; }
         .gallery-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 768px) {
         .hero-content { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-        .hero-title { font-size: 2.25rem; }
+        .hero-title { font-size: 2.5rem; }
         .hero-subtitle { margin: 0 auto 2rem; }
         .hero-cta { justify-content: center; }
         .hero-visual { display: none; }
@@ -536,7 +541,7 @@
     </div>
 
     <div style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;animation:float 2s ease-in-out infinite;">
-        <a href="#statistik" style="color:rgba(255,255,255,0.4);font-size:1.5rem;text-decoration:none;">
+        <a href="#statistik" style="color:var(--green-700);font-size:1.75rem;text-decoration:none;opacity:0.7;">
             <i class="bi bi-chevron-double-down"></i>
         </a>
     </div>
@@ -548,19 +553,19 @@
         <div class="stats-grid">
             <div class="stat-item fade-in">
                 <div class="num">{{ $leaders->count() ?? 15 }}+</div>
-                <div class="label"><i class="bi bi-people-fill" style="color:#4ade80;margin-right:5px;"></i>Pengurus</div>
+                <div class="label"><i class="bi bi-people-fill" style="color:#a2b435;margin-right:8px;"></i>Pengurus</div>
             </div>
             <div class="stat-item stat-divider fade-in">
                 <div class="num">{{ $home?->statistic_member ?? 50 }}+</div>
-                <div class="label"><i class="bi bi-person-fill" style="color:#4ade80;margin-right:5px;"></i>Anggota</div>
+                <div class="label"><i class="bi bi-person-fill" style="color:#a2b435;margin-right:8px;"></i>Anggota</div>
             </div>
             <div class="stat-item stat-divider fade-in">
                 <div class="num">{{ $home?->statistic_activity ?? 25 }}+</div>
-                <div class="label"><i class="bi bi-calendar-check-fill" style="color:#4ade80;margin-right:5px;"></i>Kegiatan</div>
+                <div class="label"><i class="bi bi-calendar-check-fill" style="color:#a2b435;margin-right:8px;"></i>Kegiatan</div>
             </div>
             <div class="stat-item stat-divider fade-in">
                 <div class="num">{{ $galleries->count() ?? 100 }}+</div>
-                <div class="label"><i class="bi bi-images" style="color:#4ade80;margin-right:5px;"></i>Foto Dokumentasi</div>
+                <div class="label"><i class="bi bi-images" style="color:#a2b435;margin-right:8px;"></i>Foto Dokumentasi</div>
             </div>
         </div>
     </div>
@@ -602,7 +607,7 @@
 
 <!-- TENTANG SECTION -->
 @if($about)
-<section class="section" style="background:#080f09;" id="tentang">
+<section class="section tentang-section" id="tentang">
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Identitas Kami</div>
@@ -611,37 +616,38 @@
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;" class="fade-in">
             <div>
-                <h3 style="font-size:1.75rem;font-weight:700;color:white;margin-bottom:1.5rem;">Sejarah Singkat</h3>
-                <div style="color:rgba(255,255,255,0.7);line-height:1.9;font-size:0.95rem;margin-bottom:2rem;">
+                <h3 style="font-size:1.75rem;font-weight:800;color:var(--green-950);margin-bottom:1.5rem;">Sejarah Singkat</h3>
+                <div style="color:var(--gray-600);line-height:1.9;font-size:1rem;margin-bottom:2rem;">
                     {!! nl2br(e(Str::limit($about->history, 800))) !!}
                 </div>
                 <div style="display:flex;gap:1rem;">
                     @if($about->vision)
-                    <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:1.25rem;flex:1;">
-                        <h4 style="color:var(--green-400);font-size:0.9rem;font-weight:600;margin-bottom:0.5rem;"><i class="bi bi-bullseye"></i> Visi</h4>
-                        <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;line-height:1.7;">{{ $about->vision }}</p>
+                    <div style="background:var(--white);border:1px solid var(--green-200);border-radius:12px;padding:1.5rem;flex:1;box-shadow:0 4px 15px rgba(0,0,0,0.02);">
+                        <h4 style="color:var(--green-700);font-size:1rem;font-weight:700;margin-bottom:0.5rem;"><i class="bi bi-bullseye"></i> Visi</h4>
+                        <p style="color:var(--gray-600);font-size:0.9rem;line-height:1.7;">{{ $about->vision }}</p>
                     </div>
                     @endif
                 </div>
             </div>
             <div style="position:relative;">
                 @if($about->logo)
-                <img src="{{ Storage::url($about->logo) }}" alt="Logo OMK" style="width:100%;max-width:350px;margin:0 auto;display:block;border-radius:16px;">
+                <img src="{{ Storage::url($about->logo) }}" alt="Logo OMK" style="width:100%;max-width:380px;margin:0 auto;display:block;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,0.06);">
                 @else
-                <div style="width:300px;height:300px;background:linear-gradient(135deg,#166534,#15803d);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8rem;font-weight:900;color:rgba(255,255,255,0.9);margin:0 auto;box-shadow:0 0 60px rgba(22,163,74,0.3);">OMK</div>
+                <div style="width:300px;height:300px;background:linear-gradient(135deg,var(--green-700),var(--green-600));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8rem;font-weight:900;color:white;margin:0 auto;box-shadow:0 15px 40px rgba(108,123,28,0.2);">OMK</div>
                 @endif
+                
                 @if($about->pastor_name)
-                <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:1.25rem;margin-top:1.5rem;display:flex;align-items:center;gap:1rem;">
-                    <div style="width:50px;height:50px;border-radius:50%;overflow:hidden;border:2px solid var(--green-500);flex-shrink:0;">
+                <div style="background:var(--white);border:1px solid var(--green-200);border-radius:12px;padding:1.25rem;margin-top:1.5rem;display:flex;align-items:center;gap:1.25rem;box-shadow:0 10px 20px rgba(0,0,0,0.04);">
+                    <div style="width:60px;height:60px;border-radius:50%;overflow:hidden;border:3px solid var(--green-500);flex-shrink:0;">
                         @if($about->pastor_photo)
                             <img src="{{ Storage::url($about->pastor_photo) }}" alt="Pastor" style="width:100%;height:100%;object-fit:cover;">
                         @else
-                            <div style="width:100%;height:100%;background:rgba(22,101,52,0.5);display:flex;align-items:center;justify-content:center;color:white;"><i class="bi bi-person-fill"></i></div>
+                            <div style="width:100%;height:100%;background:var(--green-100);display:flex;align-items:center;justify-content:center;color:var(--green-700);font-size:1.5rem;"><i class="bi bi-person-fill"></i></div>
                         @endif
                     </div>
                     <div>
-                        <h4 style="color:white;font-size:0.95rem;font-weight:600;margin-bottom:0.2rem;">{{ $about->pastor_name }}</h4>
-                        <p style="color:var(--green-400);font-size:0.75rem;">Pastor Pendamping OMK</p>
+                        <h4 style="color:var(--gray-900);font-size:1.05rem;font-weight:700;margin-bottom:0.2rem;">{{ $about->pastor_name }}</h4>
+                        <p style="color:var(--green-600);font-size:0.85rem;font-weight:500;">Pastor Pendamping OMK</p>
                     </div>
                 </div>
                 @endif
@@ -652,7 +658,7 @@
 @endif
 
 <!-- PENGURUS SECTION -->
-<section class="section" style="background:linear-gradient(135deg,#0a1a0e,#0f2a15);" id="pengurus">
+<section class="section" style="background:var(--white);" id="pengurus">
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Struktur Organisasi</div>
@@ -664,46 +670,46 @@
         @if($leaders->count() > 0)
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;">
             @foreach($leaders->take(4) as $index => $leader)
-            <div class="card fade-in" style="text-align:center;padding:2rem 1.5rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:20px;transition:all 0.3s;
-                {{ $index === 0 ? 'border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.06);' : '' }}">
-                <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;margin:0 auto 1.25rem;border:3px solid {{ $index === 0 ? 'var(--green-500)' : 'rgba(34,197,94,0.2)' }};background:rgba(22,101,52,0.3);">
+            <div class="card fade-in" style="text-align:center;padding:2.5rem 1.5rem;border-radius:20px;
+                {{ $index === 0 ? 'border-color:var(--green-300);background:var(--green-50);box-shadow:0 10px 30px rgba(108,123,28,0.1);' : '' }}">
+                <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;border:4px solid {{ $index === 0 ? 'var(--green-500)' : 'var(--green-200)' }};background:var(--white);">
                     @if($leader->photo)
                         <img src="{{ Storage::url($leader->photo) }}" alt="{{ $leader->name }}" style="width:100%;height:100%;object-fit:cover;">
                     @else
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:rgba(34,197,94,0.4);">
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--gray-300);">
                             <i class="bi bi-person-fill"></i>
                         </div>
                     @endif
                 </div>
                 
                 @if($index === 0)
-                <div style="display:inline-block;background:linear-gradient(135deg,#d4af37,#f0d060);color:#000;font-size:0.7rem;font-weight:700;padding:0.2rem 0.75rem;border-radius:50px;margin-bottom:0.75rem;letter-spacing:0.05em;">
+                <div style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#fff;font-size:0.75rem;font-weight:700;padding:0.25rem 1rem;border-radius:50px;margin-bottom:1rem;letter-spacing:0.05em;box-shadow:0 4px 10px rgba(212,175,55,0.3);">
                     ★ KETUA
                 </div>
                 @endif
                 
-                <h3 style="color:white;font-size:1rem;font-weight:700;margin-bottom:0.35rem;">{{ $leader->name }}</h3>
-                <p style="color:var(--green-400);font-size:0.8rem;font-weight:600;margin-bottom:0.35rem;">{{ $leader->position }}</p>
+                <h3 style="color:var(--gray-900);font-size:1.1rem;font-weight:700;margin-bottom:0.4rem;">{{ $leader->name }}</h3>
+                <p style="color:var(--green-600);font-size:0.9rem;font-weight:600;margin-bottom:0.5rem;">{{ $leader->position }}</p>
                 @if($leader->period)
-                <p style="color:rgba(255,255,255,0.45);font-size:0.75rem;"><i class="bi bi-calendar3"></i> {{ $leader->period }}</p>
+                <p style="color:var(--gray-500);font-size:0.8rem;"><i class="bi bi-calendar3"></i> {{ $leader->period }}</p>
                 @endif
             </div>
             @endforeach
         </div>
         
         @if($leaders->count() > 4)
-        <div style="text-align:center;margin-top:2.5rem;" class="fade-in">
+        <div style="text-align:center;margin-top:3rem;" class="fade-in">
             <a href="{{ route('leaders') }}" class="btn btn-outline">Lihat Semua Pengurus</a>
         </div>
         @endif
         @else
-        <div style="text-align:center;color:rgba(255,255,255,0.4);">Belum ada data pengurus.</div>
+        <div style="text-align:center;color:var(--gray-500);">Belum ada data pengurus.</div>
         @endif
     </div>
 </section>
 
 <!-- ANGGOTA SECTION -->
-<section class="section" style="background:#080f09;" id="anggota">
+<section class="section" style="background:var(--gray-50);border-top:1px solid var(--gray-200);" id="anggota">
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Komunitas</div>
@@ -713,41 +719,41 @@
         </div>
 
         @if($members->count() > 0)
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;margin-bottom:2rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;margin-bottom:2rem;">
             @foreach($members->take(5) as $member)
-            <div class="card fade-in" style="text-align:center;padding:1.5rem 1rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:16px;">
-                <div style="width:70px;height:70px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:2px solid rgba(34,197,94,0.2);background:rgba(22,101,52,0.3);">
+            <div class="card fade-in" style="text-align:center;padding:2rem 1rem;">
+                <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin:0 auto 1.25rem;border:3px solid var(--green-200);background:var(--gray-100);">
                     @if($member->photo)
                         <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->name }}" style="width:100%;height:100%;object-fit:cover;">
                     @else
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;color:rgba(34,197,94,0.35);">
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--gray-400);">
                             <i class="bi bi-person-fill"></i>
                         </div>
                     @endif
                 </div>
-                <h4 style="color:white;font-size:0.9rem;font-weight:600;margin-bottom:0.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ $member->name }}</h4>
+                <h4 style="color:var(--gray-900);font-size:0.95rem;font-weight:700;margin-bottom:0.35rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ $member->name }}</h4>
                 @if($member->division)
-                <p style="color:var(--green-400);font-size:0.75rem;font-weight:500;">{{ $member->division }}</p>
+                <p style="color:var(--green-600);font-size:0.8rem;font-weight:500;">{{ $member->division }}</p>
                 @endif
             </div>
             @endforeach
             @if($members->count() > 5)
-            <a href="{{ route('members') }}" class="card fade-in" style="text-align:center;padding:1.5rem 1rem;background:rgba(34,197,94,0.05);border:1px dashed rgba(34,197,94,0.3);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--green-400);">
-                <div style="width:60px;height:60px;border-radius:50%;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:0.5rem;">
+            <a href="{{ route('members') }}" class="card fade-in" style="text-align:center;padding:2rem 1rem;background:var(--green-50);border:2px dashed var(--green-300);display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--green-700);">
+                <div style="width:70px;height:70px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin-bottom:0.75rem;box-shadow:0 4px 10px rgba(0,0,0,0.05);">
                     +{{ $members->count() - 5 }}
                 </div>
-                <span style="font-size:0.85rem;font-weight:600;">Lihat Semua</span>
+                <span style="font-size:0.9rem;font-weight:700;">Lihat Semua</span>
             </a>
             @endif
         </div>
         @else
-        <div style="text-align:center;color:rgba(255,255,255,0.4);">Belum ada data anggota.</div>
+        <div style="text-align:center;color:var(--gray-500);">Belum ada data anggota.</div>
         @endif
     </div>
 </section>
 
 <!-- KEGIATAN SECTION -->
-<section class="section" style="background:linear-gradient(135deg,#0f2a15,#0a1a0e);" id="kegiatan">
+<section class="section activities-section" id="kegiatan">
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Program Kami</div>
@@ -789,14 +795,14 @@
         </div>
 
         @if($activities->count() > 3)
-        <div style="text-align:center;margin-top:2.5rem;" class="fade-in">
+        <div style="text-align:center;margin-top:3rem;" class="fade-in">
             <a href="{{ route('activities') }}" class="btn btn-outline">
                 <i class="bi bi-grid-3x3-gap"></i> Lihat Semua Kegiatan
             </a>
         </div>
         @endif
         @else
-        <div style="text-align:center;color:rgba(255,255,255,0.4);">Belum ada kegiatan yang tersedia.</div>
+        <div style="text-align:center;color:var(--gray-500);">Belum ada kegiatan yang tersedia.</div>
         @endif
     </div>
 </section>
@@ -824,7 +830,7 @@
         </div>
         
         @if($galleries->count() > 8)
-        <div style="text-align:center;margin-top:2.5rem;" class="fade-in">
+        <div style="text-align:center;margin-top:3rem;" class="fade-in">
             <a href="{{ route('gallery') }}" class="btn btn-primary">
                 <i class="bi bi-images"></i> Lihat Galeri Lengkap
             </a>
@@ -843,7 +849,7 @@
 </section>
 
 <!-- KONTAK SECTION -->
-<section class="section" style="background:#080f09;" id="kontak">
+<section class="section" style="background:var(--white);" id="kontak">
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Hubungi Kami</div>
@@ -854,37 +860,37 @@
         
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;" class="fade-in">
             <div>
-                <div style="display:flex;flex-direction:column;gap:1.5rem;">
+                <div style="display:flex;flex-direction:column;gap:2rem;">
                     @if($contact?->address)
-                    <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:48px;height:48px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
+                    <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+                        <div style="width:56px;height:56px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;color:var(--green-600);box-shadow:0 4px 10px rgba(0,0,0,0.02);">
                             <i class="bi bi-geo-alt-fill"></i>
                         </div>
                         <div>
-                            <p style="color:var(--green-400);font-weight:600;font-size:0.85rem;margin-bottom:0.25rem;">Alamat Sekretariat</p>
-                            <p style="color:rgba(255,255,255,0.75);font-size:0.9rem;line-height:1.6;">{{ $contact->address }}</p>
+                            <p style="color:var(--green-700);font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;">Alamat Sekretariat</p>
+                            <p style="color:var(--gray-600);font-size:1rem;line-height:1.6;">{{ $contact->address }}</p>
                         </div>
                     </div>
                     @endif
                     @if($contact?->phone)
-                    <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:48px;height:48px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
+                    <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+                        <div style="width:56px;height:56px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;color:var(--green-600);box-shadow:0 4px 10px rgba(0,0,0,0.02);">
                             <i class="bi bi-whatsapp"></i>
                         </div>
                         <div>
-                            <p style="color:var(--green-400);font-weight:600;font-size:0.85rem;margin-bottom:0.25rem;">WhatsApp</p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/','',$contact->phone) }}" target="_blank" style="color:rgba(255,255,255,0.75);font-size:0.9rem;text-decoration:none;">{{ $contact->phone }}</a>
+                            <p style="color:var(--green-700);font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;">WhatsApp</p>
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/','',$contact->phone) }}" target="_blank" style="color:var(--gray-600);font-size:1rem;text-decoration:none;">{{ $contact->phone }}</a>
                         </div>
                     </div>
                     @endif
                     @if($contact?->instagram)
-                    <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:48px;height:48px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-400);">
+                    <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+                        <div style="width:56px;height:56px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;color:var(--green-600);box-shadow:0 4px 10px rgba(0,0,0,0.02);">
                             <i class="bi bi-instagram"></i>
                         </div>
                         <div>
-                            <p style="color:var(--green-400);font-weight:600;font-size:0.85rem;margin-bottom:0.25rem;">Instagram</p>
-                            <a href="https://instagram.com/{{ ltrim($contact->instagram,'@') }}" target="_blank" style="color:rgba(255,255,255,0.75);font-size:0.9rem;text-decoration:none;">{{ $contact->instagram }}</a>
+                            <p style="color:var(--green-700);font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;">Instagram</p>
+                            <a href="https://instagram.com/{{ ltrim($contact->instagram,'@') }}" target="_blank" style="color:var(--gray-600);font-size:1rem;text-decoration:none;">{{ $contact->instagram }}</a>
                         </div>
                     </div>
                     @endif
@@ -893,14 +899,14 @@
 
             <div>
                 @if($contact?->maps)
-                <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(34,197,94,0.2);height:100%;min-height:300px;">
-                    <iframe src="{{ $contact->maps }}" width="100%" height="100%" style="border:0;min-height:300px;" allowfullscreen="" loading="lazy"></iframe>
+                <div style="border-radius:20px;overflow:hidden;border:1px solid var(--gray-200);height:100%;min-height:350px;box-shadow:0 10px 30px rgba(0,0,0,0.05);">
+                    <iframe src="{{ $contact->maps }}" width="100%" height="100%" style="border:0;min-height:350px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 @else
-                <div style="background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:2rem;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:center;">
-                    <div style="font-size:2.5rem;margin-bottom:1rem;">🤝</div>
-                    <h3 style="color:white;font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;">Bergabung Bersama Kami</h3>
-                    <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7;">Kami selalu terbuka untuk menyambut anggota baru yang ingin berkarya bersama dalam pelayanan gereja dan masyarakat.</p>
+                <div style="background:var(--green-50);border:1px dashed var(--green-300);border-radius:20px;padding:3rem;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:center;">
+                    <div style="font-size:3rem;margin-bottom:1rem;">🤝</div>
+                    <h3 style="color:var(--green-950);font-size:1.35rem;font-weight:800;margin-bottom:0.75rem;">Bergabung Bersama Kami</h3>
+                    <p style="color:var(--gray-600);font-size:0.95rem;line-height:1.7;">Kami selalu terbuka untuk menyambut anggota baru yang ingin berkarya bersama dalam pelayanan gereja dan masyarakat.</p>
                 </div>
                 @endif
             </div>
@@ -909,10 +915,10 @@
 </section>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:1rem;" onclick="closeLightbox()">
-    <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:80vh;border-radius:12px;object-fit:contain;">
-    <p id="lightbox-caption" style="color:rgba(255,255,255,0.7);font-size:0.9rem;"></p>
-    <button onclick="closeLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.1);border:none;color:white;width:44px;height:44px;border-radius:50%;font-size:1.25rem;cursor:pointer;">
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(15, 23, 42, 0.95);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:1rem;backdrop-filter:blur(5px);" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:80vh;border-radius:16px;object-fit:contain;box-shadow:0 20px 50px rgba(0,0,0,0.5);">
+    <p id="lightbox-caption" style="color:white;font-size:1rem;font-weight:500;"></p>
+    <button onclick="closeLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;width:44px;height:44px;border-radius:50%;font-size:1.25rem;cursor:pointer;transition:all 0.2s;">
         <i class="bi bi-x-lg"></i>
     </button>
 </div>

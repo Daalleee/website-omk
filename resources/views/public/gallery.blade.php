@@ -15,7 +15,7 @@
             @foreach($galleries as $photo)
             <div style="border-radius:14px;overflow:hidden;aspect-ratio:1;cursor:pointer;position:relative;background:rgba(22,101,52,0.2);" onclick="openLightbox('{{ Storage::url($photo->image) }}','{{ $photo->caption }}')">
                 <img src="{{ Storage::url($photo->image) }}" alt="{{ $photo->caption ?? 'Galeri OMK' }}" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
-                <div style="position:absolute;inset:0;background:rgba(5,46,22,0.65);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;font-size:1.75rem;color:white;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+                <div style="position:absolute;inset:0;background:rgba(26,30,6,0.65);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;font-size:1.75rem;color:white;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
                     <i class="bi bi-zoom-in"></i>
                 </div>
                 @if($photo->caption)

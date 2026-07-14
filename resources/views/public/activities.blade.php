@@ -42,7 +42,7 @@
                         </div>
                     @endif
                     @if($activity->category)
-                    <span style="position:absolute;top:12px;left:12px;background:rgba(5,46,22,0.85);border:1px solid rgba(34,197,94,0.3);color:var(--green-400);font-size:0.7rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:50px;">
+                    <span style="position:absolute;top:12px;left:12px;background:rgba(26,30,6,0.85);border:1px solid rgba(134,151,34,0.3);color:var(--green-400);font-size:0.7rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:50px;">
                         {{ $activity->category->name }}
                     </span>
                     @endif

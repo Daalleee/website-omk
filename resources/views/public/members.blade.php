@@ -31,11 +31,11 @@
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;margin-bottom:2rem;">
             @foreach($members as $member)
             <div class="card fade-in" style="text-align:center;padding:1.75rem 1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;">
-                <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:2px solid rgba(34,197,94,0.2);background:rgba(22,101,52,0.3);">
+                <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:2px solid rgba(134,151,34,0.2);background:rgba(22,101,52,0.3);">
                     @if($member->photo)
                         <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->name }}" style="width:100%;height:100%;object-fit:cover;">
                     @else
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(34,197,94,0.35);">
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(134,151,34,0.35);">
                             <i class="bi bi-person-fill"></i>
                         </div>
                     @endif
@@ -45,7 +45,7 @@
                 <p style="color:var(--green-400);font-size:0.75rem;font-weight:500;margin-bottom:0.35rem;">{{ $member->division }}</p>
                 @endif
                 <span style="display:inline-block;padding:0.15rem 0.6rem;border-radius:50px;font-size:0.7rem;font-weight:600;
-                    {{ $member->status === 'aktif' ? 'background:rgba(34,197,94,0.15);color:var(--green-400);border:1px solid rgba(34,197,94,0.2);' : 'background:rgba(239,68,68,0.1);color:#fca5a5;border:1px solid rgba(239,68,68,0.2);' }}">
+                    {{ $member->status === 'aktif' ? 'background:rgba(134,151,34,0.15);color:var(--green-400);border:1px solid rgba(134,151,34,0.2);' : 'background:rgba(239,68,68,0.1);color:#fca5a5;border:1px solid rgba(239,68,68,0.2);' }}">
                     {{ ucfirst($member->status) }}
                 </span>
             </div>
