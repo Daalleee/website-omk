@@ -71,7 +71,7 @@
             <div class="fade-in">
                 <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:24px;padding:3rem;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.03);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;">
                     @if($contact?->phone)
-                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/','',$contact->phone) }}" target="_blank" style="display:inline-flex;align-items:center;gap:0.75rem;background:linear-gradient(135deg,#25D366,#128C7E);color:white;padding:1.25rem 2.5rem;border-radius:16px;font-size:1.15rem;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 8px 25px rgba(37,211,102,0.25);" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 35px rgba(37,211,102,0.35)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 8px 25px rgba(37,211,102,0.25)'">
+                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/','',$contact->phone) }}" target="_blank" style="display:inline-flex;align-items:center;gap:0.75rem;background:#033403;color:white;padding:1.25rem 2.5rem;border-radius:16px;font-size:1.15rem;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 8px 25px rgba(5,59,0,0.25);" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 35px rgba(5,59,0,0.35)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 8px 25px rgba(5,59,0,0.25)'">
                         <i class="bi bi-whatsapp" style="font-size:1.75rem;"></i> Hubungi via WhatsApp
                     </a>
                     @endif

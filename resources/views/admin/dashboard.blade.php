@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="stat-card">
-        <div class="stat-icon" style="background:rgba(59,130,246,0.15);color:#60a5fa;">
+        <div class="stat-icon" style="background:rgba(3,52,3,0.12);color:#033403;">
             <i class="bi bi-person-lines-fill"></i>
         </div>
         <div class="stat-info">

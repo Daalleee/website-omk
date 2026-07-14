@@ -861,7 +861,7 @@
 
             @if($contact?->phone)
             <div style="text-align:center;margin-top:2.5rem;">
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/','',$contact->phone) }}" target="_blank" style="display:inline-flex;align-items:center;gap:0.75rem;background:#053b00;color:white;padding:1rem 2rem;border-radius:14px;font-size:1rem;font-weight:600;text-decoration:none;transition:all 0.2s;box-shadow:0 6px 20px rgba(5,59,0,0.25);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 30px rgba(5,59,0,0.35)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 20px rgba(5,59,0,0.25)'">
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/','',$contact->phone) }}" target="_blank" style="display:inline-flex;align-items:center;gap:0.75rem;background:#033403;color:white;padding:1rem 2rem;border-radius:14px;font-size:1rem;font-weight:600;text-decoration:none;transition:all 0.2s;box-shadow:0 6px 20px rgba(5,59,0,0.25);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 30px rgba(5,59,0,0.35)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 20px rgba(5,59,0,0.25)'">
                     <i class="bi bi-whatsapp" style="font-size:1.5rem;"></i> Hubungi via WhatsApp
                 </a>
             </div>

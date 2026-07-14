@@ -70,8 +70,9 @@
         }
 
         .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 0.6rem 0;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             border-bottom: 1px solid var(--green-100);
         }
@@ -82,7 +83,14 @@
             padding: 0 2rem;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 0.25rem;
+            position: relative;
+        }
+
+        .nav-right {
+            position: absolute;
+            right: 0;
         }
 
         .nav-brand {
@@ -90,6 +98,8 @@
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
+            position: absolute;
+            left: 0;
         }
 
         .nav-logo {
@@ -130,33 +140,53 @@
         .nav-links a {
             text-decoration: none;
             color: var(--gray-600);
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            padding: 0.5rem 0.875rem;
-            border-radius: 8px;
+            padding: 0.5rem 0.125rem;
             transition: all 0.2s ease;
             position: relative;
         }
 
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+background: #033403;
+            border-radius: 2px;
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
         .nav-links a:hover, .nav-links a.active {
             color: var(--green-800);
-            background: var(--green-50);
             font-weight: 600;
         }
 
         .nav-admin-btn {
-            background: linear-gradient(135deg, var(--green-800), var(--green-700));
+            background: #033403;
             color: white !important;
             border-radius: 8px !important;
             padding: 0.5rem 1.1rem !important;
             font-weight: 600 !important;
-            box-shadow: 0 4px 12px rgba(108, 123, 28, 0.2);
+            box-shadow: 0 4px 12px rgba(3, 52, 3, 0.25);
+            text-decoration: none !important;
+        }
+
+        .nav-admin-btn::after {
+            display: none !important;
+            content: none !important;
         }
 
         .nav-admin-btn:hover {
-            background: linear-gradient(135deg, var(--green-700), var(--green-600)) !important;
+            background: #033403 !important;
             transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(108, 123, 28, 0.3) !important;
+            box-shadow: 0 6px 16px rgba(3, 52, 3, 0.35) !important;
         }
 
         .hamburger {
@@ -579,12 +609,15 @@
                 <li><a href="{{ route('activities') }}" class="nav-link {{ request()->routeIs('activities') || request()->routeIs('activity.detail') ? 'active' : '' }}">Kegiatan</a></li>
                 <li><a href="{{ route('gallery') }}" class="nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}">Galeri</a></li>
                 <li><a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Kontak</a></li>
-                @auth
-                    <li><a href="{{ route('admin.dashboard') }}" class="nav-admin-btn"><i class="bi bi-grid-fill"></i> Admin</a></li>
-                @else
-                    <li><a href="{{ route('login') }}" class="nav-admin-btn"><i class="bi bi-lock-fill"></i> Login</a></li>
-                @endauth
             </ul>
+
+            <div class="nav-right">
+                @auth
+                    <a href="{{ route('admin.dashboard') }}" class="nav-admin-btn">Admin</a>
+                @else
+                    <a href="{{ route('login') }}" class="nav-admin-btn">Login</a>
+                @endauth
+            </div>
 
             <div class="hamburger" id="hamburger">
                 <span></span><span></span><span></span>
