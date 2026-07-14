@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Anggota OMK - Orang Muda Katolik')
+@section('title', 'OMK | Anggota')
 
 @section('content')
 <section class="page-hero">

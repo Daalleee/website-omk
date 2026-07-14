@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('title', 'Galeri OMK')
+@section('title', 'OMK | Galeri')
 @section('content')
 <section class="page-hero">
     <div class="container page-hero-content">

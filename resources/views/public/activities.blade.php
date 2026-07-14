@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('title', 'Kegiatan OMK')
+@section('title', 'OMK | Kegiatan')
 @section('content')
 <section class="page-hero">
     <div class="container page-hero-content">

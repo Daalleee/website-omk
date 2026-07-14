@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Tentang OMK - Orang Muda Katolik')
+@section('title', 'OMK | Tentang')
 @section('description', 'Pelajari sejarah, visi, misi, dan tujuan Orang Muda Katolik.')
 
 @section('content')
@@ -49,10 +49,17 @@
             </div>
         </div>
         <style>
-            .editor-content ul { padding-left: 1.5rem; list-style-type: disc; margin-bottom: 1rem; }
+                        .editor-content ul { padding-left: 1.5rem; list-style-type: disc; margin-bottom: 1rem; }
             .editor-content ol { padding-left: 1.5rem; list-style-type: decimal; margin-bottom: 1rem; }
             .editor-content p { margin-bottom: 0.75rem; }
             .editor-content strong, .editor-content b { font-weight: bold; color: var(--gray-900); }
+            @media (max-width: 768px) {
+                .visi-misi-grid > div { text-align: center !important; }
+                .visi-misi-grid .editor-content { text-align: center !important; }
+                .visi-misi-grid .editor-content ul,
+                .visi-misi-grid .editor-content ol { text-align: left; display: inline-block; }
+            }
+
             @media (max-width: 768px) {
                 .visi-misi-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
                 .visi-misi-grid > div { padding: 1.5rem !important; }

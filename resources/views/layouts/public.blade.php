@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'OMK - Orang Muda Katolik')</title>
+    <title>@yield('title', 'OMK')</title>
     <meta name="description" content="@yield('description', 'Website resmi Orang Muda Katolik - Komunitas pemuda Katolik yang aktif dalam iman, pelayanan, dan pengembangan diri.')">
     
     <!-- Google Fonts -->

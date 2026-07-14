@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'OMK - Orang Muda Katolik | Beranda')
+@section('title', 'OMK | Beranda')
 @section('description', 'Website resmi Orang Muda Katolik. Bersama dalam iman, tumbuh dalam kasih, bergerak untuk sesama.')
 
 @push('styles')
@@ -95,7 +95,7 @@
 
     .hero-title .highlight {
         color: #033403;
-        text-shadow: 0 0 12px rgba(255,255,255,0.5);
+        text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 30px rgba(255,255,255,0.5), 0 0 60px rgba(255,255,255,0.2);
     }
 
     .hero-subtitle {
@@ -421,24 +421,25 @@
     }
 
     @media (max-width: 768px) {
-        .hero { min-height: 85vh; }
-        .hero-content { padding: 0 1rem; }
+        .hero { min-height: 100vh; }
+        .hero-content { padding: 11rem 1rem 0; }
         .hero-title { font-size: 2.2rem; margin-bottom: 1rem; }
         .hero-subtitle { font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.7; }
         .hero-badge { font-size: 0.7rem; padding: 0.35rem 1rem; margin-bottom: 1.5rem; }
         .hero-cta { gap: 0.75rem; }
         .hero-cta .btn { padding: 0.75rem 1.5rem !important; font-size: 0.9rem !important; }
         .hero-visual { display: none; }
-        .hero-stats-wrapper { position: static; margin-top: 2rem; }
-        .stats-grid { gap: 0.5rem 1rem; }
-        .stats-glass { padding: 0.6rem 1rem; }
-        .stat-item .num { font-size: 1rem; }
-        .stat-item .label { font-size: 0.65rem; }
+        .hero-stats-wrapper { position: static; margin-top: 4rem; }
+        .stats-grid { gap: 0.35rem 0.75rem; }
+        .stats-glass { padding: 0.5rem 0.85rem; }
+        .stat-item .num { font-size: 0.85rem; }
+        .stat-item .label { font-size: 0.6rem; }
         .welcome-grid { grid-template-columns: 1fr; gap: 2rem; }
         .welcome-photo { max-width: 220px; }
-        .welcome-content { margin-left: 0; width: auto; }
+        .welcome-content { margin-left: 0; width: auto; text-align: center; }
         .welcome-content h2 { font-size: 1.5rem; white-space: normal; }
         .welcome-text { font-size: 0.9rem; }
+        .welcome-content .btn { margin: 0 auto; }
         .photo-accent { display: none; }
         .activities-grid { grid-template-columns: 1fr; }
         .activity-thumb { height: 180px; }
@@ -450,13 +451,16 @@
     }
 
     @media (max-width: 480px) {
-        .hero { min-height: 80vh; }
+        .hero { min-height: 100vh; }
+        .hero-content { padding: 10rem 1rem 0; }
         .hero-title { font-size: 1.85rem; }
         .hero-subtitle { font-size: 0.88rem; }
-        .hero-cta { flex-direction: column; align-items: center; width: 100%; }
-        .hero-cta .btn { width: 100%; justify-content: center; }
-        .stats-grid { gap: 0.35rem 0.75rem; }
-        .stat-item .num { font-size: 0.9rem; }
+        .hero-cta { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+        .hero-stats-wrapper { margin-top: 3rem; }
+        .stats-grid { gap: 0.25rem 0.5rem; }
+        .stats-glass { padding: 0.4rem 0.75rem; }
+        .stat-item .num { font-size: 0.8rem; }
+        .stat-item .label { font-size: 0.55rem; }
         .welcome-photo { max-width: 180px; }
         .welcome-content h2 { font-size: 1.35rem; }
         .activity-thumb { height: 160px; }
@@ -590,8 +594,11 @@
             .editor-content strong, .editor-content b { font-weight: bold; color: var(--gray-900); }
             @media (max-width: 768px) {
                 .visi-misi-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
-                .visi-misi-grid > div { padding: 1.5rem !important; }
+                .visi-misi-grid > div { padding: 1.5rem !important; text-align: center !important; }
                 .visi-misi-grid h3 { font-size: 1.35rem !important; }
+                .visi-misi-grid .editor-content { text-align: center !important; }
+                .visi-misi-grid .editor-content ul,
+                .visi-misi-grid .editor-content ol { text-align: left; display: inline-block; }
             }
         </style>
     </div>
