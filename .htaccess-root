@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Do not rewrite requests to the actual Laravel public directory
+    RewriteCond %{REQUEST_URI} !^/website-omk/public/
+
+    # Rewrite all requests to Laravel public directory
+    RewriteRule ^(.*)$ website-omk/public/$1 [L]
+</IfModule>

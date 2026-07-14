@@ -23,12 +23,17 @@ class HomeSettingController extends Controller
             'welcome_title' => 'nullable|string|max:255',
             'welcome_name' => 'nullable|string|max:255',
             'welcome_message' => 'nullable|string',
+            'brand_name' => 'nullable|string|max:255',
+            'footer_description' => 'nullable|string',
+            'footer_copyright' => 'nullable|string|max:255',
             'statistic_member' => 'nullable|integer',
             'statistic_activity' => 'nullable|integer',
         ]);
 
         $home = HomeSetting::first() ?? new HomeSetting();
         $data = $request->except(['_token', '_method', 'hero_image', 'welcome_photo', 'brand_logo']);
+        $data = array_filter($data, fn($value) => $value !== null);
+        $data['brand_name'] ??= 'OMK Paroki';
 
         if ($request->hasFile('hero_image')) {
             $data['hero_image'] = $request->file('hero_image')->store('home', 'public');
