@@ -815,70 +815,66 @@
             <div class="divider"></div>
         </div>
         
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;" class="fade-in">
-            <div>
-                <div style="display:flex;flex-direction:column;gap:2rem;">
-                    @if($contact?->address)
-                    <div style="display:flex;gap:1.5rem;align-items:flex-start;">
-                        <div style="width:56px;height:56px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;color:var(--green-600);box-shadow:0 4px 10px rgba(0,0,0,0.02);">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <div>
-                            <p style="color:var(--green-700);font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;">Alamat Sekretariat</p>
-                            <p style="color:var(--gray-600);font-size:1rem;line-height:1.6;">{{ $contact->address }}</p>
-                        </div>
+        <div class="fade-in" style="max-width:700px;margin:0 auto;">
+            <div style="display:flex;flex-direction:column;gap:1.5rem;">
+                @if($contact?->address)
+                <div style="display:flex;gap:1.25rem;align-items:flex-start;">
+                    <div style="width:48px;height:48px;background:var(--green-50);border:1px solid var(--green-200);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-600);">
+                        <i class="bi bi-geo-alt-fill"></i>
                     </div>
-                    @endif
-                    @if($contact?->phone)
-                    <div style="display:flex;gap:1.5rem;align-items:flex-start;">
-                        <div style="width:56px;height:56px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;color:var(--green-600);box-shadow:0 4px 10px rgba(0,0,0,0.02);">
-                            <i class="bi bi-whatsapp"></i>
-                        </div>
-                        <div>
-                            <p style="color:var(--green-700);font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;">WhatsApp</p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/','',$contact->phone) }}" target="_blank" style="color:var(--gray-600);font-size:1rem;text-decoration:none;">{{ $contact->phone }}</a>
-                        </div>
+                    <div style="flex:1;display:flex;align-items:center;min-height:48px;">
+                        <p style="color:var(--gray-600);font-size:0.95rem;line-height:1.6;">{{ $contact->address }}</p>
                     </div>
-                    @endif
-                    @if($contact?->email)
-                    <div style="display:flex;gap:1.5rem;align-items:flex-start;">
-                        <div style="width:56px;height:56px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;color:var(--green-600);box-shadow:0 4px 10px rgba(0,0,0,0.02);">
-                            <i class="bi bi-envelope-fill"></i>
-                        </div>
-                        <div>
-                            <p style="color:var(--green-700);font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;">Email</p>
-                            <a href="mailto:{{ $contact->email }}" style="color:var(--gray-600);font-size:1rem;text-decoration:none;">{{ $contact->email }}</a>
-                        </div>
-                    </div>
-                    @endif
-                    @if($contact?->instagram)
-                    <div style="display:flex;gap:1.5rem;align-items:flex-start;">
-                        <div style="width:56px;height:56px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;color:var(--green-600);box-shadow:0 4px 10px rgba(0,0,0,0.02);">
-                            <i class="bi bi-instagram"></i>
-                        </div>
-                        <div>
-                            <p style="color:var(--green-700);font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;">Instagram</p>
-                            <a href="https://instagram.com/{{ ltrim($contact->instagram,'@') }}" target="_blank" style="color:var(--gray-600);font-size:1rem;text-decoration:none;">{{ $contact->instagram }}</a>
-                        </div>
-                    </div>
-                    @endif
                 </div>
-            </div>
-
-            <div>
-                @if($contact?->maps)
-                <div style="border-radius:20px;overflow:hidden;border:1px solid var(--gray-200);height:100%;min-height:350px;box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-                    <iframe src="https://www.google.com/maps?q={{ urlencode($contact->maps) }}&output=embed" width="100%" height="100%" style="border:0;min-height:350px;" allowfullscreen="" loading="lazy"></iframe>
+                @endif
+                @if($contact?->phone)
+                <div style="display:flex;gap:1.25rem;align-items:flex-start;">
+                    <div style="width:48px;height:48px;background:var(--green-50);border:1px solid var(--green-200);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-600);">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <div style="flex:1;display:flex;align-items:center;min-height:48px;">
+                        <a href="tel:{{ $contact->phone }}" style="color:var(--gray-600);font-size:0.95rem;text-decoration:none;">{{ $contact->phone }}</a>
+                    </div>
                 </div>
-                @else
-                <div style="background:var(--green-50);border:1px dashed var(--green-300);border-radius:20px;padding:3rem;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:center;">
-                    <div style="font-size:3rem;margin-bottom:1rem;">🤝</div>
-                    <h3 style="color:var(--green-950);font-size:1.35rem;font-weight:800;margin-bottom:0.75rem;">Bergabung Bersama Kami</h3>
-                    <p style="color:var(--gray-600);font-size:0.95rem;line-height:1.7;">Kami selalu terbuka untuk menyambut anggota baru yang ingin berkarya bersama dalam pelayanan gereja dan masyarakat.</p>
+                @endif
+                @if($contact?->email)
+                <div style="display:flex;gap:1.25rem;align-items:flex-start;">
+                    <div style="width:48px;height:48px;background:var(--green-50);border:1px solid var(--green-200);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-600);">
+                        <i class="bi bi-envelope-fill"></i>
+                    </div>
+                    <div style="flex:1;display:flex;align-items:center;min-height:48px;">
+                        <a href="mailto:{{ $contact->email }}" style="color:var(--gray-600);font-size:0.95rem;text-decoration:none;">{{ $contact->email }}</a>
+                    </div>
+                </div>
+                @endif
+                @if($contact?->instagram)
+                <div style="display:flex;gap:1.25rem;align-items:flex-start;">
+                    <div style="width:48px;height:48px;background:var(--green-50);border:1px solid var(--green-200);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;color:var(--green-600);">
+                        <i class="bi bi-instagram"></i>
+                    </div>
+                    <div style="flex:1;display:flex;align-items:center;min-height:48px;">
+                        <a href="https://instagram.com/{{ ltrim($contact->instagram,'@') }}" target="_blank" style="color:var(--gray-600);font-size:0.95rem;text-decoration:none;">{{ $contact->instagram }}</a>
+                    </div>
                 </div>
                 @endif
             </div>
+
+            @if($contact?->phone)
+            <div style="text-align:center;margin-top:2.5rem;">
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/','',$contact->phone) }}" target="_blank" style="display:inline-flex;align-items:center;gap:0.75rem;background:#053b00;color:white;padding:1rem 2rem;border-radius:14px;font-size:1rem;font-weight:600;text-decoration:none;transition:all 0.2s;box-shadow:0 6px 20px rgba(5,59,0,0.25);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 30px rgba(5,59,0,0.35)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 20px rgba(5,59,0,0.25)'">
+                    <i class="bi bi-whatsapp" style="font-size:1.5rem;"></i> Hubungi via WhatsApp
+                </a>
+            </div>
+            @endif
         </div>
+
+        @if($contact?->maps)
+        <div style="margin-top:3rem;" class="fade-in">
+            <div style="border-radius:20px;overflow:hidden;border:1px solid var(--gray-200);min-height:350px;box-shadow:0 10px 30px rgba(0,0,0,0.05);">
+                <iframe src="https://www.google.com/maps?q={{ urlencode($contact->maps) }}&output=embed&t=k" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        @endif
     </div>
 </section>
 
