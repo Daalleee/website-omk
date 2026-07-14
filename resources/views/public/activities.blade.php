@@ -13,20 +13,8 @@
         <!-- Filter -->
         <form method="GET" style="display:flex;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap;background:var(--white);padding:1.25rem;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 2px 8px rgba(0,0,0,0.03);">
             <input type="text" name="search" class="form-input" placeholder="Cari kegiatan..." value="{{ request('search') }}" style="flex:1;min-width:200px;">
-            <select name="category" class="form-input" style="flex:1;min-width:140px;">
-                <option value="">Semua Kategori</option>
-                @foreach($categories as $cat)
-                <option value="{{ $cat->id }}" {{ request('category') == $cat->id ? 'selected' : '' }}>{{ $cat->name }}</option>
-                @endforeach
-            </select>
-            <select name="year" class="form-input" style="flex:1;min-width:120px;">
-                <option value="">Semua Tahun</option>
-                @foreach($years as $year)
-                <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>{{ $year }}</option>
-                @endforeach
-            </select>
-            <button type="submit" class="btn btn-primary" style="flex-shrink:0;"><i class="bi bi-search"></i> Filter</button>
-            @if(request()->anyFilled(['search','category','year']))
+            <button type="submit" class="btn btn-primary" style="flex-shrink:0;"><i class="bi bi-search"></i> Cari</button>
+            @if(request('search'))
             <a href="{{ route('activities') }}" class="btn btn-outline" style="flex-shrink:0;"><i class="bi bi-x"></i> Reset</a>
             @endif
         </form>

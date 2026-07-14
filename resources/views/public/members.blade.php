@@ -16,13 +16,8 @@
         <!-- Filter/Search -->
         <form method="GET" style="display:flex;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap;background:var(--white);padding:1.25rem;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 2px 8px rgba(0,0,0,0.03);">
             <input type="text" name="search" class="form-input" placeholder="Cari anggota..." value="{{ request('search') }}" style="flex:1;min-width:200px;">
-            <select name="status" class="form-input" style="flex:1;min-width:140px;">
-                <option value="">Semua Status</option>
-                <option value="aktif" {{ request('status') == 'aktif' ? 'selected' : '' }}>Aktif</option>
-                <option value="tidak aktif" {{ request('status') == 'tidak aktif' ? 'selected' : '' }}>Tidak Aktif</option>
-            </select>
             <button type="submit" class="btn btn-primary" style="flex-shrink:0;"><i class="bi bi-search"></i> Cari</button>
-            @if(request('search') || request('status'))
+            @if(request('search'))
             <a href="{{ route('members') }}" class="btn btn-outline" style="flex-shrink:0;"><i class="bi bi-x"></i> Reset</a>
             @endif
         </form>

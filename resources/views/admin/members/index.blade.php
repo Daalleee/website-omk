@@ -9,11 +9,6 @@
         <div style="display:flex;gap:1rem;align-items:center;">
             <form method="GET" style="display:flex;gap:0.5rem;">
                 <input type="text" name="search" class="form-input" style="padding:0.4rem 0.75rem;width:200px;" placeholder="Cari nama..." value="{{ request('search') }}">
-                <select name="status" class="form-input" style="padding:0.4rem 0.75rem;width:130px;">
-                    <option value="">Semua</option>
-                    <option value="aktif" {{ request('status') == 'aktif' ? 'selected' : '' }}>Aktif</option>
-                    <option value="tidak aktif" {{ request('status') == 'tidak aktif' ? 'selected' : '' }}>Nonaktif</option>
-                </select>
                 <button type="submit" class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
             </form>
             <a href="{{ route('admin.members.create') }}" class="btn btn-primary btn-sm"><i class="bi bi-plus-lg"></i> Tambah</a>
