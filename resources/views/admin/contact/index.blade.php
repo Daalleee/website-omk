@@ -37,16 +37,12 @@
                     <label class="form-label">Instagram Username</label>
                     <input type="text" name="instagram" class="form-input" value="{{ old('instagram', $contact->instagram) }}" placeholder="Contoh: @omk_paroki">
                 </div>
-                <div class="form-group">
-                    <label class="form-label">Facebook Page Name</label>
-                    <input type="text" name="facebook" class="form-input" value="{{ old('facebook', $contact->facebook) }}" placeholder="Contoh: OMK Paroki">
-                </div>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Google Maps Embed URL (src)</label>
-                <textarea name="maps" class="form-input" rows="3">{{ old('maps', $contact->maps) }}</textarea>
-                <div class="form-hint">Cara mendapatkan: Cari lokasi di Google Maps > Share/Bagikan > Embed a map (Sematkan Peta) > Copy link di dalam atribut src="..." saja.</div>
+                <label class="form-label">Alamat Lokasi untuk Maps</label>
+                <input type="text" name="maps" class="form-input" value="{{ old('maps', $contact->maps) }}" placeholder="Contoh: Gereja Paroki, Jl. Gereja No. 1, Kota">
+                <div class="form-hint">Tulis alamat atau nama lokasi. Nanti otomatis ditampilkan di Google Maps.</div>
             </div>
 
             <div style="margin-top:2rem;">

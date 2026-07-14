@@ -37,6 +37,17 @@
                         </div>
                     </div>
                     @endif
+                    @if($contact?->email)
+                    <div style="display:flex;gap:1.25rem;align-items:flex-start;">
+                        <div style="width:52px;height:52px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.35rem;color:var(--green-600);box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div>
+                            <p style="color:var(--green-700);font-weight:700;font-size:0.9rem;margin-bottom:0.25rem;">Email</p>
+                            <a href="mailto:{{ $contact->email }}" style="color:var(--gray-600);font-size:0.95rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--green-600)'" onmouseout="this.style.color='var(--gray-600)'">{{ $contact->email }}</a>
+                        </div>
+                    </div>
+                    @endif
                     @if($contact?->instagram)
                     <div style="display:flex;gap:1.25rem;align-items:flex-start;">
                         <div style="width:52px;height:52px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.35rem;color:var(--green-600);box-shadow:0 2px 8px rgba(0,0,0,0.03);">
@@ -55,7 +66,7 @@
             <div class="fade-in">
                 @if($contact?->maps)
                 <div style="border-radius:20px;overflow:hidden;margin-bottom:1.5rem;border:1px solid var(--gray-200);box-shadow:0 10px 30px rgba(0,0,0,0.04);">
-                    <iframe src="{{ $contact->maps }}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps?q={{ urlencode($contact->maps) }}&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 @endif
                 <div style="background:var(--green-50);border:1px solid var(--green-200);border-radius:20px;padding:2.25rem;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,0.02);">

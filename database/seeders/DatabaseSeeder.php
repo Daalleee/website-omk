@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'omk@gereja.id',
             'phone' => '081234567890',
             'instagram' => '@omk_paroki',
-            'facebook' => 'OMK Paroki',
+            'maps' => 'Gereja Paroki, Jl. Gereja No. 1, Kota',
         ]);
     }
 }

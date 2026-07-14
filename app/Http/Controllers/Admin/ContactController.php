@@ -21,7 +21,6 @@ class ContactController extends Controller
             'email' => 'nullable|email',
             'phone' => 'nullable|string|max:20',
             'instagram' => 'nullable|string|max:255',
-            'facebook' => 'nullable|string|max:255',
             'maps' => 'nullable|string',
         ]);
 

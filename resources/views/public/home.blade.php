@@ -840,6 +840,17 @@
                         </div>
                     </div>
                     @endif
+                    @if($contact?->email)
+                    <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+                        <div style="width:56px;height:56px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;color:var(--green-600);box-shadow:0 4px 10px rgba(0,0,0,0.02);">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div>
+                            <p style="color:var(--green-700);font-weight:700;font-size:0.95rem;margin-bottom:0.35rem;">Email</p>
+                            <a href="mailto:{{ $contact->email }}" style="color:var(--gray-600);font-size:1rem;text-decoration:none;">{{ $contact->email }}</a>
+                        </div>
+                    </div>
+                    @endif
                     @if($contact?->instagram)
                     <div style="display:flex;gap:1.5rem;align-items:flex-start;">
                         <div style="width:56px;height:56px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;color:var(--green-600);box-shadow:0 4px 10px rgba(0,0,0,0.02);">
@@ -857,7 +868,7 @@
             <div>
                 @if($contact?->maps)
                 <div style="border-radius:20px;overflow:hidden;border:1px solid var(--gray-200);height:100%;min-height:350px;box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-                    <iframe src="{{ $contact->maps }}" width="100%" height="100%" style="border:0;min-height:350px;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps?q={{ urlencode($contact->maps) }}&output=embed" width="100%" height="100%" style="border:0;min-height:350px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 @else
                 <div style="background:var(--green-50);border:1px dashed var(--green-300);border-radius:20px;padding:3rem;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:center;">
