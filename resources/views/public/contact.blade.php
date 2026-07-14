@@ -37,17 +37,6 @@
                         </div>
                     </div>
                     @endif
-                    @if($contact?->email)
-                    <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:52px;height:52px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.35rem;color:var(--green-600);box-shadow:0 2px 8px rgba(0,0,0,0.03);">
-                            <i class="bi bi-envelope-fill"></i>
-                        </div>
-                        <div>
-                            <p style="color:var(--green-700);font-weight:700;font-size:0.9rem;margin-bottom:0.25rem;">Email</p>
-                            <a href="mailto:{{ $contact->email }}" style="color:var(--gray-600);font-size:0.95rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--green-600)'" onmouseout="this.style.color='var(--gray-600)'">{{ $contact->email }}</a>
-                        </div>
-                    </div>
-                    @endif
                     @if($contact?->instagram)
                     <div style="display:flex;gap:1.25rem;align-items:flex-start;">
                         <div style="width:52px;height:52px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.35rem;color:var(--green-600);box-shadow:0 2px 8px rgba(0,0,0,0.03);">
@@ -56,17 +45,6 @@
                         <div>
                             <p style="color:var(--green-700);font-weight:700;font-size:0.9rem;margin-bottom:0.25rem;">Instagram</p>
                             <a href="https://instagram.com/{{ ltrim($contact->instagram,'@') }}" target="_blank" style="color:var(--gray-600);font-size:0.95rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--green-600)'" onmouseout="this.style.color='var(--gray-600)'">{{ $contact->instagram }}</a>
-                        </div>
-                    </div>
-                    @endif
-                    @if($contact?->facebook)
-                    <div style="display:flex;gap:1.25rem;align-items:flex-start;">
-                        <div style="width:52px;height:52px;background:var(--green-50);border:1px solid var(--green-200);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.35rem;color:var(--green-600);box-shadow:0 2px 8px rgba(0,0,0,0.03);">
-                            <i class="bi bi-facebook"></i>
-                        </div>
-                        <div>
-                            <p style="color:var(--green-700);font-weight:700;font-size:0.9rem;margin-bottom:0.25rem;">Facebook</p>
-                            <p style="color:var(--gray-600);font-size:0.95rem;">{{ $contact->facebook }}</p>
                         </div>
                     </div>
                     @endif
