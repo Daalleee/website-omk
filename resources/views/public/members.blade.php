@@ -11,10 +11,10 @@
     </div>
 </section>
 
-<section class="section" style="background:#080f09;">
+<section class="section" style="background:var(--gray-50);">
     <div class="container">
         <!-- Filter/Search -->
-        <form method="GET" style="display:flex;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap;">
+        <form method="GET" style="display:flex;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap;background:var(--white);padding:1.25rem;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 2px 8px rgba(0,0,0,0.03);">
             <input type="text" name="search" class="form-input" placeholder="Cari anggota..." value="{{ request('search') }}" style="max-width:300px;">
             <select name="status" class="form-input" style="max-width:180px;">
                 <option value="">Semua Status</option>
@@ -30,22 +30,22 @@
         @if($members->count() > 0)
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;margin-bottom:2rem;">
             @foreach($members as $member)
-            <div class="card fade-in" style="text-align:center;padding:1.75rem 1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;">
-                <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:2px solid rgba(134,151,34,0.2);background:rgba(22,101,52,0.3);">
+            <div class="card fade-in" style="text-align:center;padding:1.75rem 1.25rem;border-radius:16px;">
+                <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:3px solid var(--green-200);background:var(--gray-100);">
                     @if($member->photo)
                         <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->name }}" style="width:100%;height:100%;object-fit:cover;">
                     @else
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:rgba(134,151,34,0.35);">
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--gray-400);">
                             <i class="bi bi-person-fill"></i>
                         </div>
                     @endif
                 </div>
-                <h4 style="color:white;font-size:0.9rem;font-weight:600;margin-bottom:0.35rem;">{{ $member->name }}</h4>
+                <h4 style="color:var(--gray-900);font-size:0.9rem;font-weight:700;margin-bottom:0.35rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ $member->name }}</h4>
                 @if($member->division)
-                <p style="color:var(--green-400);font-size:0.75rem;font-weight:500;margin-bottom:0.35rem;">{{ $member->division }}</p>
+                <p style="color:var(--green-600);font-size:0.75rem;font-weight:500;margin-bottom:0.5rem;">{{ $member->division }}</p>
                 @endif
-                <span style="display:inline-block;padding:0.15rem 0.6rem;border-radius:50px;font-size:0.7rem;font-weight:600;
-                    {{ $member->status === 'aktif' ? 'background:rgba(134,151,34,0.15);color:var(--green-400);border:1px solid rgba(134,151,34,0.2);' : 'background:rgba(239,68,68,0.1);color:#fca5a5;border:1px solid rgba(239,68,68,0.2);' }}">
+                <span style="display:inline-block;padding:0.2rem 0.7rem;border-radius:50px;font-size:0.72rem;font-weight:600;
+                    {{ $member->status === 'aktif' ? 'background:var(--green-100);color:var(--green-700);border:1px solid var(--green-200);' : 'background:#fee2e2;color:#b91c1c;border:1px solid #fecaca;' }}">
                     {{ ucfirst($member->status) }}
                 </span>
             </div>
@@ -59,7 +59,7 @@
         </div>
         @endif
         @else
-        <div style="text-align:center;padding:4rem 0;color:rgba(255,255,255,0.4);">
+        <div style="text-align:center;padding:4rem 0;color:var(--gray-400);">
             <i class="bi bi-people" style="font-size:3rem;display:block;margin-bottom:1rem;"></i>
             <p>Tidak ada anggota ditemukan.</p>
         </div>

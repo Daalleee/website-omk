@@ -11,87 +11,61 @@
         position: relative;
         display: flex;
         align-items: center;
+        justify-content: center;
         overflow: hidden;
-        background: linear-gradient(135deg, #ffffff 0%, var(--green-50) 100%);
+        background-color: var(--green-950);
     }
 
-    .hero-bg-pattern {
+    .hero-bg-image {
         position: absolute;
         inset: 0;
-        background-image: 
-            radial-gradient(ellipse at 20% 50%, rgba(134, 151, 34, 0.05) 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, rgba(108, 123, 28, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse at 60% 80%, rgba(63, 71, 16, 0.03) 0%, transparent 50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
     }
 
-    .hero-grid-overlay {
+    .hero-overlay {
         position: absolute;
         inset: 0;
-        background-image: 
-            linear-gradient(rgba(134, 151, 34, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(134, 151, 34, 0.05) 1px, transparent 1px);
-        background-size: 50px 50px;
-    }
-
-    .hero-orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        animation: float 8s ease-in-out infinite;
-    }
-
-    .hero-orb-1 {
-        width: 500px; height: 500px;
-        background: rgba(134, 151, 34, 0.08);
-        top: -100px; right: -100px;
-        animation-delay: 0s;
-    }
-
-    .hero-orb-2 {
-        width: 350px; height: 350px;
-        background: rgba(108, 123, 28, 0.06);
-        bottom: 0; left: -50px;
-        animation-delay: 4s;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0) scale(1); }
-        50% { transform: translateY(-30px) scale(1.05); }
+        background: linear-gradient(135deg, rgba(26, 30, 6, 0.85) 0%, rgba(43, 49, 10, 0.75) 100%);
+        z-index: 1;
     }
 
     .hero-content {
         position: relative;
         z-index: 2;
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 4rem;
-        align-items: center;
         width: 100%;
-        max-width: 1200px;
+        max-width: 900px;
         margin: 0 auto;
         padding: 0 2rem;
         padding-top: 5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-badge {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        background: rgba(134, 151, 34, 0.1);
-        border: 1px solid rgba(134, 151, 34, 0.2);
-        color: var(--green-700);
-        padding: 0.4rem 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 0.4rem 1.25rem;
         border-radius: 50px;
         font-size: 0.8rem;
         font-weight: 700;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        backdrop-filter: blur(5px);
     }
 
     .hero-badge .dot {
         width: 8px; height: 8px;
-        background: var(--green-500);
+        background: var(--green-400);
         border-radius: 50%;
         animation: pulse-dot 2s infinite;
     }
@@ -101,101 +75,51 @@
         50% { opacity: 0.5; transform: scale(0.8); }
     }
 
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+
     .hero-title {
-        font-size: 4rem;
+        font-size: 4.5rem;
         font-weight: 800;
         line-height: 1.15;
-        color: var(--green-950);
-        margin-bottom: 1.25rem;
+        color: white;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     .hero-title .highlight {
-        background: linear-gradient(135deg, var(--green-700), var(--green-500));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: var(--green-400);
+        text-shadow: 0 4px 20px rgba(162, 180, 53, 0.3);
     }
 
     .hero-subtitle {
         font-size: 1.15rem;
-        color: var(--gray-600);
-        margin-bottom: 2.5rem;
-        line-height: 1.7;
-        max-width: 500px;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 3rem;
+        line-height: 1.8;
+        max-width: 600px;
     }
 
     .hero-cta {
         display: flex;
-        gap: 1rem;
+        gap: 1.25rem;
         flex-wrap: wrap;
-    }
-
-    .hero-visual {
-        position: relative;
-        display: flex;
-        align-items: center;
         justify-content: center;
     }
-
-    .hero-card-center {
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--white), var(--green-50));
-        border: 2px dashed rgba(134, 151, 34, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        animation: spin-slow 30s linear infinite;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    
+    .btn-hero-outline {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1.5px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
     }
-
-    @keyframes spin-slow {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+    .btn-hero-outline:hover {
+        background: white;
+        color: var(--green-950);
+        border-color: white;
     }
-
-    .hero-logo-inner {
-        width: 240px;
-        height: 240px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--green-800), var(--green-700));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 5rem;
-        font-weight: 900;
-        color: var(--white);
-        animation: spin-slow 30s linear infinite reverse;
-        box-shadow: 0 10px 40px rgba(108, 123, 28, 0.3), inset 0 0 40px rgba(0,0,0,0.2);
-    }
-
-    .hero-floating-stat {
-        position: absolute;
-        background: var(--white);
-        border: 1px solid var(--green-100);
-        border-radius: 12px;
-        padding: 0.75rem 1.25rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .hero-floating-stat .stat-num {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--green-700);
-        line-height: 1;
-    }
-
-    .hero-floating-stat .stat-label {
-        font-size: 0.75rem;
-        color: var(--gray-600);
-        margin-top: 2px;
-        font-weight: 500;
-    }
-
-    .stat-1 { top: 5%; left: -30px; }
-    .stat-2 { bottom: 10%; right: -30px; }
 
     /* STATS SECTION */
     .stats-section {
@@ -491,57 +415,35 @@
 @section('content')
 <!-- HERO SECTION -->
 <section class="hero" id="beranda">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-grid-overlay"></div>
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
+    @if($home?->hero_image)
+        <img src="{{ Storage::url($home->hero_image) }}" alt="Banner OMK" class="hero-bg-image">
+    @endif
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
-        <div class="hero-text">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                Organisasi Resmi Paroki
-            </div>
-            <h1 class="hero-title">
-                {{ $home?->hero_title ?? 'Orang Muda' }}<br>
-                <span class="highlight">{{ 'Katolik' }}</span>
-            </h1>
-            <p class="hero-subtitle">
-                {{ $home?->hero_subtitle ?? 'Bersama dalam Iman, Tumbuh dalam Kasih, Bergerak untuk Sesama.' }}
-            </p>
-            <div class="hero-cta">
-                <a href="#tentang" class="btn btn-primary">
-                    <i class="bi bi-info-circle"></i> Tentang Kami
-                </a>
-                <a href="#kegiatan" class="btn btn-outline">
-                    <i class="bi bi-calendar-event"></i> Kegiatan
-                </a>
-            </div>
+        <div class="hero-badge fade-in">
+            <span class="dot"></span>
+            Organisasi Resmi Paroki
         </div>
-
-        <div class="hero-visual">
-            <div class="hero-card-center">
-                @if($home?->hero_image)
-                    <div class="hero-logo-inner" style="overflow:hidden;">
-                        <img src="{{ Storage::url($home->hero_image) }}" alt="OMK" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                @else
-                    <div class="hero-logo-inner">OMK</div>
-                @endif
-            </div>
-            <div class="hero-floating-stat stat-1">
-                <div class="stat-num">{{ $home?->statistic_member ?? 50 }}+</div>
-                <div class="stat-label">Anggota Aktif</div>
-            </div>
-            <div class="hero-floating-stat stat-2">
-                <div class="stat-num">{{ $home?->statistic_activity ?? 25 }}+</div>
-                <div class="stat-label">Total Kegiatan</div>
-            </div>
+        <h1 class="hero-title fade-in" style="transition-delay: 0.1s;">
+            {{ $home?->hero_title ?? 'Orang Muda' }}<br>
+            <span class="highlight">{{ 'Katolik' }}</span>
+        </h1>
+        <p class="hero-subtitle fade-in" style="transition-delay: 0.2s;">
+            {{ $home?->hero_subtitle ?? 'Bersama dalam Iman, Tumbuh dalam Kasih, Bergerak untuk Sesama.' }}
+        </p>
+        <div class="hero-cta fade-in" style="transition-delay: 0.3s;">
+            <a href="#tentang" class="btn btn-primary" style="padding: 0.875rem 2.25rem; font-size: 1rem;">
+                <i class="bi bi-info-circle"></i> Tentang Kami
+            </a>
+            <a href="#kegiatan" class="btn btn-hero-outline" style="padding: 0.875rem 2.25rem; font-size: 1rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.25s ease;">
+                <i class="bi bi-calendar-event"></i> Kegiatan Terbaru
+            </a>
         </div>
     </div>
 
-    <div style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;animation:float 2s ease-in-out infinite;">
-        <a href="#statistik" style="color:var(--green-700);font-size:1.75rem;text-decoration:none;opacity:0.7;">
+    <div style="position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;animation:float 2s ease-in-out infinite;">
+        <a href="#statistik" style="color:rgba(255,255,255,0.7);font-size:2rem;text-decoration:none;transition:color 0.2s;">
             <i class="bi bi-chevron-double-down"></i>
         </a>
     </div>

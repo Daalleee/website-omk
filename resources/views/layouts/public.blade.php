@@ -572,13 +572,13 @@
             </a>
 
             <ul class="nav-links">
-                <li><a href="{{ request()->routeIs('home') ? '#beranda' : route('home').'#beranda' }}" class="nav-link">Beranda</a></li>
-                <li><a href="{{ request()->routeIs('home') ? '#tentang' : route('home').'#tentang' }}" class="nav-link">Tentang</a></li>
-                <li><a href="{{ request()->routeIs('home') ? '#pengurus' : route('home').'#pengurus' }}" class="nav-link">Pengurus</a></li>
-                <li><a href="{{ request()->routeIs('home') ? '#anggota' : route('home').'#anggota' }}" class="nav-link">Anggota</a></li>
-                <li><a href="{{ request()->routeIs('home') ? '#kegiatan' : route('home').'#kegiatan' }}" class="nav-link">Kegiatan</a></li>
-                <li><a href="{{ request()->routeIs('home') ? '#galeri' : route('home').'#galeri' }}" class="nav-link">Galeri</a></li>
-                <li><a href="{{ request()->routeIs('home') ? '#kontak' : route('home').'#kontak' }}" class="nav-link">Kontak</a></li>
+                <li><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Beranda</a></li>
+                <li><a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">Tentang</a></li>
+                <li><a href="{{ route('leaders') }}" class="nav-link {{ request()->routeIs('leaders') ? 'active' : '' }}">Pengurus</a></li>
+                <li><a href="{{ route('members') }}" class="nav-link {{ request()->routeIs('members') ? 'active' : '' }}">Anggota</a></li>
+                <li><a href="{{ route('activities') }}" class="nav-link {{ request()->routeIs('activities') || request()->routeIs('activity.detail') ? 'active' : '' }}">Kegiatan</a></li>
+                <li><a href="{{ route('gallery') }}" class="nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}">Galeri</a></li>
+                <li><a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Kontak</a></li>
                 @auth
                     <li><a href="{{ route('admin.dashboard') }}" class="nav-admin-btn"><i class="bi bi-grid-fill"></i> Admin</a></li>
                 @else
@@ -595,13 +595,13 @@
     <!-- MOBILE NAV -->
     <div class="mobile-nav" id="mobileNav">
         <button class="mobile-close" id="mobileClose"><i class="bi bi-x-lg"></i></button>
-        <a href="{{ request()->routeIs('home') ? '#beranda' : route('home').'#beranda' }}" class="mobile-link">Beranda</a>
-        <a href="{{ request()->routeIs('home') ? '#tentang' : route('home').'#tentang' }}" class="mobile-link">Tentang</a>
-        <a href="{{ request()->routeIs('home') ? '#pengurus' : route('home').'#pengurus' }}" class="mobile-link">Pengurus</a>
-        <a href="{{ request()->routeIs('home') ? '#anggota' : route('home').'#anggota' }}" class="mobile-link">Anggota</a>
-        <a href="{{ request()->routeIs('home') ? '#kegiatan' : route('home').'#kegiatan' }}" class="mobile-link">Kegiatan</a>
-        <a href="{{ request()->routeIs('home') ? '#galeri' : route('home').'#galeri' }}" class="mobile-link">Galeri</a>
-        <a href="{{ request()->routeIs('home') ? '#kontak' : route('home').'#kontak' }}" class="mobile-link">Kontak</a>
+        <a href="{{ route('home') }}" class="mobile-link">Beranda</a>
+        <a href="{{ route('about') }}" class="mobile-link">Tentang</a>
+        <a href="{{ route('leaders') }}" class="mobile-link">Pengurus</a>
+        <a href="{{ route('members') }}" class="mobile-link">Anggota</a>
+        <a href="{{ route('activities') }}" class="mobile-link">Kegiatan</a>
+        <a href="{{ route('gallery') }}" class="mobile-link">Galeri</a>
+        <a href="{{ route('contact') }}" class="mobile-link">Kontak</a>
         @auth
             <a href="{{ route('admin.dashboard') }}" style="color: var(--green-600);">Admin Panel</a>
         @else
@@ -634,23 +634,23 @@
                 <div class="footer-col">
                     <h4>Navigasi</h4>
                     <ul>
-                        <li><a href="{{ request()->routeIs('home') ? '#beranda' : route('home').'#beranda' }}">Beranda</a></li>
-                        <li><a href="{{ request()->routeIs('home') ? '#tentang' : route('home').'#tentang' }}">Tentang OMK</a></li>
-                        <li><a href="{{ request()->routeIs('home') ? '#pengurus' : route('home').'#pengurus' }}">Pengurus</a></li>
-                        <li><a href="{{ request()->routeIs('home') ? '#anggota' : route('home').'#anggota' }}">Anggota</a></li>
-                        <li><a href="{{ request()->routeIs('home') ? '#kegiatan' : route('home').'#kegiatan' }}">Kegiatan</a></li>
-                        <li><a href="{{ request()->routeIs('home') ? '#galeri' : route('home').'#galeri' }}">Galeri</a></li>
-                        <li><a href="{{ request()->routeIs('home') ? '#kontak' : route('home').'#kontak' }}">Kontak</a></li>
+                        <li><a href="{{ route('home') }}">Beranda</a></li>
+                        <li><a href="{{ route('about') }}">Tentang OMK</a></li>
+                        <li><a href="{{ route('leaders') }}">Pengurus</a></li>
+                        <li><a href="{{ route('members') }}">Anggota</a></li>
+                        <li><a href="{{ route('activities') }}">Kegiatan</a></li>
+                        <li><a href="{{ route('gallery') }}">Galeri</a></li>
+                        <li><a href="{{ route('contact') }}">Kontak</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Informasi</h4>
                     <ul>
-                        <li><a href="{{ request()->routeIs('home') ? '#tentang' : route('home').'#tentang' }}">Visi & Misi</a></li>
-                        <li><a href="{{ request()->routeIs('home') ? '#tentang' : route('home').'#tentang' }}">Sejarah</a></li>
-                        <li><a href="{{ request()->routeIs('home') ? '#kegiatan' : route('home').'#kegiatan' }}">Jadwal Kegiatan</a></li>
-                        <li><a href="{{ request()->routeIs('home') ? '#galeri' : route('home').'#galeri' }}">Galeri Foto</a></li>
+                        <li><a href="{{ route('about') }}">Visi &amp; Misi</a></li>
+                        <li><a href="{{ route('about') }}">Sejarah</a></li>
+                        <li><a href="{{ route('activities') }}">Jadwal Kegiatan</a></li>
+                        <li><a href="{{ route('gallery') }}">Galeri Foto</a></li>
                         <li><a href="{{ route('login') }}">Login Admin</a></li>
                     </ul>
                 </div>
@@ -709,23 +709,7 @@
             });
         }, { threshold: 0.1 });
 
-        // Active link highlighting on scroll
-        const sections = document.querySelectorAll('section[id]');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
-            document.querySelectorAll('.nav-link').forEach(li => {
-                li.classList.remove('active');
-                if (li.getAttribute('href').includes(current)) {
-                    li.classList.add('active');
-                }
-            });
-        });
+        // Active state is now handled server-side via route matching
 
         document.querySelectorAll('.mobile-link').forEach(link => {
             link.addEventListener('click', () => {
