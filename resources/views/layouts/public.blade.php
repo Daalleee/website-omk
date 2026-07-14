@@ -16,17 +16,17 @@
     
     <style>
         :root {
-            --green-950: #1a1e06;
-            --green-900: #2b310a;
-            --green-800: #3f4710;
-            --green-700: #556017;
-            --green-600: #6c7b1c;
-            --green-500: #869722;
-            --green-400: #a2b435;
-            --green-300: #bdcc5f;
-            --green-200: #d5e092;
-            --green-100: #ecf3cc;
-            --green-50: #f7faeb;
+            --green-950: #011a01;
+            --green-900: #022602;
+            --green-800: #033403;
+            --green-700: #044204;
+            --green-600: #055205;
+            --green-500: #066406;
+            --green-400: #1a7a1a;
+            --green-300: #4a9e4a;
+            --green-200: #90c490;
+            --green-100: #c8e2c8;
+            --green-50: #eaf5ea;
             
             --gold: #d4af37;
             --gold-light: #f0d060;
@@ -113,7 +113,7 @@
             font-weight: 800;
             font-size: 1.1rem;
             color: white;
-            box-shadow: 0 4px 15px rgba(108, 123, 28, 0.2);
+            box-shadow: 0 4px 15px rgba(3, 52, 3, 0.2);
         }
 
         .nav-brand-text .brand-name {
@@ -143,6 +143,7 @@
             font-size: 0.95rem;
             font-weight: 500;
             padding: 0.5rem 0.125rem;
+            letter-spacing: 0.03em;
             transition: all 0.2s ease;
             position: relative;
         }
@@ -308,7 +309,7 @@ background: #033403;
         .card:hover {
             transform: translateY(-4px);
             border-color: var(--green-200);
-            box-shadow: 0 15px 40px rgba(108, 123, 28, 0.08);
+            box-shadow: 0 15px 40px rgba(3, 52, 3, 0.08);
         }
 
         /* BUTTONS */
@@ -329,13 +330,13 @@ background: #033403;
         .btn-primary {
             background: linear-gradient(135deg, var(--green-800), var(--green-700));
             color: white;
-            box-shadow: 0 4px 15px rgba(108, 123, 28, 0.25);
+            box-shadow: 0 4px 15px rgba(3, 52, 3, 0.25);
         }
 
         .btn-primary:hover {
             background: linear-gradient(135deg, var(--green-700), var(--green-600));
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(108, 123, 28, 0.35);
+            box-shadow: 0 8px 25px rgba(3, 52, 3, 0.35);
             color: white;
         }
 
@@ -536,7 +537,7 @@ background: #033403;
         .form-input:focus {
             outline: none;
             border-color: var(--green-600);
-            box-shadow: 0 0 0 3px rgba(108, 123, 28, 0.15);
+            box-shadow: 0 0 0 3px rgba(3, 52, 3, 0.15);
         }
 
         .form-input::placeholder { color: var(--gray-400); }

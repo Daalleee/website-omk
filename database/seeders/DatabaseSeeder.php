@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         HomeSetting::create([
             'hero_title' => 'Orang Muda Katolik',
             'hero_subtitle' => 'Bersama dalam Iman, Tumbuh dalam Kasih, Bergerak untuk Sesama',
+            'hero_tagline' => 'Katolik',
             'welcome_title' => 'Sambutan Ketua OMK',
             'welcome_name' => 'Ketua OMK',
             'welcome_message' => 'Selamat datang di website resmi Orang Muda Katolik. Kami adalah komunitas anak muda Katolik yang bersatu dalam semangat iman, harapan, dan kasih. Mari bergabung bersama kami dalam setiap kegiatan dan pelayanan gereja.',

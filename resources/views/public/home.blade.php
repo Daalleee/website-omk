@@ -94,8 +94,8 @@
     }
 
     .hero-title .highlight {
-        color: var(--green-400);
-        text-shadow: 0 4px 20px rgba(162, 180, 53, 0.3);
+        color: #033403;
+        text-shadow: 0 0 12px rgba(255,255,255,0.5);
     }
 
     .hero-subtitle {
@@ -125,48 +125,49 @@
         border-color: white;
     }
 
-    /* STATS GLASSMORPHISM */
+    /* STATS BUTTON */
     .hero-stats-wrapper {
         position: absolute;
         right: 2rem;
-        bottom: -6rem;
+        bottom: -8rem;
     }
 
     .stats-glass {
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 12px;
-        padding: 1rem 1.25rem;
-        width: auto;
-        min-width: 220px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1.5px solid rgba(255,255,255,0.3);
+        border-radius: 10px;
+        padding: 0.75rem 1.25rem;
+        transition: all 0.25s ease;
+    }
+
+    .stats-glass:hover {
+        background: rgba(255,255,255,0.2);
+        border-color: rgba(255,255,255,0.5);
+        transform: translateY(-2px);
     }
 
     .stats-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem 0.75rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem 1.25rem;
     }
 
     .stat-item {
         text-align: center;
-        padding: 0;
     }
 
     .stat-item .num {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--green-400);
-        line-height: 1;
-        margin-bottom: 0.2rem;
-        text-shadow: 0 2px 8px rgba(162, 180, 53, 0.3);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: white;
+        line-height: 1.2;
     }
 
     .stat-item .label {
-        color: rgba(255,255,255,0.8);
-        font-size: 0.75rem;
+        color: rgba(255,255,255,0.85);
+        font-size: 0.7rem;
         font-weight: 500;
     }
 
@@ -414,7 +415,7 @@
     @media (max-width: 1024px) {
         .hero-title { font-size: 3rem; }
         .hero-stats-wrapper { position: static; margin-top: 3rem; }
-        .stats-glass { margin: 0 auto; max-width: 600px; min-width: 0; }
+        .stats-grid { gap: 0.75rem; }
         .activities-grid { grid-template-columns: 1fr 1fr; }
         .gallery-grid { grid-template-columns: repeat(3, 1fr); }
     }
@@ -422,9 +423,9 @@
     @media (max-width: 768px) {
         .hero-title { font-size: 2.5rem; }
         .hero-visual { display: none; }
-        .stats-glass { padding: 1.5rem; border-radius: 20px; }
-        .stats-grid { gap: 1.5rem 1rem; }
-        .stat-item .num { font-size: 2.5rem; }
+        .stats-grid { gap: 0.5rem; }
+        .stats-glass { padding: 0.6rem 1rem; }
+        .stat-item .num { font-size: 1rem; }
         .welcome-grid { grid-template-columns: 1fr; gap: 2.5rem; }
         .activities-grid { grid-template-columns: 1fr; }
         .gallery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -443,13 +444,9 @@
 
     <div class="hero-content">
         <div class="hero-text-container">
-            <div class="hero-badge fade-in">
-                <span class="dot"></span>
-                Organisasi Resmi Paroki
-            </div>
             <h1 class="hero-title fade-in" style="transition-delay: 0.1s;">
                 {{ $home?->hero_title ?? 'Orang Muda' }}<br>
-                <span class="highlight">{{ 'Katolik' }}</span>
+                <span class="highlight">{{ $home?->hero_tagline ?? 'Katolik' }}</span>
             </h1>
             <p class="hero-subtitle fade-in" style="transition-delay: 0.2s;">
                 {{ $home?->hero_subtitle ?? 'Bersama dalam Iman, Tumbuh dalam Kasih, Bergerak untuk Sesama.' }}
@@ -469,19 +466,19 @@
                 <div class="stats-grid">
                     <div class="stat-item">
                         <div class="num">{{ $leaders->count() }}</div>
-                        <div class="label"><i class="bi bi-people-fill" style="color:#a2b435;margin-right:8px;"></i>Pengurus</div>
+                        <div class="label"><i class="bi bi-people-fill"></i> Pengurus</div>
                     </div>
                     <div class="stat-item">
                         <div class="num">{{ $members->count() }}</div>
-                        <div class="label"><i class="bi bi-person-fill" style="color:#a2b435;margin-right:8px;"></i>Anggota</div>
+                        <div class="label"><i class="bi bi-person-fill"></i> Anggota</div>
                     </div>
                     <div class="stat-item">
                         <div class="num">{{ $activities->count() }}</div>
-                        <div class="label"><i class="bi bi-calendar-check-fill" style="color:#a2b435;margin-right:8px;"></i>Kegiatan</div>
+                        <div class="label"><i class="bi bi-calendar-check-fill"></i> Kegiatan</div>
                     </div>
                     <div class="stat-item">
                         <div class="num">{{ $galleries->count() }}</div>
-                        <div class="label"><i class="bi bi-images" style="color:#a2b435;margin-right:8px;"></i>Foto</div>
+                        <div class="label"><i class="bi bi-images"></i> Foto</div>
                     </div>
                 </div>
             </div>
@@ -491,7 +488,7 @@
 
 <!-- WELCOME / SAMBUTAN KETUA -->
 @if($home?->welcome_message)
-<section class="section welcome-section" id="sambutan">
+<section class="section welcome-section" style="background:var(--green-50);" id="sambutan">
     <div class="container">
         <div class="welcome-grid">
             <div class="welcome-photo fade-in">
@@ -710,7 +707,7 @@
 </section>
 
 <!-- KEGIATAN SECTION -->
-<section class="section activities-section" id="kegiatan">
+<section class="section activities-section" style="background:var(--green-50);" id="kegiatan">
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Program Kami</div>
@@ -765,7 +762,7 @@
 </section>
 
 <!-- GALERI SECTION -->
-<section class="section gallery-section" id="galeri">
+<section class="section gallery-section" style="background:var(--white);" id="galeri">
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Dokumentasi</div>
@@ -806,7 +803,7 @@
 </section>
 
 <!-- KONTAK SECTION -->
-<section class="section" style="background:var(--white);" id="kontak">
+<section class="section" style="background:var(--gray-50);border-top:1px solid var(--gray-200);" id="kontak">
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Hubungi Kami</div>

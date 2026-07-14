@@ -5,7 +5,7 @@
 @section('content')
 <div class="stats-row">
     <div class="stat-card">
-        <div class="stat-icon" style="background:rgba(134,151,34,0.15);color:var(--green-400);">
+        <div class="stat-icon" style="background:rgba(3,52,3,0.15);color:var(--green-400);">
             <i class="bi bi-people-fill"></i>
         </div>
         <div class="stat-info">

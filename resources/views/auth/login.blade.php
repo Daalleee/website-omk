@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         :root {
-            --green-950: #1a1e06;
-            --green-900: #2b310a;
-            --green-700: #556017;
-            --green-600: #6c7b1c;
-            --green-500: #869722;
-            --green-400: #a2b435;
-            --green-50: #f7faeb;
+            --green-950: #011a01;
+            --green-900: #022602;
+            --green-700: #044204;
+            --green-600: #055205;
+            --green-500: #066406;
+            --green-400: #1a7a1a;
+            --green-50: #eaf5ea;
             --gray-50: #f8fafc;
             --gray-200: #e2e8f0;
             --gray-300: #cbd5e1;
@@ -40,8 +40,8 @@
         .bg-pattern {
             position:absolute; inset:0;
             background-image: 
-                radial-gradient(ellipse at 20% 50%, rgba(134, 151, 34, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(108, 123, 28, 0.03) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 50%, rgba(3, 52, 3, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(3, 52, 3, 0.03) 0%, transparent 50%);
             z-index:0;
         }
         
@@ -54,7 +54,7 @@
             padding: 2rem 2rem;
             position: relative;
             z-index: 10;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05), 0 0 40px rgba(134,151,34,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05), 0 0 40px rgba(3,52,3,0.05);
         }
 
         .login-logo {
@@ -63,7 +63,7 @@
             border-radius: 16px;
             display: flex; align-items: center; justify-content: center;
             font-weight: 800; font-size: 1.25rem; margin: 0 auto 1rem; color: white;
-            box-shadow: 0 8px 20px rgba(108, 123, 28, 0.2);
+            box-shadow: 0 8px 20px rgba(3, 52, 3, 0.2);
         }
 
         .login-title { text-align:center; font-size:1.25rem; font-weight:800; margin-bottom:0.25rem; color: var(--green-950); }
@@ -81,7 +81,7 @@
         }
         .form-input:focus {
             outline:none; border-color:var(--green-500);
-            box-shadow:0 0 0 4px rgba(108,123,28,0.1);
+            box-shadow:0 0 0 4px rgba(3,52,3,0.1);
         }
         .form-input:focus + i { color:var(--green-600); }
 
@@ -89,10 +89,10 @@
             width:100%; background:linear-gradient(135deg, var(--green-700), var(--green-600));
             color:white; border:none; padding:0.875rem; border-radius:12px;
             font-size:0.95rem; font-weight:600; cursor:pointer; transition:all 0.3s;
-            box-shadow: 0 10px 20px rgba(108, 123, 28, 0.2); margin-top:0.5rem;
+            box-shadow: 0 10px 20px rgba(3, 52, 3, 0.2); margin-top:0.5rem;
             font-family:'Poppins',sans-serif;
         }
-        .btn-login:hover { transform:translateY(-2px); box-shadow: 0 12px 25px rgba(108, 123, 28, 0.3); }
+        .btn-login:hover { transform:translateY(-2px); box-shadow: 0 12px 25px rgba(3, 52, 3, 0.3); }
 
         .alert-error {
             background: #fef2f2; border: 1px solid #fecaca;

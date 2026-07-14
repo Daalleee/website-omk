@@ -18,6 +18,11 @@
                 <label class="form-label">Hero Title</label>
                 <input type="text" name="hero_title" class="form-input" value="{{ old('hero_title', $home->hero_title) }}" required>
             </div>
+
+            <div class="form-group">
+                <label class="form-label">Hero Tagline (Kata setelah judul, misal: Katolik)</label>
+                <input type="text" name="hero_tagline" class="form-input" value="{{ old('hero_tagline', $home->hero_tagline) }}">
+            </div>
             
             <div class="form-group">
                 <label class="form-label">Hero Subtitle</label>

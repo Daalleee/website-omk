@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         :root {
-            --green-950: #1a1e06;
-            --green-900: #2b310a;
-            --green-800: #3f4710;
-            --green-700: #556017;
-            --green-600: #6c7b1c;
-            --green-500: #869722;
-            --green-400: #a2b435;
-            --green-300: #bdcc5f;
-            --green-200: #d5e092;
-            --green-100: #ecf3cc;
-            --green-50: #f7faeb;
+            --green-950: #011a01;
+            --green-900: #022602;
+            --green-800: #033403;
+            --green-700: #044204;
+            --green-600: #055205;
+            --green-500: #066406;
+            --green-400: #1a7a1a;
+            --green-300: #4a9e4a;
+            --green-200: #90c490;
+            --green-100: #c8e2c8;
+            --green-50: #eaf5ea;
             
             --white: #ffffff;
             --gray-50: #f8fafc;
@@ -64,7 +64,7 @@
             align-items: center;
             justify-content: center;
             font-weight: 800; font-size: 0.95rem; color: white;
-            box-shadow: 0 4px 10px rgba(134,151,34,0.2);
+            box-shadow: 0 4px 10px rgba(3,52,3,0.2);
         }
         .sidebar-brand .brand-info .name { font-size: 0.95rem; font-weight: 700; color: white; }
         .sidebar-brand .brand-info .sub { font-size: 0.65rem; color: var(--green-400); }
@@ -195,7 +195,7 @@
             transition: all 0.2s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
-        .stat-card:hover { border-color: var(--green-300); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(108,123,28,0.08); }
+        .stat-card:hover { border-color: var(--green-300); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(3,52,3,0.08); }
         .stat-icon {
             width: 48px; height: 48px;
             border-radius: 12px;
@@ -235,7 +235,7 @@
         /* BUTTONS */
         .btn { display:inline-flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; border-radius:8px; font-size:0.85rem; font-weight:600; text-decoration:none; transition:all 0.2s; cursor:pointer; border:none; font-family:'Poppins',sans-serif; }
         .btn-sm { padding:0.35rem 0.75rem; font-size:0.78rem; }
-        .btn-primary { background:linear-gradient(135deg,var(--green-700),var(--green-600)); color:white; box-shadow:0 2px 10px rgba(108,123,28,0.25); }
+        .btn-primary { background:linear-gradient(135deg,var(--green-700),var(--green-600)); color:white; box-shadow:0 2px 10px rgba(3,52,3,0.25); }
         .btn-primary:hover { background:linear-gradient(135deg,var(--green-800),var(--green-700)); transform:translateY(-1px); color: white; }
         
         .btn-danger { background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; }
@@ -261,7 +261,7 @@
             border-radius:8px; padding:0.65rem 0.875rem; color:var(--gray-900);
             font-family:'Poppins',sans-serif; font-size:0.875rem; transition:all 0.2s;
         }
-        .form-input:focus { outline:none; border-color:var(--green-500); box-shadow:0 0 0 3px rgba(134,151,34,0.15); }
+        .form-input:focus { outline:none; border-color:var(--green-500); box-shadow:0 0 0 3px rgba(3,52,3,0.15); }
         .form-input::placeholder { color:var(--gray-400); }
         textarea.form-input { resize:vertical; min-height:120px; }
         .form-hint { font-size:0.75rem; color:var(--gray-500); margin-top:0.35rem; }

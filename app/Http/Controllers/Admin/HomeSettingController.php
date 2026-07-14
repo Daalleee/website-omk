@@ -19,6 +19,7 @@ class HomeSettingController extends Controller
         $request->validate([
             'hero_title' => 'required|string|max:255',
             'hero_subtitle' => 'nullable|string',
+            'hero_tagline' => 'nullable|string|max:255',
             'welcome_title' => 'nullable|string|max:255',
             'welcome_name' => 'nullable|string|max:255',
             'welcome_message' => 'nullable|string',
