@@ -291,9 +291,13 @@
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-brand">
+            @if(isset($_home) && $_home && $_home->brand_logo)
+            <img src="{{ Storage::url($_home->brand_logo) }}" alt="Logo" style="width:38px;height:38px;object-fit:cover;border-radius:50%;flex-shrink:0;">
+            @else
             <div class="logo">OMK</div>
+            @endif
             <div class="brand-info">
-                <div class="name">OMK Admin</div>
+                <div class="name">{{ $_home->brand_name ?? 'OMK' }} Admin</div>
                 <div class="sub">Content Management</div>
             </div>
         </div>
@@ -302,10 +306,6 @@
             <a href="{{ route('admin.dashboard') }}" class="sidebar-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                 <i class="bi bi-grid-fill"></i> Dashboard
             </a>
-            <a href="{{ route('home') }}" class="sidebar-link" target="_blank">
-                <i class="bi bi-house-fill"></i> Lihat Website
-            </a>
-
             <div class="sidebar-section-title">Konten</div>
             <a href="{{ route('admin.home.index') }}" class="sidebar-link {{ request()->routeIs('admin.home.*') ? 'active' : '' }}">
                 <i class="bi bi-layout-text-window"></i> Beranda
@@ -352,6 +352,9 @@
         <div class="topbar">
             <div class="page-heading">@yield('page-title', 'Dashboard')</div>
             <div class="user-info">
+                <a href="{{ route('home') }}" target="_blank" style="display:inline-flex;align-items:center;color:var(--green-700);font-size:0.85rem;font-weight:500;text-decoration:none;padding:0.4rem 0.75rem;border-radius:8px;border:1px solid var(--green-200);background:var(--green-50);transition:all 0.2s;" onmouseover="this.style.background='var(--green-100)'" onmouseout="this.style.background='var(--green-50)'">
+                    Lihat Website
+                </a>
                 <div class="user-chip">
                     <i class="bi bi-person-circle"></i>
                     <span>{{ auth()->user()->name }}</span>

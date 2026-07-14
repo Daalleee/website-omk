@@ -20,14 +20,13 @@
                         <button type="submit" class="btn btn-danger" style="padding:0.2rem 0.5rem;font-size:0.75rem;"><i class="bi bi-trash-fill"></i></button>
                     </form>
                 </div>
-                <div style="padding:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.7);">
-
                     @if($photo->caption)
-                    <div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:rgba(255,255,255,0.5);">
-                        {{ $photo->caption }}
+                    <div style="position:absolute;bottom:0;left:0;right:0;padding:0.6rem;background:linear-gradient(transparent,rgba(0,0,0,0.8));">
+                        <div style="color:#fff;font-size:0.8rem;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                            {{ $photo->caption }}
+                        </div>
                     </div>
                     @endif
-                </div>
             </div>
             @endforeach
         </div>

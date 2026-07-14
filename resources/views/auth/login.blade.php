@@ -50,26 +50,26 @@
             border: 1px solid var(--gray-200);
             border-radius: 24px;
             width: 100%;
-            max-width: 420px;
-            padding: 3rem 2.5rem;
+            max-width: 380px;
+            padding: 2rem 2rem;
             position: relative;
             z-index: 10;
             box-shadow: 0 20px 40px rgba(0,0,0,0.05), 0 0 40px rgba(134,151,34,0.05);
         }
 
         .login-logo {
-            width: 70px; height: 70px;
+            width: 60px; height: 60px;
             background: linear-gradient(135deg, var(--green-700), var(--green-500));
             border-radius: 16px;
             display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 1.5rem; margin: 0 auto 1.5rem; color: white;
-            box-shadow: 0 10px 25px rgba(108, 123, 28, 0.2);
+            font-weight: 800; font-size: 1.25rem; margin: 0 auto 1rem; color: white;
+            box-shadow: 0 8px 20px rgba(108, 123, 28, 0.2);
         }
 
-        .login-title { text-align:center; font-size:1.5rem; font-weight:800; margin-bottom:0.25rem; color: var(--green-950); }
-        .login-subtitle { text-align:center; font-size:0.85rem; color:var(--gray-500); margin-bottom:2.5rem; font-weight: 500; }
+        .login-title { text-align:center; font-size:1.25rem; font-weight:800; margin-bottom:0.25rem; color: var(--green-950); }
+        .login-subtitle { text-align:center; font-size:0.8rem; color:var(--gray-500); margin-bottom:2rem; font-weight: 500; }
 
-        .form-group { margin-bottom:1.5rem; }
+        .form-group { margin-bottom:1rem; }
         .form-label { display:block; font-size:0.875rem; font-weight:600; color:var(--gray-700); margin-bottom:0.5rem; }
         
         .input-group { position:relative; display:flex; align-items:center; }
@@ -87,8 +87,8 @@
 
         .btn-login {
             width:100%; background:linear-gradient(135deg, var(--green-700), var(--green-600));
-            color:white; border:none; padding:1rem; border-radius:12px;
-            font-size:1rem; font-weight:600; cursor:pointer; transition:all 0.3s;
+            color:white; border:none; padding:0.875rem; border-radius:12px;
+            font-size:0.95rem; font-weight:600; cursor:pointer; transition:all 0.3s;
             box-shadow: 0 10px 20px rgba(108, 123, 28, 0.2); margin-top:0.5rem;
             font-family:'Poppins',sans-serif;
         }
@@ -102,7 +102,7 @@
         }
 
         .back-link {
-            display:block; text-align:center; margin-top:2rem;
+            display:block; text-align:center; margin-top:1.5rem;
             color:var(--gray-500); font-size:0.85rem; text-decoration:none; transition:color 0.2s; font-weight: 500;
         }
         .back-link:hover { color:var(--green-700); text-decoration: underline; }
@@ -111,7 +111,13 @@
 <body>
     <div class="bg-pattern"></div>
     <div class="login-card">
-        <div class="login-logo">OMK</div>
+        <div class="login-logo" style="overflow:hidden;border-radius:50%;">
+            @if(isset($_home) && $_home && $_home->brand_logo)
+            <img src="{{ Storage::url($_home->brand_logo) }}" alt="Logo" style="width:100%;height:100%;object-fit:cover;">
+            @else
+            OMK
+            @endif
+        </div>
         <h1 class="login-title">Admin Akses</h1>
         <p class="login-subtitle">Masuk untuk mengelola konten website</p>
 
@@ -135,7 +141,7 @@
             <div class="form-group">
                 <label class="form-label">Email Address</label>
                 <div class="input-group">
-                    <input type="email" name="email" class="form-input" value="{{ old('email') }}" required autofocus placeholder="admin@omk.com">
+                    <input type="email" name="email" class="form-input" value="{{ old('email') }}" required autofocus placeholder="Masukkan email">
                     <i class="bi bi-envelope"></i>
                 </div>
             </div>
@@ -143,14 +149,10 @@
             <div class="form-group">
                 <label class="form-label">Password</label>
                 <div class="input-group">
-                    <input type="password" name="password" class="form-input" required placeholder="••••••••">
-                    <i class="bi bi-lock"></i>
+                    <input type="password" name="password" id="login-password" class="form-input" required placeholder="Masukkan password" style="padding-right:2.75rem;">
+                    <i class="bi bi-lock" style="left:1rem;right:auto;"></i>
+                    <i class="bi bi-eye-slash" id="toggle-password" style="position:absolute;right:0.875rem;left:auto;color:var(--gray-400);cursor:pointer;font-size:1.1rem;transition:color 0.2s;" onclick="togglePassword()"></i>
                 </div>
-            </div>
-
-            <div class="form-group" style="display:flex;align-items:center;gap:0.5rem;">
-                <input type="checkbox" name="remember" id="remember" style="accent-color:var(--green-600);width:16px;height:16px;">
-                <label for="remember" style="font-size:0.85rem;color:var(--gray-600);cursor:pointer;font-weight:500;">Ingat Saya</label>
             </div>
 
             <button type="submit" class="btn-login">Login ke Dashboard</button>
@@ -158,5 +160,21 @@
         
         <a href="{{ route('home') }}" class="back-link"><i class="bi bi-arrow-left"></i> Kembali ke Beranda</a>
     </div>
+
+<script>
+function togglePassword() {
+    var input = document.getElementById('login-password');
+    var icon = document.getElementById('toggle-password');
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('bi-eye-slash');
+        icon.classList.add('bi-eye');
+    } else {
+        input.type = 'password';
+        icon.classList.remove('bi-eye');
+        icon.classList.add('bi-eye-slash');
+    }
+}
+</script>
 </body>
 </html>

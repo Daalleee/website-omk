@@ -593,13 +593,17 @@ background: #033403;
     <!-- NAVBAR -->
     <nav class="navbar" id="mainNavbar">
         <div class="nav-container">
-            <a href="{{ route('home') }}" class="nav-brand">
-                <div class="nav-logo">OMK</div>
-                <div class="nav-brand-text">
-                    <div class="brand-name">OMK Paroki</div>
-                    <div class="brand-sub">Orang Muda Katolik</div>
-                </div>
-            </a>
+    <a href="{{ route('home') }}" class="nav-brand">
+        @if(isset($_home) && $_home && $_home->brand_logo)
+        <img src="{{ Storage::url($_home->brand_logo) }}" alt="Logo" style="height:42px;width:42px;object-fit:cover;border-radius:50%;">
+        @else
+        <div class="nav-logo">OMK</div>
+        @endif
+        <div class="nav-brand-text">
+            <div class="brand-name">{{ $_home->brand_name ?? 'OMK Paroki' }}</div>
+            <div class="brand-sub">Orang Muda Katolik</div>
+        </div>
+    </a>
 
             <ul class="nav-links">
                 <li><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Beranda</a></li>
@@ -649,19 +653,8 @@ background: #033403;
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="brand-name">🌿 OMK Paroki</div>
-                    <p>Komunitas Orang Muda Katolik yang bergerak dalam semangat iman, harapan, dan kasih untuk pelayanan gereja dan masyarakat.</p>
-                    <div class="social-links">
-                        @if(isset($contact) && $contact && $contact->instagram)
-                        <a href="https://instagram.com/{{ ltrim($contact->instagram, '@') }}" class="social-link" target="_blank"><i class="bi bi-instagram"></i></a>
-                        @endif
-                        @if(isset($contact) && $contact && $contact->facebook)
-                        <a href="https://facebook.com/{{ $contact->facebook }}" class="social-link" target="_blank"><i class="bi bi-facebook"></i></a>
-                        @endif
-                        @if(isset($contact) && $contact && $contact->phone)
-                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $contact->phone) }}" class="social-link" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                        @endif
-                    </div>
+                    <div class="brand-name">{{ $_home->brand_name ?? 'OMK Paroki' }}</div>
+                    <p>{{ $_home->footer_description ?? 'Komunitas Orang Muda Katolik yang bergerak dalam semangat iman, harapan, dan kasih untuk pelayanan gereja dan masyarakat.' }}</p>
                 </div>
 
                 <div class="footer-col">
@@ -712,7 +705,7 @@ background: #033403;
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} OMK Paroki. Semua hak dilindungi. Dibuat dengan ❤️ untuk pelayanan gereja.</p>
+                <p>{!! $_home->footer_copyright ?? '&copy; ' . date('Y') . ' OMK Paroki. Semua hak dilindungi. Dibuat dengan ❤️ untuk pelayanan gereja.' !!}</p>
             </div>
         </div>
     </footer>

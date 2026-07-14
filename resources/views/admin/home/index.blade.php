@@ -61,6 +61,33 @@
                 <input type="file" name="welcome_photo" class="form-input" accept="image/*">
             </div>
 
+            <h3 style="color:var(--green-400);font-size:1rem;margin:2rem 0 1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Nama & Logo OMK</h3>
+
+            <div class="form-group">
+                <label class="form-label">Nama OMK</label>
+                <input type="text" name="brand_name" class="form-input" value="{{ old('brand_name', $home->brand_name) }}">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Logo OMK</label>
+                @if($home->brand_logo)
+                <div style="margin-bottom:10px;">
+                    <img src="{{ Storage::url($home->brand_logo) }}" alt="Logo" style="height:60px;border-radius:8px;object-fit:contain;">
+                </div>
+                @endif
+                <input type="file" name="brand_logo" class="form-input" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Deskripsi Footer</label>
+                <textarea name="footer_description" class="form-input" rows="3">{{ old('footer_description', $home->footer_description) }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Teks Copyright Footer</label>
+                <input type="text" name="footer_copyright" class="form-input" value="{{ old('footer_copyright', $home->footer_copyright) }}">
+            </div>
+
             <div style="margin-top:2rem;">
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Simpan Perubahan</button>
             </div>

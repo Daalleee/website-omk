@@ -27,13 +27,16 @@ class HomeSettingController extends Controller
         ]);
 
         $home = HomeSetting::first() ?? new HomeSetting();
-        $data = $request->except(['_token', '_method', 'hero_image', 'welcome_photo']);
+        $data = $request->except(['_token', '_method', 'hero_image', 'welcome_photo', 'brand_logo']);
 
         if ($request->hasFile('hero_image')) {
             $data['hero_image'] = $request->file('hero_image')->store('home', 'public');
         }
         if ($request->hasFile('welcome_photo')) {
             $data['welcome_photo'] = $request->file('welcome_photo')->store('home', 'public');
+        }
+        if ($request->hasFile('brand_logo')) {
+            $data['brand_logo'] = $request->file('brand_logo')->store('home', 'public');
         }
 
         $home->fill($data)->save();

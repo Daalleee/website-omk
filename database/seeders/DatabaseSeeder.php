@@ -31,6 +31,9 @@ class DatabaseSeeder extends Seeder
             'welcome_message' => 'Selamat datang di website resmi Orang Muda Katolik. Kami adalah komunitas anak muda Katolik yang bersatu dalam semangat iman, harapan, dan kasih. Mari bergabung bersama kami dalam setiap kegiatan dan pelayanan gereja.',
             'statistic_member' => 50,
             'statistic_activity' => 25,
+            'brand_name' => 'OMK Paroki',
+            'footer_description' => 'Komunitas Orang Muda Katolik yang bergerak dalam semangat iman, harapan, dan kasih untuk pelayanan gereja dan masyarakat.',
+            'footer_copyright' => '© ' . date('Y') . ' OMK Paroki. Semua hak dilindungi. Dibuat dengan ❤️ untuk pelayanan gereja.',
         ]);
 
         // Create about

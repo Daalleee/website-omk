@@ -10,5 +10,6 @@ class HomeSetting extends Model
         'hero_title', 'hero_subtitle', 'hero_image',
         'welcome_message', 'welcome_title', 'welcome_name', 'welcome_photo',
         'statistic_member', 'statistic_activity',
+        'brand_name', 'brand_logo', 'footer_description', 'footer_copyright',
     ];
 }
