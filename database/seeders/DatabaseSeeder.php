@@ -2,24 +2,61 @@
 
 namespace Database\Seeders;
 
+use App\Models\About;
+use App\Models\Category;
+use App\Models\Contact;
+use App\Models\HomeSetting;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Create admin user
+        User::create([
+            'name' => 'Administrator',
+            'email' => 'admin@omk.id',
+            'password' => Hash::make('password'),
+            'role' => 'admin',
+        ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Create home settings
+        HomeSetting::create([
+            'hero_title' => 'Orang Muda Katolik',
+            'hero_subtitle' => 'Bersama dalam Iman, Tumbuh dalam Kasih, Bergerak untuk Sesama',
+            'welcome_title' => 'Sambutan Ketua OMK',
+            'welcome_name' => 'Ketua OMK',
+            'welcome_message' => 'Selamat datang di website resmi Orang Muda Katolik. Kami adalah komunitas anak muda Katolik yang bersatu dalam semangat iman, harapan, dan kasih. Mari bergabung bersama kami dalam setiap kegiatan dan pelayanan gereja.',
+            'statistic_member' => 50,
+            'statistic_activity' => 25,
+        ]);
+
+        // Create about
+        About::create([
+            'history' => 'Orang Muda Katolik (OMK) adalah organisasi pemuda Gereja Katolik yang berdiri untuk mewadahi dan memberdayakan kaum muda dalam kehidupan menggereja. OMK hadir sebagai wadah pembinaan iman, pengembangan diri, dan aksi sosial bagi kaum muda Katolik di lingkungan paroki.',
+            'vision' => 'Menjadi komunitas orang muda Katolik yang beriman, berdedikasi, dan berdampak bagi masyarakat.',
+            'mission' => "1. Membangun iman kaum muda melalui kegiatan rohani dan pembinaan\n2. Mengembangkan potensi dan bakat kaum muda\n3. Berpartisipasi aktif dalam kegiatan gereja dan masyarakat\n4. Menjalin persaudaraan antar sesama anggota",
+            'goals' => 'Terbentuknya generasi muda Katolik yang tangguh, beriman mendalam, dan mampu menjadi terang bagi sesama.',
+            'pastor_name' => 'Rm. Pastor Paroki',
+            'pastor_bio' => 'Pastor pendamping OMK yang membimbing dan mendampingi kegiatan OMK.',
+        ]);
+
+        // Create categories
+        Category::create(['name' => 'Kegiatan Rohani', 'slug' => 'kegiatan-rohani']);
+        Category::create(['name' => 'Kegiatan Sosial', 'slug' => 'kegiatan-sosial']);
+        Category::create(['name' => 'Kegiatan Seni & Budaya', 'slug' => 'kegiatan-seni-budaya']);
+        Category::create(['name' => 'Olahraga', 'slug' => 'olahraga']);
+        Category::create(['name' => 'Rekoleksi', 'slug' => 'rekoleksi']);
+
+        // Create contact
+        Contact::create([
+            'address' => 'Gereja Paroki, Jl. Gereja No. 1, Kota',
+            'email' => 'omk@gereja.id',
+            'phone' => '081234567890',
+            'instagram' => '@omk_paroki',
+            'facebook' => 'OMK Paroki',
         ]);
     }
 }

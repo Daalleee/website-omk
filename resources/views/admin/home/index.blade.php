@@ -1,0 +1,84 @@
+@extends('layouts.admin')
+@section('title', 'Pengaturan Beranda')
+@section('page-title', 'Pengaturan Beranda')
+
+@section('content')
+<div class="admin-card">
+    <div class="admin-card-header">
+        <h2>Form Pengaturan Beranda</h2>
+    </div>
+    <div class="admin-card-body">
+        <form action="{{ route('admin.home.update') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+
+            <h3 style="color:var(--green-400);font-size:1rem;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Hero Section</h3>
+            
+            <div class="form-group">
+                <label class="form-label">Hero Title</label>
+                <input type="text" name="hero_title" class="form-input" value="{{ old('hero_title', $home->hero_title) }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Hero Subtitle</label>
+                <textarea name="hero_subtitle" class="form-input" rows="3">{{ old('hero_subtitle', $home->hero_subtitle) }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Hero Image (Logo Tengah)</label>
+                @if($home->hero_image)
+                <div style="margin-bottom:10px;">
+                    <img src="{{ Storage::url($home->hero_image) }}" alt="Hero Image" style="height:100px;border-radius:8px;object-fit:cover;">
+                </div>
+                @endif
+                <input type="file" name="hero_image" class="form-input" accept="image/*">
+            </div>
+
+            <h3 style="color:var(--green-400);font-size:1rem;margin:2rem 0 1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Section Sambutan</h3>
+
+            <div class="form-group">
+                <label class="form-label">Judul Sambutan</label>
+                <input type="text" name="welcome_title" class="form-input" value="{{ old('welcome_title', $home->welcome_title) }}">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Nama Ketua/Penulis Sambutan</label>
+                <input type="text" name="welcome_name" class="form-input" value="{{ old('welcome_name', $home->welcome_name) }}">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Pesan Sambutan</label>
+                <textarea name="welcome_message" class="form-input" rows="5">{{ old('welcome_message', $home->welcome_message) }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Foto Ketua/Penulis</label>
+                @if($home->welcome_photo)
+                <div style="margin-bottom:10px;">
+                    <img src="{{ Storage::url($home->welcome_photo) }}" alt="Welcome Photo" style="height:100px;border-radius:8px;object-fit:cover;">
+                </div>
+                @endif
+                <input type="file" name="welcome_photo" class="form-input" accept="image/*">
+            </div>
+
+            <h3 style="color:var(--green-400);font-size:1rem;margin:2rem 0 1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Statistik Manual (Opsional)</h3>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Angka ini akan ditampilkan di halaman depan jika diisi.</p>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+                <div class="form-group">
+                    <label class="form-label">Statistik Anggota</label>
+                    <input type="number" name="statistic_member" class="form-input" value="{{ old('statistic_member', $home->statistic_member) }}">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Statistik Kegiatan</label>
+                    <input type="number" name="statistic_activity" class="form-input" value="{{ old('statistic_activity', $home->statistic_activity) }}">
+                </div>
+            </div>
+
+            <div style="margin-top:2rem;">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Simpan Perubahan</button>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection
