@@ -10,7 +10,7 @@ class LeaderController extends Controller
 {
     public function index()
     {
-        $leaders = Leader::orderBy('order_number')->get();
+        $leaders = Leader::all();
         return view('admin.leaders.index', compact('leaders'));
     }
 
@@ -25,8 +25,6 @@ class LeaderController extends Controller
             'name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
             'period' => 'nullable|string|max:255',
-            'motto' => 'nullable|string',
-            'order_number' => 'nullable|integer',
             'status' => 'nullable|boolean',
         ]);
 
@@ -52,8 +50,6 @@ class LeaderController extends Controller
             'name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
             'period' => 'nullable|string|max:255',
-            'motto' => 'nullable|string',
-            'order_number' => 'nullable|integer',
         ]);
 
         $data = $request->except(['_token', '_method', 'photo']);

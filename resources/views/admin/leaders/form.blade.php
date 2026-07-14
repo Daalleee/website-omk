@@ -72,21 +72,9 @@
             </script>
 
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-                <div class="form-group">
-                    <label class="form-label">Periode</label>
-                    <input type="text" name="period" class="form-input" value="{{ old('period', $leader->period) }}" placeholder="Contoh: 2026-2028">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Urutan Tampil (Order)</label>
-                    <input type="number" name="order_number" class="form-input" value="{{ old('order_number', $leader->order_number ?? 0) }}">
-                    <div class="form-hint">Angka lebih kecil tampil lebih awal. Ketua biasanya 1.</div>
-                </div>
-            </div>
-
             <div class="form-group">
-                <label class="form-label">Motto (Opsional)</label>
-                <input type="text" name="motto" class="form-input" value="{{ old('motto', $leader->motto) }}" placeholder="Kutipan ayat atau motto hidup">
+                <label class="form-label">Periode</label>
+                <input type="text" name="period" class="form-input" value="{{ old('period', $leader->period) }}" placeholder="Contoh: 2026-2028">
             </div>
 
             <div class="form-group">

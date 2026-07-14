@@ -34,11 +34,6 @@
                     @if($leader->period)
                     <p style="color:var(--gray-400);font-size:0.75rem;margin-top:0.5rem;"><i class="bi bi-calendar3"></i> {{ $leader->period }}</p>
                     @endif
-                    @if($leader->motto)
-                    <p style="color:var(--gray-500);font-size:0.8rem;font-style:italic;border-top:1px solid var(--gray-200);padding-top:0.75rem;margin-top:0.75rem;">
-                        "{{ $leader->motto }}"
-                    </p>
-                    @endif
                 </div>
                 @endforeach
             </div>
@@ -62,11 +57,6 @@
                     <span style="display:inline-block;background:var(--green-100);color:var(--green-800);border:1px solid var(--green-300);font-size:0.72rem;font-weight:600;padding:0.3rem 1rem;border-radius:50px;letter-spacing:0.03em;">{{ $leader->position }}</span>
                     @if($leader->period)
                     <p style="color:var(--gray-400);font-size:0.75rem;margin-top:0.5rem;"><i class="bi bi-calendar3"></i> {{ $leader->period }}</p>
-                    @endif
-                    @if($leader->motto)
-                    <p style="color:var(--gray-500);font-size:0.8rem;font-style:italic;border-top:1px solid var(--gray-200);padding-top:0.75rem;margin-top:0.75rem;">
-                        "{{ $leader->motto }}"
-                    </p>
                     @endif
                 </div>
                 @endforeach

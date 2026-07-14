@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             'mission' => "1. Membangun iman kaum muda melalui kegiatan rohani dan pembinaan\n2. Mengembangkan potensi dan bakat kaum muda\n3. Berpartisipasi aktif dalam kegiatan gereja dan masyarakat\n4. Menjalin persaudaraan antar sesama anggota",
             'goals' => 'Terbentuknya generasi muda Katolik yang tangguh, beriman mendalam, dan mampu menjadi terang bagi sesama.',
             'pastor_name' => 'Rm. Pastor Paroki',
-            'pastor_bio' => 'Pastor pendamping OMK yang membimbing dan mendampingi kegiatan OMK.',
+            'pastor_bio' => 'Bapak pendamping OMK yang membimbing dan mendampingi kegiatan OMK.',
         ]);
 
         // Create categories

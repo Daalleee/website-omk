@@ -25,9 +25,6 @@
                 <tr>
                     <th width="50">Foto</th>
                     <th>Nama Lengkap</th>
-                    <th>L/P</th>
-                    <th>Kontak</th>
-                    <th>Bidang</th>
                     <th>Status</th>
                     <th width="120">Aksi</th>
                 </tr>
@@ -50,14 +47,6 @@
                             @endif
                         </span>
                     </td>
-                    <td>{{ $member->gender }}</td>
-                    <td>
-                        <div style="font-size:0.75rem;">
-                            @if($member->phone)<div style="color:var(--green-400);"><i class="bi bi-whatsapp"></i> {{ $member->phone }}</div>@endif
-                            @if($member->address)<div style="color:rgba(255,255,255,0.5);"><i class="bi bi-geo-alt"></i> {{ Str::limit($member->address, 20) }}</div>@endif
-                        </div>
-                    </td>
-                    <td>{{ $member->division ?? '-' }}</td>
                     <td>
                         @if($member->status == 'aktif')
                         <span class="badge badge-green">Aktif</span>
@@ -77,7 +66,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7" style="text-align:center;padding:2rem;">Data anggota tidak ditemukan.</td>
+                    <td colspan="4" style="text-align:center;padding:2rem;">Data anggota tidak ditemukan.</td>
                 </tr>
                 @endforelse
             </tbody>

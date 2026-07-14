@@ -79,7 +79,7 @@
             <h3 style="color:var(--green-950);font-size:1.35rem;font-weight:700;margin-bottom:0.25rem;">{{ $about->pastor_name }}</h3>
             <p style="color:var(--green-600);font-size:0.9rem;margin-bottom:1rem;font-weight:600;">Bapak Pendamping OMK</p>
             @if($about->pastor_bio)
-            <p style="color:var(--gray-600);font-size:0.9rem;line-height:1.7;">{{ $about->pastor_bio }}</p>
+            <p style="color:var(--gray-600);font-size:0.9rem;line-height:1.7;">{{ str_replace('Pastor', 'Bapak', $about->pastor_bio) }}</p>
             @endif
         </div>
     </div>

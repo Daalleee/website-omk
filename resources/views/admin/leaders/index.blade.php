@@ -16,7 +16,6 @@
                     <th>Nama</th>
                     <th>Jabatan</th>
                     <th>Periode</th>
-                    <th>Urutan</th>
                     <th>Status</th>
                     <th width="150">Aksi</th>
                 </tr>
@@ -34,7 +33,6 @@
                     <td><strong>{{ $leader->name }}</strong></td>
                     <td>{{ $leader->position }}</td>
                     <td>{{ $leader->period ?? '-' }}</td>
-                    <td>{{ $leader->order_number }}</td>
                     <td>
                         @if($leader->status)
                         <span class="badge badge-green">Aktif</span>
@@ -54,7 +52,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7" style="text-align:center;padding:2rem;">Belum ada data pengurus.</td>
+                    <td colspan="6" style="text-align:center;padding:2rem;">Belum ada data pengurus.</td>
                 </tr>
                 @endforelse
             </tbody>

@@ -129,7 +129,7 @@
     .hero-stats-wrapper {
         position: absolute;
         right: 2rem;
-        bottom: 2.5rem;
+        bottom: -6rem;
     }
 
     .stats-glass {
@@ -178,12 +178,14 @@
     .welcome-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 5rem;
-        align-items: center;
+        gap: 0.5rem;
+        align-items: start;
     }
 
     .welcome-photo {
         position: relative;
+        max-width: 320px;
+        justify-self: center;
     }
 
     .photo-frame {
@@ -221,7 +223,13 @@
         z-index: -1;
     }
 
+    .welcome-content {
+        margin-left: -2rem;
+        width: min-content;
+    }
+
     .welcome-content h2 {
+        white-space: nowrap;
         font-size: 2.25rem;
         font-weight: 800;
         color: var(--green-950);
@@ -302,15 +310,15 @@
 
     .activity-category {
         position: absolute;
-        top: 12px; left: 12px;
+        top: 8px; left: 8px;
         background: rgba(255, 255, 255, 0.95);
         border: 1px solid var(--green-200);
         color: var(--green-700);
-        font-size: 0.75rem;
-        font-weight: 700;
-        padding: 0.35rem 0.8rem;
+        font-size: 0.65rem;
+        font-weight: 600;
+        padding: 0.2rem 0.6rem;
         border-radius: 50px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
     .activity-body { padding: 1.5rem; }
@@ -451,7 +459,7 @@
                     <i class="bi bi-info-circle"></i> Tentang Kami
                 </a>
                 <a href="#kegiatan" class="btn btn-hero-outline" style="padding: 0.875rem 2.25rem; font-size: 1rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.25s ease;">
-                    <i class="bi bi-calendar-event"></i> Kegiatan Terbaru
+                    <i class="bi bi-calendar-event"></i> Kegiatan
                 </a>
             </div>
         </div>
@@ -496,15 +504,10 @@
                         </div>
                     @endif
                 </div>
-                <div class="photo-accent"></div>
+                <p style="text-align:center;margin-top:0.75rem;font-weight:600;color:var(--green-700);">{{ $home->welcome_name ?? 'Ketua OMK' }}</p>
             </div>
             <div class="welcome-content fade-in">
-                <div class="section-badge">Sambutan</div>
                 <h2>{{ $home->welcome_title ?? 'Sambutan Ketua OMK' }}</h2>
-                <div class="ketua-name">
-                    <i class="bi bi-star-fill"></i>
-                    {{ $home->welcome_name ?? 'Ketua OMK' }}
-                </div>
                 <p class="welcome-text">{{ $home->welcome_message }}</p>
                 <a href="#tentang" class="btn btn-outline">
                     <i class="bi bi-arrow-right"></i> Selengkapnya
@@ -583,7 +586,7 @@
             <h3 style="color:var(--green-950);font-size:1.35rem;font-weight:700;margin-bottom:0.25rem;">{{ $about->pastor_name }}</h3>
             <p style="color:var(--green-600);font-size:0.9rem;margin-bottom:1rem;font-weight:600;">Bapak Pendamping OMK</p>
             @if($about->pastor_bio)
-            <p style="color:var(--gray-600);font-size:0.9rem;line-height:1.7;">{{ $about->pastor_bio }}</p>
+            <p style="color:var(--gray-600);font-size:0.9rem;line-height:1.7;">{{ str_replace('Pastor', 'Bapak', $about->pastor_bio) }}</p>
             @endif
         </div>
     </div>
@@ -596,7 +599,7 @@
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Struktur Organisasi</div>
-            <h2>Pengurus Inti</h2>
+            <h2>Pengurus</h2>
             <p>Kenali para pemimpin yang melayani dan menggerakkan OMK</p>
             <div class="divider"></div>
         </div>
@@ -693,15 +696,13 @@
                 @endif
             </div>
             @endforeach
-            @if($members->count() > 5)
-            <a href="{{ route('members') }}" class="fade-in" style="text-align:center;text-decoration:none;color:var(--green-700);">
-                <div style="width:100%;aspect-ratio:3/4;border-radius:16px;border:4px dashed var(--green-300);background:var(--green-50);display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1.25rem;box-shadow:0 8px 20px rgba(108,123,28,0.05);">
-                    +{{ $members->count() - 5 }}
-                </div>
-                <span style="font-size:0.9rem;font-weight:700;">Lihat Semua</span>
-            </a>
-            @endif
         </div>
+
+        @if($members->count() > 5)
+        <div style="text-align:center;margin-top:2rem;" class="fade-in">
+            <a href="{{ route('members') }}" class="btn btn-outline">Lihat Semua Anggota</a>
+        </div>
+        @endif
         @else
         <div style="text-align:center;color:var(--gray-500);">Belum ada data anggota.</div>
         @endif
@@ -713,7 +714,7 @@
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Program Kami</div>
-            <h2>Kegiatan Terbaru</h2>
+            <h2>Kegiatan</h2>
             <p>Dokumentasi kegiatan dan program yang telah kami laksanakan bersama</p>
             <div class="divider"></div>
         </div>
@@ -768,7 +769,7 @@
     <div class="container">
         <div class="section-title fade-in">
             <div class="section-badge">Dokumentasi</div>
-            <h2>Galeri Terpilih</h2>
+            <h2>Galeri</h2>
             <p>Momen-momen berharga dalam setiap kegiatan dan perjalanan OMK</p>
             <div class="divider"></div>
         </div>
