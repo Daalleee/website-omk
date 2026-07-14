@@ -61,7 +61,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 1.25rem 0;
             transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
@@ -78,19 +78,18 @@
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.25rem;
+            justify-content: space-between;
             position: relative;
         }
 
         .nav-right {
-            position: absolute;
-            right: 0;
+            display: flex;
+            align-items: center;
         }
 
         .nav-brand {
@@ -98,8 +97,7 @@
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
-            position: absolute;
-            left: 0;
+            z-index: 10;
         }
 
         .nav-logo {
@@ -135,6 +133,9 @@
             list-style: none;
             gap: 0.25rem;
             align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .nav-links a {
@@ -195,15 +196,28 @@ background: #033403;
             flex-direction: column;
             cursor: pointer;
             gap: 5px;
-            padding: 5px;
+            padding: 10px;
+            position: relative;
+            z-index: 50;
         }
 
         .hamburger span {
             width: 24px;
-            height: 2px;
+            height: 2.5px;
             background: var(--green-950);
-            transition: all 0.3s;
+            transition: all 0.3s ease-in-out;
             border-radius: 2px;
+            transform-origin: center;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
         }
 
         /* MOBILE NAV */
@@ -236,14 +250,7 @@ background: #033403;
         .mobile-nav a:hover { color: var(--green-700); }
 
         .mobile-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--gray-800);
-            font-size: 1.75rem;
-            cursor: pointer;
+            display: none;
         }
 
         /* SECTION STYLES */
@@ -580,11 +587,37 @@ background: #033403;
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .nav-right { display: none; }
             .hamburger { display: flex; }
-            .section { padding: 3.5rem 0; }
-            .section-title h2 { font-size: 1.85rem; }
-            .page-title { font-size: 1.875rem; }
-            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-brand-text .brand-name { font-size: 0.95rem; }
+            .nav-brand-text .brand-sub { font-size: 0.6rem; }
+            .nav-container { padding: 0 1rem; }
+            .container { padding: 0 1rem; }
+            .section { padding: 3rem 0; }
+            .section-title { margin-bottom: 2rem; }
+            .section-title h2 { font-size: 1.5rem; }
+            .section-title p { font-size: 0.9rem; }
+            .section-badge { font-size: 0.72rem; padding: 0.3rem 0.8rem; }
+            .page-hero { padding: 6rem 0 2rem; min-height: auto; }
+            .page-title { font-size: 1.6rem; }
+            .page-subtitle { font-size: 0.9rem; }
+            .breadcrumb { font-size: 0.78rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            footer { padding: 2.5rem 0 1rem; }
+            .footer-brand .brand-name { font-size: 1.1rem; }
+            .footer-col h4 { font-size: 0.9rem; margin-bottom: 0.75rem; }
+            .btn { padding: 0.65rem 1.25rem; font-size: 0.9rem; }
+            .form-input { padding: 0.75rem 1rem; font-size: 1rem; border-radius: 10px; }
+            .pagination { flex-wrap: wrap; gap: 0.35rem; margin-top: 2rem; }
+            .pagination a, .pagination span { padding: 0.45rem 0.7rem; font-size: 0.8rem; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 0.75rem; }
+            .section { padding: 2.5rem 0; }
+            .section-title h2 { font-size: 1.35rem; }
+            .page-title { font-size: 1.4rem; }
+            .page-hero { padding: 5.5rem 0 1.5rem; }
         }
     </style>
 
@@ -723,8 +756,15 @@ background: #033403;
         const mobileNav = document.getElementById('mobileNav');
         const mobileClose = document.getElementById('mobileClose');
 
-        hamburger?.addEventListener('click', () => mobileNav.classList.add('open'));
-        mobileClose?.addEventListener('click', () => mobileNav.classList.remove('open'));
+        hamburger?.addEventListener('click', () => {
+            mobileNav.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        });
+        
+        mobileClose?.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+            hamburger.classList.remove('open');
+        });
 
         // Fade in animation
         const observer = new IntersectionObserver((entries) => {
@@ -741,6 +781,7 @@ background: #033403;
         document.querySelectorAll('.mobile-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileNav.classList.remove('open');
+                hamburger.classList.remove('open');
             });
         });
 

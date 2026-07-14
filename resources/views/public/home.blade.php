@@ -421,15 +421,46 @@
     }
 
     @media (max-width: 768px) {
-        .hero-title { font-size: 2.5rem; }
+        .hero { min-height: 85vh; }
+        .hero-content { padding: 0 1rem; }
+        .hero-title { font-size: 2.2rem; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.7; }
+        .hero-badge { font-size: 0.7rem; padding: 0.35rem 1rem; margin-bottom: 1.5rem; }
+        .hero-cta { gap: 0.75rem; }
+        .hero-cta .btn { padding: 0.75rem 1.5rem !important; font-size: 0.9rem !important; }
         .hero-visual { display: none; }
-        .stats-grid { gap: 0.5rem; }
+        .hero-stats-wrapper { position: static; margin-top: 2rem; }
+        .stats-grid { gap: 0.5rem 1rem; }
         .stats-glass { padding: 0.6rem 1rem; }
         .stat-item .num { font-size: 1rem; }
-        .welcome-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        .stat-item .label { font-size: 0.65rem; }
+        .welcome-grid { grid-template-columns: 1fr; gap: 2rem; }
+        .welcome-photo { max-width: 220px; }
+        .welcome-content { margin-left: 0; width: auto; }
+        .welcome-content h2 { font-size: 1.5rem; white-space: normal; }
+        .welcome-text { font-size: 0.9rem; }
+        .photo-accent { display: none; }
         .activities-grid { grid-template-columns: 1fr; }
-        .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        .activity-thumb { height: 180px; }
+        .activity-body { padding: 1rem; }
+        .activity-title { font-size: 1rem; }
+        .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+        .gallery-item { border-radius: 10px; }
         .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+    }
+
+    @media (max-width: 480px) {
+        .hero { min-height: 80vh; }
+        .hero-title { font-size: 1.85rem; }
+        .hero-subtitle { font-size: 0.88rem; }
+        .hero-cta { flex-direction: column; align-items: center; width: 100%; }
+        .hero-cta .btn { width: 100%; justify-content: center; }
+        .stats-grid { gap: 0.35rem 0.75rem; }
+        .stat-item .num { font-size: 0.9rem; }
+        .welcome-photo { max-width: 180px; }
+        .welcome-content h2 { font-size: 1.35rem; }
+        .activity-thumb { height: 160px; }
+        .gallery-grid { gap: 0.4rem; }
     }
 </style>
 @endpush
@@ -538,14 +569,14 @@
             <h2>Visi &amp; Misi</h2>
             <div class="divider"></div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="fade-in">
-            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2.5rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="fade-in visi-misi-grid">
+            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
                 <h3 style="color:var(--green-800);font-size:1.75rem;font-weight:800;margin-bottom:1rem;text-align:center;">Visi</h3>
                 <div style="color:var(--gray-600);line-height:1.8;text-align:left;font-size:1rem;" class="editor-content">
                     {!! $about->vision !!}
                 </div>
             </div>
-            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2.5rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
+            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
                 <h3 style="color:var(--green-800);font-size:1.75rem;font-weight:800;margin-bottom:1rem;text-align:center;">Misi</h3>
                 <div style="color:var(--gray-600);line-height:1.8;text-align:left;font-size:1rem;" class="editor-content">
                     {!! $about->mission !!}
@@ -557,6 +588,11 @@
             .editor-content ol { padding-left: 1.5rem; list-style-type: decimal; margin-bottom: 1rem; }
             .editor-content p { margin-bottom: 0.75rem; }
             .editor-content strong, .editor-content b { font-weight: bold; color: var(--gray-900); }
+            @media (max-width: 768px) {
+                .visi-misi-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+                .visi-misi-grid > div { padding: 1.5rem !important; }
+                .visi-misi-grid h3 { font-size: 1.35rem !important; }
+            }
         </style>
     </div>
 </section>
@@ -674,19 +710,19 @@
         </div>
 
         @if($members->count() > 0)
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;margin-bottom:2rem;">
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin-bottom:2rem;">
             @foreach($members->take(5) as $member)
-            <div class="fade-in" style="text-align:center;">
+            <div class="fade-in" style="text-align:center;width:100%;max-width:240px;">
                 <div style="width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;margin:0 auto 1.25rem;background:var(--green-50);box-shadow:0 8px 20px rgba(108,123,28,0.12);">
                     @if($member->photo)
                         <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->name }}" style="width:100%;height:100%;object-fit:cover;">
                     @else
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--gray-400);">
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;color:var(--gray-300);">
                             <i class="bi bi-person-bounding-box"></i>
                         </div>
                     @endif
                 </div>
-                <h4 style="color:var(--gray-900);font-size:1rem;font-weight:700;margin-bottom:0.5rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ $member->name }}</h4>
+                <h4 style="color:var(--gray-900);font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ $member->name }}</h4>
                 <span style="display:inline-block;background:var(--green-100);color:var(--green-700);border:1px solid var(--green-300);font-size:0.75rem;font-weight:600;padding:0.2rem 0.85rem;border-radius:50px;">Anggota</span>
                 @if($member->period)
                 <p style="color:var(--gray-400);font-size:0.75rem;margin-top:0.5rem;"><i class="bi bi-calendar3"></i> {{ $member->period }}</p>

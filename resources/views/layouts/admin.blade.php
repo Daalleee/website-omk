@@ -48,6 +48,7 @@
             z-index: 100;
             overflow-y: auto;
             box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
         .sidebar-brand {
             padding: 1.5rem;
@@ -65,6 +66,7 @@
             justify-content: center;
             font-weight: 800; font-size: 0.95rem; color: white;
             box-shadow: 0 4px 10px rgba(3,52,3,0.2);
+            flex-shrink: 0;
         }
         .sidebar-brand .brand-info .name { font-size: 0.95rem; font-weight: 700; color: white; }
         .sidebar-brand .brand-info .sub { font-size: 0.65rem; color: var(--green-400); }
@@ -123,12 +125,23 @@
             border-top: 1px solid rgba(255,255,255,0.08);
         }
 
+        /* SIDEBAR OVERLAY (mobile) */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 99;
+            backdrop-filter: blur(2px);
+        }
+
         /* MAIN CONTENT */
         .main-content {
             margin-left: var(--sidebar-w);
             flex: 1;
             display: flex;
             flex-direction: column;
+            min-width: 0;
         }
 
         /* TOPBAR */
@@ -139,14 +152,27 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 0.75rem;
             position: sticky;
             top: 0;
             z-index: 50;
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
-        .page-heading { font-size: 1.15rem; font-weight: 700; color: var(--green-950); }
-        .user-info { display: flex; align-items: center; gap: 1rem; }
+        .topbar-left { display: flex; align-items: center; gap: 0.75rem; min-width: 0; }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            padding: 0.5rem;
+            cursor: pointer;
+            color: var(--green-800);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .page-heading { font-size: 1.15rem; font-weight: 700; color: var(--green-950); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .user-info { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
         .user-chip {
             display: flex; align-items: center; gap: 0.6rem;
             background: var(--green-50);
@@ -158,6 +184,21 @@
             color: var(--green-800);
         }
         .user-chip i { color: var(--green-600); }
+        .view-site-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--green-700);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.4rem 0.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--green-200);
+            background: var(--green-50);
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .view-site-btn:hover { background: var(--green-100); }
 
         /* CONTENT AREA */
         .content-area { padding: 2rem; flex: 1; }
@@ -178,6 +219,8 @@
             align-items: center;
             justify-content: space-between;
             background: var(--white);
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
         .admin-card-header h2 { font-size: 1.05rem; font-weight: 700; color: var(--green-950); margin: 0; }
         .admin-card-body { padding: 1.5rem; }
@@ -272,22 +315,114 @@
         .alert-error { background:#fef2f2; border:1px solid #fecaca; color:#b91c1c; }
 
         /* BREADCRUMB */
-        .admin-breadcrumb { display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--gray-500); margin-bottom:1.5rem; font-weight: 500; }
+        .admin-breadcrumb { display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--gray-500); margin-bottom:1.5rem; font-weight: 500; flex-wrap: wrap; }
         .admin-breadcrumb a { color:var(--green-600); text-decoration:none; }
         .admin-breadcrumb a:hover { color:var(--green-800); text-decoration:underline; }
 
         /* AVATAR */
-        .avatar { width:40px; height:40px; border-radius:8px; object-fit:cover; background:var(--gray-100); display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--gray-400); border: 1px solid var(--gray-200); }
+        .avatar { width:40px; height:40px; border-radius:8px; object-fit:cover; background:var(--gray-100); display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--gray-400); border: 1px solid var(--gray-200); flex-shrink: 0; }
 
-        @media (max-width:768px) {
-            .sidebar { transform:translateX(-100%); transition:transform 0.3s; }
-            .sidebar.open { transform:translateX(0); }
-            .main-content { margin-left:0; }
+        /* ===== RESPONSIVE: TABLET ===== */
+        @media (max-width: 1024px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .content-area { padding: 1.5rem; }
+        }
+
+        /* ===== RESPONSIVE: MOBILE ===== */
+        @media (max-width: 768px) {
+            :root { --sidebar-w: 280px; }
+
+            /* Sidebar mobile drawer */
+            .sidebar {
+                transform: translateX(-100%);
+                box-shadow: none;
+            }
+            .sidebar.open {
+                transform: translateX(0);
+                box-shadow: 5px 0 25px rgba(0,0,0,0.3);
+            }
+            .sidebar-overlay.active {
+                display: block;
+            }
+
+            /* Main fills full width */
+            .main-content { margin-left: 0; }
+
+            /* Show hamburger */
+            .mobile-menu-btn { display: flex; }
+
+            /* Topbar mobile */
+            .topbar { padding: 0.75rem 1rem; }
+            .page-heading { font-size: 1rem; }
+            .view-site-btn { display: none; }
+            .user-chip span { display: none; }
+            .user-chip .badge { display: none; }
+            .user-chip { padding: 0.4rem 0.6rem; }
+
+            /* Content mobile */
+            .content-area { padding: 1rem; }
+
+            /* Stats 2 kolom di HP */
+            .stats-row { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+            .stat-card { padding: 1rem; gap: 0.75rem; }
+            .stat-icon { width: 40px; height: 40px; font-size: 1.15rem; border-radius: 10px; }
+            .stat-info .num { font-size: 1.35rem; }
+            .stat-info .label { font-size: 0.72rem; }
+
+            /* Card mobile */
+            .admin-card { border-radius: 12px; margin-bottom: 1rem; }
+            .admin-card-header { padding: 1rem 1.25rem; }
+            .admin-card-header h2 { font-size: 0.95rem; }
+            .admin-card-body { padding: 1rem 1.25rem; }
+
+            /* Table wrapper overflow */
+            .table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+            /* Form mobile: bigger tap targets */
+            .form-input {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+                border-radius: 10px;
+            }
+            .form-label { font-size: 0.9rem; }
+            .btn { padding: 0.6rem 1.1rem; font-size: 0.9rem; }
+            .btn-sm { padding: 0.45rem 0.85rem; font-size: 0.82rem; }
+
+            /* Alert mobile */
+            .alert { padding: 0.75rem 1rem; font-size: 0.82rem; }
+
+            /* Breadcrumb mobile */
+            .admin-breadcrumb { font-size: 0.8rem; margin-bottom: 1rem; }
+
+            /* Section header inside forms */
+            .admin-card-body h3 { font-size: 0.95rem !important; }
+
+            /* Make checkbox/radio bigger for touch */
+            input[type="checkbox"], input[type="radio"] {
+                width: 18px;
+                height: 18px;
+            }
+
+            /* Fix inline grid for mobile (contact, activity forms) */
+            .mobile-stack {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* ===== RESPONSIVE: SMALL PHONE ===== */
+        @media (max-width: 400px) {
+            .stats-row { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+            .stat-card { padding: 0.75rem; }
+            .stat-info .num { font-size: 1.15rem; }
+            .content-area { padding: 0.75rem; }
         }
     </style>
     @stack('styles')
 </head>
 <body>
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-brand">
@@ -350,9 +485,14 @@
     <!-- MAIN CONTENT -->
     <div class="main-content">
         <div class="topbar">
-            <div class="page-heading">@yield('page-title', 'Dashboard')</div>
+            <div class="topbar-left">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka menu">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="page-heading">@yield('page-title', 'Dashboard')</div>
+            </div>
             <div class="user-info">
-                <a href="{{ route('home') }}" target="_blank" style="display:inline-flex;align-items:center;color:var(--green-700);font-size:0.85rem;font-weight:500;text-decoration:none;padding:0.4rem 0.75rem;border-radius:8px;border:1px solid var(--green-200);background:var(--green-50);transition:all 0.2s;" onmouseover="this.style.background='var(--green-100)'" onmouseout="this.style.background='var(--green-50)'">
+                <a href="{{ route('home') }}" target="_blank" class="view-site-btn">
                     Lihat Website
                 </a>
                 <div class="user-chip">
@@ -374,6 +514,34 @@
             @yield('content')
         </div>
     </div>
+
+    <script>
+        // Mobile sidebar toggle
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        const menuBtn = document.getElementById('mobileMenuBtn');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn?.addEventListener('click', openSidebar);
+        overlay?.addEventListener('click', closeSidebar);
+
+        // Close sidebar when clicking a nav link (mobile)
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) closeSidebar();
+            });
+        });
+    </script>
 
     @stack('scripts')
 </body>

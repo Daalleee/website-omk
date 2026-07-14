@@ -12,27 +12,27 @@
     <div class="container">
         <!-- Filter -->
         <form method="GET" style="display:flex;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap;background:var(--white);padding:1.25rem;border-radius:14px;border:1px solid var(--gray-200);box-shadow:0 2px 8px rgba(0,0,0,0.03);">
-            <input type="text" name="search" class="form-input" placeholder="Cari kegiatan..." value="{{ request('search') }}" style="max-width:280px;">
-            <select name="category" class="form-input" style="max-width:200px;">
+            <input type="text" name="search" class="form-input" placeholder="Cari kegiatan..." value="{{ request('search') }}" style="flex:1;min-width:200px;">
+            <select name="category" class="form-input" style="flex:1;min-width:140px;">
                 <option value="">Semua Kategori</option>
                 @foreach($categories as $cat)
                 <option value="{{ $cat->id }}" {{ request('category') == $cat->id ? 'selected' : '' }}>{{ $cat->name }}</option>
                 @endforeach
             </select>
-            <select name="year" class="form-input" style="max-width:130px;">
+            <select name="year" class="form-input" style="flex:1;min-width:120px;">
                 <option value="">Semua Tahun</option>
                 @foreach($years as $year)
                 <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>{{ $year }}</option>
                 @endforeach
             </select>
-            <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Filter</button>
+            <button type="submit" class="btn btn-primary" style="flex-shrink:0;"><i class="bi bi-search"></i> Filter</button>
             @if(request()->anyFilled(['search','category','year']))
-            <a href="{{ route('activities') }}" class="btn btn-outline"><i class="bi bi-x"></i> Reset</a>
+            <a href="{{ route('activities') }}" class="btn btn-outline" style="flex-shrink:0;"><i class="bi bi-x"></i> Reset</a>
             @endif
         </form>
 
         @if($activities->count() > 0)
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;margin-bottom:2rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem;">
             @foreach($activities as $activity)
             <a href="{{ route('activity.detail', $activity->slug) }}" class="card fade-in" style="text-decoration:none;color:inherit;display:block;">
                 <div style="height:210px;overflow:hidden;background:var(--green-50);position:relative;">

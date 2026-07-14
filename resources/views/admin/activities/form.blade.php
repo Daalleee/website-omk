@@ -16,7 +16,7 @@
             @csrf
             @if($activity->exists) @method('PUT') @endif
 
-            <div style="display:grid;grid-template-columns:2fr 1fr;gap:2rem;">
+            <div style="display:grid;grid-template-columns:2fr 1fr;gap:2rem;" class="mobile-stack">
                 <!-- KOLOM KIRI -->
                 <div>
                     <div class="form-group">
@@ -30,7 +30,7 @@
                         <div class="form-hint">Mendukung format paragraf biasa.</div>
                     </div>
 
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="mobile-stack">
                         <div class="form-group">
                             <label class="form-label">Tanggal Kegiatan</label>
                             <input type="date" name="activity_date" class="form-input" value="{{ old('activity_date', optional($activity->activity_date)->format('Y-m-d')) }}">

@@ -11,7 +11,7 @@
 <section class="section" style="background:var(--gray-50);">
     <div class="container">
         @if($galleries->count() > 0)
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-bottom:2rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.25rem;margin-bottom:2rem;">
             @foreach($galleries as $photo)
             <div style="border-radius:16px;overflow:hidden;aspect-ratio:1;cursor:pointer;position:relative;background:var(--gray-200);box-shadow:0 4px 15px rgba(0,0,0,0.05);" onclick="openLightbox('{{ Storage::url($photo->image) }}','{{ $photo->caption }}')">
                 <img src="{{ Storage::url($photo->image) }}" alt="{{ $photo->caption ?? 'Galeri OMK' }}" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">

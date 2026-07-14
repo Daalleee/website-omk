@@ -31,7 +31,7 @@
                 <textarea name="address" class="form-input" rows="3">{{ old('address', $contact->address) }}</textarea>
             </div>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="mobile-stack">
                 <div class="form-group">
                     <label class="form-label">Email</label>
                     <input type="email" name="email" class="form-input" value="{{ old('email', $contact->email) }}" placeholder="contoh@gmail.com">
@@ -44,7 +44,7 @@
 
             <h3 style="color:var(--green-400);font-size:1rem;margin:2rem 0 1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Sosial Media & Maps</h3>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="mobile-stack">
                 <div class="form-group">
                     <label class="form-label">Instagram Username</label>
                     <input type="text" name="instagram" class="form-input" value="{{ old('instagram', $contact->instagram) }}" placeholder="Contoh: @omk_paroki">

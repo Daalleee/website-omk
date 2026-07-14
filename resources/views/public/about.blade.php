@@ -34,14 +34,14 @@
             <h2>Visi &amp; Misi</h2>
             <div class="divider"></div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="fade-in">
-            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2.5rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="fade-in visi-misi-grid">
+            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
                 <h3 style="color:var(--green-800);font-size:1.75rem;font-weight:800;margin-bottom:1rem;text-align:center;">Visi</h3>
                 <div style="color:var(--gray-600);line-height:1.8;text-align:left;font-size:1rem;" class="editor-content">
                     {!! $about->vision !!}
                 </div>
             </div>
-            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2.5rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
+            <div style="background:var(--white);border:1px solid var(--green-200);border-radius:20px;padding:2rem;box-shadow:0 4px 15px rgba(0,0,0,0.03);">
                 <h3 style="color:var(--green-800);font-size:1.75rem;font-weight:800;margin-bottom:1rem;text-align:center;">Misi</h3>
                 <div style="color:var(--gray-600);line-height:1.8;text-align:left;font-size:1rem;" class="editor-content">
                     {!! $about->mission !!}
@@ -53,6 +53,11 @@
             .editor-content ol { padding-left: 1.5rem; list-style-type: decimal; margin-bottom: 1rem; }
             .editor-content p { margin-bottom: 0.75rem; }
             .editor-content strong, .editor-content b { font-weight: bold; color: var(--gray-900); }
+            @media (max-width: 768px) {
+                .visi-misi-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+                .visi-misi-grid > div { padding: 1.5rem !important; }
+                .visi-misi-grid h3 { font-size: 1.35rem !important; }
+            }
         </style>
 
 </section>
