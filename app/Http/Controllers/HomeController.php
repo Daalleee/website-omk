@@ -32,7 +32,7 @@ class HomeController extends Controller
         $about = About::first();
         $leaders = Leader::where('status', true)->get();
         $members = Member::where('status', 'aktif')->get();
-        $activities = Activity::where('status', true)->with('category')->latest()->get();
+        $activities = Activity::where('status', true)->with('category')->latest('activity_date')->get();
         $galleries = Gallery::latest()->get();
         $contact = Contact::first();
 
