@@ -20,7 +20,7 @@
             </div>
 
             <div class="form-group">
-x`                <label class="form-label">Hero Tagline (Kata setelah judul)</label>
+                <label class="form-label">Hero Tagline (Kata setelah judul)</label>
                 <input type="text" name="hero_tagline" class="form-input" value="{{ old('hero_tagline', $home->hero_tagline) }}">
             </div>
             
@@ -36,7 +36,7 @@ x`                <label class="form-label">Hero Tagline (Kata setelah judul)</l
                     <img src="{{ Storage::url($home->hero_image) }}" alt="Hero Image" style="height:100px;border-radius:8px;object-fit:cover;">
                 </div>
                 @endif
-                <input type="file" name="hero_image" class="form-input" accept="image/*">
+                <input type="file" name="hero_image" class="form-input" accept="image/*" data-crop="1.7778">
             </div>
 
             <h3 style="color:var(--green-400);font-size:1rem;margin:2rem 0 1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Section Sambutan</h3>
@@ -63,7 +63,7 @@ x`                <label class="form-label">Hero Tagline (Kata setelah judul)</l
                     <img src="{{ Storage::url($home->welcome_photo) }}" alt="Welcome Photo" style="height:100px;border-radius:8px;object-fit:cover;">
                 </div>
                 @endif
-                <input type="file" name="welcome_photo" class="form-input" accept="image/*">
+                <input type="file" name="welcome_photo" class="form-input" accept="image/*" data-crop="0.75">
             </div>
 
             <h3 style="color:var(--green-400);font-size:1rem;margin:2rem 0 1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Nama & Logo OMK</h3>
@@ -80,7 +80,7 @@ x`                <label class="form-label">Hero Tagline (Kata setelah judul)</l
                     <img src="{{ Storage::url($home->brand_logo) }}" alt="Logo" style="height:60px;border-radius:8px;object-fit:contain;">
                 </div>
                 @endif
-                <input type="file" name="brand_logo" class="form-input" accept="image/*">
+                <input type="file" name="brand_logo" class="form-input" accept="image/*" data-crop="1" data-crop-format="png">
             </div>
 
             <div class="form-group">

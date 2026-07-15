@@ -23,7 +23,8 @@
                     <img src="{{ Storage::url($member->photo) }}" alt="Foto" style="width:120px;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:3px solid var(--green-300);">
                 </div>
                 @endif
-                <input type="file" name="photo" class="form-input" accept="image/*">
+                <input type="file" name="photo" class="form-input" accept="image/*" data-crop="0.75">
+                <div class="form-hint">Setelah memilih foto, Anda dapat memotongnya (rasio 3:4).</div>
                 <div class="form-hint">Format: JPG, PNG. Disarankan foto potret (vertikal).</div>
             </div>
 

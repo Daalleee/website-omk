@@ -51,7 +51,7 @@
                     <img src="{{ Storage::url($about->pastor_photo) }}" alt="Bapak Photo" style="height:100px;border-radius:8px;object-fit:cover;">
                 </div>
                 @endif
-                <input type="file" name="pastor_photo" class="form-input" accept="image/*">
+                <input type="file" name="pastor_photo" class="form-input" accept="image/*" data-crop="0.75">
             </div>
 
             <div style="margin-top:2rem;">

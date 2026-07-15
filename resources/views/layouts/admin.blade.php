@@ -544,5 +544,7 @@
     </script>
 
     @stack('scripts')
+
+    @include('admin.partials.cropper')
 </body>
 </html>

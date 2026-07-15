@@ -84,7 +84,8 @@
                     <img src="{{ Storage::url($leader->photo) }}" alt="Foto" style="height:100px;border-radius:8px;object-fit:cover;">
                 </div>
                 @endif
-                <input type="file" name="photo" class="form-input" accept="image/*">
+                <input type="file" name="photo" class="form-input" accept="image/*" data-crop="0.75">
+                <div class="form-hint">Setelah memilih foto, Anda dapat memotongnya (rasio 3:4).</div>
             </div>
 
             <div class="form-group">

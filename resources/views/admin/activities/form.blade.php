@@ -51,7 +51,7 @@
                             <img src="{{ Storage::url($activity->thumbnail) }}" alt="Thumb" style="width:100%;height:150px;border-radius:8px;object-fit:cover;">
                         </div>
                         @endif
-                        <input type="file" name="thumbnail" class="form-input" accept="image/*">
+                        <input type="file" name="thumbnail" class="form-input" accept="image/*" data-crop="1.3333">
                         <div class="form-hint">Digunakan di daftar kegiatan (Card).</div>
                     </div>
 
@@ -62,7 +62,7 @@
                             <img src="{{ Storage::url($activity->banner) }}" alt="Banner" style="width:100%;height:100px;border-radius:8px;object-fit:cover;">
                         </div>
                         @endif
-                        <input type="file" name="banner" class="form-input" accept="image/*">
+                        <input type="file" name="banner" class="form-input" accept="image/*" data-crop="1.7778">
                         <div class="form-hint">Digunakan di halaman detail bagian atas. Jika kosong akan menggunakan thumbnail.</div>
                     </div>
                 </div>
