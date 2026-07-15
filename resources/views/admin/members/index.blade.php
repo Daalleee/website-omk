@@ -6,12 +6,12 @@
 <div class="admin-card">
     <div class="admin-card-header" style="flex-wrap:wrap;gap:1rem;">
         <h2>Daftar Anggota</h2>
-        <div style="display:flex;gap:1rem;align-items:center;">
-            <form method="GET" style="display:flex;gap:0.5rem;">
-                <input type="text" name="search" class="form-input" style="padding:0.4rem 0.75rem;width:200px;" placeholder="Cari nama..." value="{{ request('search') }}">
+        <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+            <form method="GET" style="display:flex;gap:0.5rem;flex:1 1 auto;min-width:0;">
+                <input type="text" name="search" class="form-input" style="padding:0.4rem 0.75rem;flex:1 1 auto;min-width:0;max-width:200px;" placeholder="Cari nama..." value="{{ request('search') }}">
                 <button type="submit" class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
             </form>
-            <a href="{{ route('admin.members.create') }}" class="btn btn-primary btn-sm"><i class="bi bi-plus-lg"></i> Tambah</a>
+            <a href="{{ route('admin.members.create') }}" class="btn btn-primary btn-sm" style="white-space:nowrap;"><i class="bi bi-plus-lg"></i> Tambah Anggota</a>
         </div>
     </div>
     <div class="admin-card-body" style="padding:0;overflow-x:auto;">

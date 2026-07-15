@@ -6,12 +6,12 @@
 <div class="admin-card">
     <div class="admin-card-header" style="flex-wrap:wrap;gap:1rem;">
         <h2>Daftar Kegiatan</h2>
-        <div style="display:flex;gap:1rem;align-items:center;">
-            <form method="GET" style="display:flex;gap:0.5rem;">
-                <input type="text" name="search" class="form-input" style="padding:0.4rem 0.75rem;width:250px;" placeholder="Cari kegiatan..." value="{{ request('search') }}">
+        <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+            <form method="GET" style="display:flex;gap:0.5rem;flex:1 1 auto;min-width:0;">
+                <input type="text" name="search" class="form-input" style="padding:0.4rem 0.75rem;flex:1 1 auto;min-width:0;max-width:250px;" placeholder="Cari kegiatan..." value="{{ request('search') }}">
                 <button type="submit" class="btn btn-secondary btn-sm"><i class="bi bi-search"></i></button>
             </form>
-            <a href="{{ route('admin.activities.create') }}" class="btn btn-primary btn-sm"><i class="bi bi-plus-lg"></i> Tambah Kegiatan</a>
+            <a href="{{ route('admin.activities.create') }}" class="btn btn-primary btn-sm" style="white-space:nowrap;"><i class="bi bi-plus-lg"></i> Tambah Kegiatan</a>
         </div>
     </div>
     <div class="admin-card-body" style="padding:0;overflow-x:auto;">
@@ -20,8 +20,6 @@
                 <tr>
                     <th width="80">Thumbnail</th>
                     <th>Judul Kegiatan</th>
-                    <th>Kategori</th>
-                    <th>Tanggal & Lokasi</th>
                     <th>Status</th>
                     <th width="120">Aksi</th>
                 </tr>
@@ -36,21 +34,8 @@
                         <div style="width:60px;height:45px;background:rgba(255,255,255,0.05);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);"><i class="bi bi-image"></i></div>
                         @endif
                     </td>
-                    <td>
-                        <a href="{{ route('activity.detail', $act->slug) }}" target="_blank" style="color:white;text-decoration:none;font-weight:600;" onmouseover="this.style.color='var(--green-400)'" onmouseout="this.style.color='white'">{{ $act->title }}</a>
-                        <br>
-                        <span style="font-size:0.75rem;color:rgba(255,255,255,0.4);">{{ $act->galleries->count() }} Foto Galeri</span>
-                    </td>
-                    <td>
-                        @if($act->category)
-                        <span class="badge badge-gray">{{ $act->category->name }}</span>
-                        @endif
-                    </td>
-                    <td>
-                        <div style="font-size:0.8rem;">
-                            @if($act->activity_date)<div style="color:var(--green-300);"><i class="bi bi-calendar3"></i> {{ $act->activity_date->format('d M Y') }}</div>@endif
-                            @if($act->location)<div style="color:rgba(255,255,255,0.6);"><i class="bi bi-geo-alt"></i> {{ $act->location }}</div>@endif
-                        </div>
+                    <td style="padding-left:1.5rem;">
+                        <a href="{{ route('activity.detail', $act->slug) }}" target="_blank" style="color:#111;text-decoration:none;font-weight:600;" onmouseover="this.style.color='var(--green-400)'" onmouseout="this.style.color='#111'">{{ $act->title }}</a>
                     </td>
                     <td>
                         @if($act->status)
@@ -71,7 +56,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="6" style="text-align:center;padding:2rem;">Data kegiatan belum ada.</td>
+                    <td colspan="4" style="text-align:center;padding:2rem;">Data kegiatan belum ada.</td>
                 </tr>
                 @endforelse
             </tbody>

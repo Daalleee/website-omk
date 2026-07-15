@@ -30,7 +30,6 @@ class ActivityController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'category_id' => 'nullable|exists:categories,id',
             'description' => 'nullable|string',
             'activity_date' => 'nullable|date',
             'location' => 'nullable|string|max:255',
@@ -38,7 +37,7 @@ class ActivityController extends Controller
 
         $data = $request->except(['_token', 'thumbnail', 'banner']);
         $data['slug'] = Str::slug($request->title).'-'.time();
-        $data['status'] = $request->boolean('status', true);
+        $data['status'] = true;
 
         if ($request->hasFile('thumbnail')) {
             $data['thumbnail'] = $request->file('thumbnail')->store('activities', 'public');

@@ -44,32 +44,6 @@
 
                 <!-- KOLOM KANAN -->
                 <div>
-                    <div class="admin-card" style="background:rgba(0,0,0,0.2);margin-bottom:1.5rem;">
-                        <div class="admin-card-body">
-                            <div class="form-group">
-                                <label class="form-label">Kategori</label>
-                                <select name="category_id" class="form-input">
-                                    <option value="">Pilih Kategori...</option>
-                                    @foreach($categories as $cat)
-                                    <option value="{{ $cat->id }}" {{ old('category_id', $activity->category_id) == $cat->id ? 'selected' : '' }}>{{ $cat->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="form-group" style="margin-bottom:0;">
-                                <label class="form-label">Status Publish</label>
-                                <div style="display:flex;align-items:center;gap:1rem;margin-top:0.5rem;">
-                                    <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:white;cursor:pointer;">
-                                        <input type="radio" name="status" value="1" {{ old('status', $activity->status ?? true) == 1 ? 'checked' : '' }} style="accent-color:var(--green-500);"> Publish
-                                    </label>
-                                    <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:white;cursor:pointer;">
-                                        <input type="radio" name="status" value="0" {{ old('status', $activity->status ?? true) == 0 ? 'checked' : '' }} style="accent-color:var(--green-500);"> Draft
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="form-group">
                         <label class="form-label">Thumbnail (Kotak/Persegi)</label>
                         @if($activity->thumbnail)

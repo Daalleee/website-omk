@@ -44,28 +44,12 @@
 
 <div class="admin-card">
     <div class="admin-card-header">
-        <h2><i class="bi bi-bar-chart-fill" style="color:var(--green-400);margin-right:8px;"></i> Statistik Pengunjung 7 Hari Terakhir</h2>
+        <h2><i class="bi bi-hand-index-thumb" style="color:var(--green-400);margin-right:8px;"></i> Selamat Datang</h2>
     </div>
     <div class="admin-card-body">
-        <div style="height:300px;display:flex;align-items:flex-end;gap:2%;padding-top:2rem;">
-            @php 
-                $maxVisitor = $visitor_chart->max('count') ?? 1;
-                $maxVisitor = $maxVisitor == 0 ? 1 : $maxVisitor; 
-            @endphp
-            @foreach($visitor_chart as $data)
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
-                <div style="font-size:0.75rem;color:var(--green-400);font-weight:600;">{{ $data->count }}</div>
-                <div style="width:100%;background:linear-gradient(to top, var(--green-800), var(--green-500));border-radius:4px 4px 0 0;height:{{ ($data->count / $maxVisitor) * 100 }}%;min-height:4px;transition:height 1s ease;"></div>
-                <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-align:center;">{{ \Carbon\Carbon::parse($data->date)->format('d M') }}</div>
-            </div>
-            @endforeach
-            
-            @if($visitor_chart->isEmpty())
-            <div style="width:100%;text-align:center;color:rgba(255,255,255,0.4);align-self:center;">
-                Belum ada data pengunjung.
-            </div>
-            @endif
-        </div>
+        <p style="color:rgba(255,255,255,0.75);line-height:1.7;margin:0;">
+            Halo, Admin! Senang bertemu denganmu di panel OMK. Di sini kamu bisa mengelola seluruh konten website &mdash; mulai dari data pengurus, anggota, kegiatan, hingga galeri foto. Semoga harimu menyenangkan dan selamat bekerja!
+        </p>
     </div>
 </div>
 @endsection

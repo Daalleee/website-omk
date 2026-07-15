@@ -20,7 +20,7 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">Hero Tagline (Kata setelah judul, misal: Katolik)</label>
+x`                <label class="form-label">Hero Tagline (Kata setelah judul)</label>
                 <input type="text" name="hero_tagline" class="form-input" value="{{ old('hero_tagline', $home->hero_tagline) }}">
             </div>
             
