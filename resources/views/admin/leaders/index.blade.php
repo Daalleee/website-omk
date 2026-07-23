@@ -15,6 +15,7 @@
                     <th width="60">Foto</th>
                     <th>Nama</th>
                     <th>Jabatan</th>
+                    <th>Grup</th>
                     <th>Periode</th>
                     <th>Status</th>
                     <th width="150">Aksi</th>
@@ -32,6 +33,7 @@
                     </td>
                     <td><strong>{{ $leader->name }}</strong></td>
                     <td>{{ $leader->position }}</td>
+                    <td>{{ ucfirst($leader->group) }}</td>
                     <td>{{ $leader->period ?? '-' }}</td>
                     <td>
                         @if($leader->status)
@@ -52,7 +54,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="6" style="text-align:center;padding:2rem;">Belum ada data pengurus.</td>
+                    <td colspan="7" style="text-align:center;padding:2rem;">Belum ada data pengurus.</td>
                 </tr>
                 @endforelse
             </tbody>

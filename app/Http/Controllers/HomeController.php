@@ -30,7 +30,7 @@ class HomeController extends Controller
         $this->logVisitor($request, '/');
         $home = HomeSetting::first();
         $about = About::first();
-        $leaders = Leader::where('status', true)->get();
+        $leaders = Leader::where('status', true)->orderBy('group')->orderBy('order_number')->get();
         $members = Member::where('status', 'aktif')->get();
         $activities = Activity::where('status', true)->with('category')->latest('activity_date')->get();
         $galleries = Gallery::latest()->get();
@@ -50,7 +50,7 @@ class HomeController extends Controller
     public function leaders(Request $request)
     {
         $this->logVisitor($request, '/pengurus');
-        $leaders = Leader::where('status', true)->get();
+        $leaders = Leader::where('status', true)->orderBy('group')->orderBy('order_number')->get();
         $contact = Contact::first();
         return view('public.leaders', compact('leaders', 'contact'));
     }

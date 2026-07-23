@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Leader extends Model
 {
     protected $fillable = [
-        'photo', 'name', 'position', 'period', 'status',
+        'photo', 'name', 'position', 'group', 'period', 'status',
     ];
 
     protected $casts = [

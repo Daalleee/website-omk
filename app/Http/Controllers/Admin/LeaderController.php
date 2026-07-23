@@ -10,7 +10,7 @@ class LeaderController extends Controller
 {
     public function index()
     {
-        $leaders = Leader::all();
+        $leaders = Leader::orderBy('group')->orderBy('order_number')->get();
         return view('admin.leaders.index', compact('leaders'));
     }
 
@@ -24,6 +24,7 @@ class LeaderController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
+            'group' => 'required|string|max:255',
             'period' => 'nullable|string|max:255',
             'status' => 'nullable|boolean',
         ]);
@@ -49,6 +50,7 @@ class LeaderController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
+            'group' => 'required|string|max:255',
             'period' => 'nullable|string|max:255',
         ]);
 
