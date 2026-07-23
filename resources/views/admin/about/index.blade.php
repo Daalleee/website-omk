@@ -32,10 +32,10 @@
 
 
 
-            <h3 style="color:var(--green-400);font-size:1rem;margin:2rem 0 1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Bapak Pendamping</h3>
+            <h3 style="color:var(--green-400);font-size:1rem;margin:2rem 0 1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">Pendamping</h3>
 
             <div class="form-group">
-                <label class="form-label">Nama Bapak Pendamping</label>
+                <label class="form-label">Nama Pendamping</label>
                 <input type="text" name="pastor_name" class="form-input" value="{{ old('pastor_name', $about->pastor_name) }}">
             </div>
 
