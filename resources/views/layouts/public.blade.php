@@ -6,6 +6,30 @@
     <title>@yield('title', 'OMK')</title>
     <meta name="description" content="@yield('description', 'Website resmi Orang Muda Katolik - Komunitas pemuda Katolik yang aktif dalam iman, pelayanan, dan pengembangan diri.')">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    
+    <!-- Open Graph / SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request()->url() }}">
+    <meta property="og:title" content="@yield('title', 'OMK')">
+    <meta property="og:description" content="@yield('description', 'Website resmi Orang Muda Katolik - Komunitas pemuda Katolik yang aktif dalam iman, pelayanan, dan pengembangan diri.')">
+    @if($_home && $_home->brand_logo)
+    <meta property="og:image" content="{{ Storage::url($_home->brand_logo) }}">
+    @endif
+    @if($_home && $_home->brand_name)
+    <meta property="og:site_name" content="{{ $_home->brand_name }}">
+    @endif
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="@yield('title', 'OMK')">
+    <meta name="twitter:description" content="@yield('description', 'Website resmi Orang Muda Katolik - Komunitas pemuda Katolik yang aktif dalam iman, pelayanan, dan pengembangan diri.')">
+    @if($_home && $_home->brand_logo)
+    <meta name="twitter:image" content="{{ Storage::url($_home->brand_logo) }}">
+    @endif
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
