@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'OMK | Beranda')
+@section('title', 'Orang Muda Katolik St. Mikael Itci Kenangan')
 @section('description', 'Website resmi Orang Muda Katolik. Bersama dalam iman, tumbuh dalam kasih, bergerak untuk sesama.')
 
 @push('styles')
