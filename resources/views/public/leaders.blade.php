@@ -14,7 +14,7 @@
 <section class="section" style="background:var(--white);">
     <div class="container">
         @php
-            $groups = ['pendamping' => 'Pendamping', 'inti' => 'Inti', 'kerohanian' => 'Bidang Kerohanian', 'sosial' => 'Bidang Sosial', 'seni_budaya' => 'Bidang Seni & Budaya', 'olahraga' => 'Bidang Olahraga', 'usaha' => 'Koordinator Usaha', 'liturgi' => 'Koordinator Liturgi', 'perlengkapan' => 'Koordinator Perlengkapan'];
+            $groups = ['pendamping' => 'Pendamping', 'inti' => 'Inti', 'kerohanian' => 'Bidang Kerohanian', 'sosial' => 'Bidang Sosial', 'seni_budaya' => 'Bidang Seni & Budaya', 'olahraga' => 'Bidang Olahraga', 'usaha' => 'Koordinator Usaha Dana', 'liturgi' => 'Koordinator Liturgi', 'perlengkapan' => 'Koordinator Perlengkapan'];
             $grouped = $leaders->groupBy('group');
         @endphp
         @if($leaders->count() > 0)

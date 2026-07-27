@@ -35,7 +35,7 @@
                     <option value="sosial" {{ $currentGroup === 'sosial' ? 'selected' : '' }}>Bidang Sosial</option>
                     <option value="seni_budaya" {{ $currentGroup === 'seni_budaya' ? 'selected' : '' }}>Bidang Seni & Budaya</option>
                     <option value="olahraga" {{ $currentGroup === 'olahraga' ? 'selected' : '' }}>Bidang Olahraga</option>
-                    <option value="usaha" {{ $currentGroup === 'usaha' ? 'selected' : '' }}>Koordinator Usaha</option>
+                    <option value="usaha" {{ $currentGroup === 'usaha' ? 'selected' : '' }}>Koordinator Usaha Dana</option>
                     <option value="liturgi" {{ $currentGroup === 'liturgi' ? 'selected' : '' }}>Koordinator Liturgi</option>
                     <option value="perlengkapan" {{ $currentGroup === 'perlengkapan' ? 'selected' : '' }}>Koordinator Perlengkapan</option>
                 </select>
