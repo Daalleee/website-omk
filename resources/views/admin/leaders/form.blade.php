@@ -36,6 +36,8 @@
                     <option value="seni_budaya" {{ $currentGroup === 'seni_budaya' ? 'selected' : '' }}>Bidang Seni & Budaya</option>
                     <option value="olahraga" {{ $currentGroup === 'olahraga' ? 'selected' : '' }}>Bidang Olahraga</option>
                     <option value="usaha" {{ $currentGroup === 'usaha' ? 'selected' : '' }}>Koordinator Usaha Dana</option>
+                    <option value="humas" {{ $currentGroup === 'humas' ? 'selected' : '' }}>Hubungan Masyarakat</option>
+                    <option value="dokumentasi" {{ $currentGroup === 'dokumentasi' ? 'selected' : '' }}>Dokumentasi</option>
                     <option value="liturgi" {{ $currentGroup === 'liturgi' ? 'selected' : '' }}>Koordinator Liturgi</option>
                     <option value="perlengkapan" {{ $currentGroup === 'perlengkapan' ? 'selected' : '' }}>Koordinator Perlengkapan</option>
                 </select>
@@ -60,6 +62,8 @@
                 seni_budaya: ['Koordinator','Anggota','Lainnya'],
                 olahraga: ['Koordinator','Anggota','Lainnya'],
                 usaha: ['Koordinator','Anggota','Lainnya'],
+                humas: ['Koordinator','Anggota','Lainnya'],
+                dokumentasi: ['Koordinator','Anggota','Lainnya'],
                 liturgi: ['Koordinator','Anggota','Lainnya'],
                 perlengkapan: ['Koordinator','Anggota','Lainnya'],
             };
