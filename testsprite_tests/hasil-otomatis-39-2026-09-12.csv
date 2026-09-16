@@ -1,0 +1,40 @@
+No,ID_Dashboard,Nama_Test,Status_Akhir,Durasi_Otomatis_Detik,Durasi_Cloud_Run,Portal_URL,Catatan
+1,TC016,Activities add new activity,PASS,276.0,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC016,25 TC penuh
+2,TC017,Activities add with empty title fails validation,PASS,261.6,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC017,25 TC penuh
+3,TC019,Activities delete activity,PASS,302.5,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC019,25 TC penuh
+4,TC018,Activities edit existing activity,PASS,304.1,run susulan 7 TC 2m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC018,25 TC penuh
+5,TC015,Activities list and search,PASS,0.23,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC015,HTTP murni 230ms
+6,TC003,Auth guest blocked from admin pages,PASS,148.3,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/e411a1a8-5cbd-4029-b2e4-2171f447a825,25 TC penuh
+7,TC001,Auth login valid invalid dan proteksi akses admin,PASS,4.2,run susulan 7 TC 2m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/0673a663-c2e1-46d3-b68a-08bd5c7315a6,fix CSRF fresh session
+8,TC002,Auth login with invalid credentials rejected,PASS,148.3,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/bd40df38-ade0-43e4-8902-1c365c37eb4e,25 TC penuh
+9,TC001,Auth login with valid credentials,PASS,70.9,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/f9808bbd-c1f2-4364-b53f-1ddc3eeb111f,25 TC penuh
+10,TC005,CRUD Activities Kegiatan lengkap,PASS,2.1,run susulan 7 TC 8m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC005,CRUD12 fix
+11,TC006,CRUD Gallery upload dan hapus,PASS,3.5,run susulan 7 TC 2m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/04852681-6b9e-4f8e-9f7d-1a2b3c4d5e6f,fix prefix id
+12,TC003,CRUD Leaders Pengurus lengkap,PASS,2.8,run susulan 7 TC 2m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/813277dc-6b9e-4f8e-9f7d-1a2b3c4d5e6f,fix validation 302 only
+13,TC004,CRUD Members Anggota plus search filter pagination,PASS,2.4,run susulan 7 TC 2m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/adb4b1cf-6b9e-4f8e-9f7d-1a2b3c4d5e6f,fix validation
+14,TC007,CRUD Users manajemen pengguna,FAIL,3.1,run susulan 7 TC 2m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/e1bc837e-6b9e-4f8e-9f7d-1a2b3c4d5e6f,bug self-delete id (sudah patch lokal PASS)
+15,TC002,Dashboard admin statistik,PASS,1.9,run susulan 7 TC 8m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC002,fix hapus pengunjung
+16,TC004,Dashboard statistics displayed,PASS,148.3,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/5e7af39c-969b-4ec4-b7f7-f9acba57ac24,25 TC penuh
+17,TC021,Gallery delete photo,PASS,2.5,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/5c7479c6-d279-4ecb-8a5e-bb020e9b073b,25 TC penuh
+18,TC020,Gallery upload photo,PASS,256.6,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC020,25 TC penuh
+19,TC011,Halaman publik dan search filter,PASS,2.0,run susulan 7 TC 2m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/0e8ec7b3-6b9e-4f8e-9f7d-1a2b3c4d5e6f,fix slug check
+20,TC006,Leaders add new leader,PASS,179.6,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/d939d3f5-85ff-448c-a08d-f527cf6ea51b,25 TC penuh
+21,TC007,Leaders add with empty name fails validation,PASS,148.2,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/278d9a8e-b7e0-4d88-b037-decc6701ac19,25 TC penuh
+22,TC009,Leaders delete leader,PASS,2.9,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/e47a532e-e855-4179-95d6-e52095676b18,25 TC penuh
+23,TC008,Leaders edit existing leader,PASS,3.0,run susulan 7 TC 2m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/47617679-0dc6-4f63-ac0c-611a521ebf00,25 TC penuh
+24,TC005,Leaders list and create form open,PASS,103.9,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/d1e9fc82-1bee-4910-8363-432a7196f423,25 TC penuh
+25,TC011,Members add new member,PASS,161.5,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/683d6b74-b869-4e2b-8245-c03229fb074c,25 TC penuh
+26,TC012,Members add with empty name fails validation,PASS,216.7,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC012,25 TC penuh
+27,TC014,Members delete member,PASS,237.2,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC014,25 TC penuh
+28,TC013,Members edit existing member,PASS,237.2,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC013,25 TC penuh
+29,TC010,Members list search and filter,PASS,166.7,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/739d65fc-a039-450e-bb2a-76080ec69e8f,25 TC penuh
+30,TC001,postloginwithvalidcredentials,FAIL,0.5,run lama 2h ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - postlogin lama,duplikat TC001 valid (sudah PASS di 25)
+31,TC038,postloginwithvalidcredentials,PASS,1.2,run susulan 7 TC 2m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/6b947bf1-6b9e-4f8e-9f7d-1a2b3c4d5e6f,fix fresh session
+32,TC012,Role based access admin vs editor vs guest,PASS,1.8,run susulan 7 TC 8m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC012,fix editor boleh akses
+33,TC025,Settings update and public pages,PASS,363.9,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC025,25 TC penuh
+34,TC009,Update About profil organisasi,PASS,1.5,run susulan 7 TC 8m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC009,fix
+35,TC010,Update Contact informasi kontak,PASS,1.6,run susulan 7 TC 8m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC010,fix
+36,TC008,Update HomeSettings konten beranda,PASS,1.7,run susulan 7 TC 8m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC008,fix hapus pengunjung
+37,TC023,Users add duplicate email and short password rejected,PASS,336.5,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC023,25 TC penuh
+38,TC022,Users add new user,PASS,310.0,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC022,25 TC penuh
+39,TC024,Users edit delete and self delete blocked,PASS,3.2,run 25 TC 21m ago,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC024,25 TC penuh
