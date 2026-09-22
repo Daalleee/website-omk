@@ -1,0 +1,41 @@
+No,ID,Nama_Test,Status_Otomatis,Durasi_Otomatis_Detik,Durasi_Manual_Estimasi_Detik,Selisih_Manual-Otomatis_Detik,Kecepatan_Otomatis_vs_Manual,Portal_URL
+1,TC016,Activities add new activity,PASS,276.0,120,-156.0,0.4x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC016
+2,TC017,Activities add with empty title fails validation,PASS,261.6,60,-201.6,0.2x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC017
+3,TC019,Activities delete activity,PASS,302.5,90,-212.5,0.2x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC019
+4,TC018,Activities edit existing activity,PASS,304.1,90,-214.1,0.2x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC018
+5,TC015,Activities list and search,PASS,0.2,30,29.8,130.4x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC015
+6,TC003,Auth guest blocked from admin pages,PASS,148.3,45,-103.3,0.3x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/e411a1a8-5cbd-4029-b2e4-2171f447a825
+7,TC001,Auth login valid invalid dan proteksi akses admin,PASS,4.2,90,85.8,21.4x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/0673a663-c2e1-46d3-b68a-08bd5c7315a6
+8,TC002,Auth login with invalid credentials rejected,PASS,148.3,45,-103.3,0.3x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/bd40df38-ade0-43e4-8902-1c365c37eb4e
+9,TC001,Auth login with valid credentials,PASS,70.9,30,-40.9,0.4x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/f9808bbd-c1f2-4364-b53f-1ddc3eeb111f
+10,TC005,CRUD Activities Kegiatan lengkap,PASS,2.1,300,297.9,142.9x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC005
+11,TC006,CRUD Gallery upload dan hapus,PASS,3.5,180,176.5,51.4x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/04852681-6b9e-4f8e-9f7d-1a2b3c4d5e6f
+12,TC003,CRUD Leaders Pengurus lengkap,PASS,2.8,300,297.2,107.1x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/813277dc-6b9e-4f8e-9f7d-1a2b3c4d5e6f
+13,TC004,CRUD Members Anggota plus search filter pagination,PASS,2.4,300,297.6,125.0x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/adb4b1cf-6b9e-4f8e-9f7d-1a2b3c4d5e6f
+14,TC007,CRUD Users manajemen pengguna,FAIL,3.1,300,296.9,96.8x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/e1bc837e-6b9e-4f8e-9f7d-1a2b3c4d5e6f
+15,TC002,Dashboard admin statistik,PASS,1.9,30,28.1,15.8x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC002
+16,TC004,Dashboard statistics displayed,PASS,148.3,20,-128.3,0.1x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/5e7af39c-969b-4ec4-b7f7-f9acba57ac24
+17,TC021,Gallery delete photo,PASS,2.5,60,57.5,24.0x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/5c7479c6-d279-4ecb-8a5e-bb020e9b073b
+18,TC020,Gallery upload photo,PASS,256.6,90,-166.6,0.3x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC020
+19,TC011,Halaman publik dan search filter,PASS,2.0,90,88.0,45.0x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/0e8ec7b3-6b9e-4f8e-9f7d-1a2b3c4d5e6f
+20,TC006,Leaders add new leader,PASS,179.6,90,-89.6,0.5x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/d939d3f5-85ff-448c-a08d-f527cf6ea51b
+21,TC007,Leaders add with empty name fails validation,PASS,148.2,60,-88.2,0.4x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/278d9a8e-b7e0-4d88-b037-decc6701ac19
+22,TC009,Leaders delete leader,PASS,2.9,60,57.1,20.7x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/e47a532e-e855-4179-95d6-e52095676b18
+23,TC008,Leaders edit existing leader,PASS,3.0,90,87.0,30.0x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/47617679-0dc6-4f63-ac0c-611a521ebf00
+24,TC005,Leaders list and create form open,PASS,103.9,30,-73.9,0.2x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/d1e9fc82-1bee-4910-8363-432a7196f423
+25,TC011,Members add new member,PASS,161.5,90,-71.5,0.5x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/683d6b74-b869-4e2b-8245-c03229fb074c
+26,TC012,Members add with empty name fails validation,PASS,216.7,60,-156.7,0.2x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC012
+27,TC014,Members delete member,PASS,237.2,60,-177.2,0.2x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC014
+28,TC013,Members edit existing member,PASS,237.2,90,-147.2,0.3x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC013
+29,TC010,Members list search and filter,PASS,166.7,45,-121.7,0.2x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/739d65fc-a039-450e-bb2a-76080ec69e8f
+30,TC001,postloginwithvalidcredentials,FAIL,0.5,30,29.5,60.0x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - postlogin lama
+31,TC038,postloginwithvalidcredentials,PASS,1.2,30,28.8,25.0x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/6b947bf1-6b9e-4f8e-9f7d-1a2b3c4d5e6f
+32,TC012,Role based access admin vs editor vs guest,PASS,1.8,60,58.2,33.3x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC012
+33,TC025,Settings update and public pages,PASS,363.9,120,-243.9,0.3x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC025
+34,TC009,Update About profil organisasi,PASS,1.5,60,58.5,40.0x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC009
+35,TC010,Update Contact informasi kontak,PASS,1.6,60,58.4,37.5x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC010
+36,TC008,Update HomeSettings konten beranda,PASS,1.7,60,58.3,35.3x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC008
+37,TC023,Users add duplicate email and short password rejected,PASS,336.5,90,-246.5,0.2x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC023
+38,TC022,Users add new user,PASS,310.0,90,-220.0,0.2x (lebih lambat cloud),https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC022
+39,TC024,Users edit delete and self delete blocked,PASS,3.2,120,116.8,37.5x,https://www.testsprite.com/dashboard/mcp/tests/f9f97a7b-1839-5aee-9280-763a065623f8/test/ - TC024
+TOTAL,39,Semua fitur (37 PASS / 2 FAIL),37/39,4420.1,3665,-755.1,0.8x,

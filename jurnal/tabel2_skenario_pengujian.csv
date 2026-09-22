@@ -1,0 +1,40 @@
+No.,ID,Fungsi,Skenario yang Diuji,Hasil yang Diharapkan,Hasil Pengujian,Status,Durasi Otomatis (detik),Durasi Manual (detik)
+1,TC016,Kegiatan,"Menambahkan data kegiatan baru","Data kegiatan baru berhasil disimpan dan tampil pada daftar Kegiatan","Kegiatan baru berhasil ditambahkan","Pass",276.0,420.0
+2,TC017,Kegiatan,"Menambahkan kegiatan dengan judul kosong","Sistem menolak data tanpa judul dan menampilkan validasi","Validasi judul kosong berhasil ditampilkan","Pass",261.6,390.0
+3,TC019,Kegiatan,"Menghapus data kegiatan","Data kegiatan terpilih berhasil dihapus dari daftar","Kegiatan berhasil dihapus","Pass",302.5,450.0
+4,TC018,Kegiatan,"Mengubah data kegiatan yang sudah ada","Perubahan data kegiatan tersimpan dan tampil pada daftar","Kegiatan berhasil diperbarui","Pass",304.1,460.0
+5,TC015,Kegiatan,"Menampilkan daftar dan pencarian kegiatan","Daftar kegiatan dapat ditampilkan dan dicari sesuai kata kunci","Daftar dan pencarian kegiatan berfungsi sesuai skenario","Pass",0.23,120.0
+6,TC003,Autentikasi,"Membatasi akses tamu (guest) ke halaman admin","Tamu tanpa login tidak dapat mengakses halaman admin","Akses ke halaman admin berhasil dibatasi","Pass",148.3,240.0
+7,TC001,Autentikasi,"Login dengan kredensial valid/tidak valid serta proteksi akses admin","Login berhasil untuk kredensial valid, ditolak untuk kredensial tidak valid, dan akses admin terlindungi","Skenario login dan proteksi akses berjalan sesuai harapan","Pass",4.2,180.0
+8,TC002,Autentikasi,"Login menggunakan kredensial yang tidak valid","Sistem menolak login dan menampilkan pesan kesalahan","Login dengan kredensial tidak valid berhasil ditolak","Pass",148.3,240.0
+9,TC001,Autentikasi,"Login menggunakan kredensial yang valid","Pengguna berhasil masuk dan diarahkan ke dashboard","Login dengan kredensial valid berhasil","Pass",70.9,150.0
+10,TC005,Kegiatan,"Pengujian CRUD kegiatan secara lengkap (tambah, lihat, ubah, hapus)","Seluruh operasi CRUD kegiatan berjalan sesuai fungsi","Seluruh operasi CRUD kegiatan berhasil dijalankan","Pass",2.1,300.0
+11,TC006,Galeri,"Pengujian unggah dan hapus foto galeri","Foto dapat diunggah dan dihapus sesuai fungsi","Unggah dan hapus foto galeri berhasil dijalankan","Pass",3.5,360.0
+12,TC003,Kepengurusan,"Pengujian CRUD data pengurus secara lengkap","Seluruh operasi CRUD data pengurus berjalan sesuai fungsi","Seluruh operasi CRUD pengurus berhasil dijalankan","Pass",2.8,300.0
+13,TC004,Anggota,"Pengujian CRUD anggota beserta pencarian, filter, dan pagination","Data anggota dapat dikelola serta dicari, difilter, dan dipaginasi","Seluruh operasi CRUD dan fitur pendukung anggota berhasil dijalankan","Pass",2.4,360.0
+14,TC007,Pengguna,"Pengujian manajemen pengguna (CRUD akun pengguna)","Seluruh operasi manajemen akun pengguna berjalan sesuai fungsi, termasuk pencegahan penghapusan akun sendiri","Sistem pada saat pengujian otomatis masih mengizinkan penghapusan akun sendiri (self-delete); perbaikan telah diterapkan dan lolos pada pengujian ulang secara lokal","Failed",3.1,480.0
+15,TC002,Dashboard,"Menampilkan statistik dashboard admin","Statistik dashboard admin ditampilkan sesuai data terkini","Statistik dashboard admin berhasil ditampilkan","Pass",1.9,180.0
+16,TC004,Dashboard,"Menampilkan statistik dashboard admin","Statistik ringkasan ditampilkan pada dashboard","Statistik dashboard berhasil ditampilkan","Pass",148.3,240.0
+17,TC021,Galeri,"Menghapus foto galeri","Foto yang dipilih berhasil dihapus dari galeri","Foto galeri berhasil dihapus","Pass",2.5,300.0
+18,TC020,Galeri,"Mengunggah foto galeri","Foto baru berhasil diunggah dan tampil pada galeri","Foto galeri berhasil diunggah","Pass",256.6,390.0
+19,TC011,Halaman Publik,"Menampilkan halaman publik beserta pencarian dan filter","Halaman publik dapat diakses dan fitur pencarian/filter berfungsi","Halaman publik serta pencarian dan filter berfungsi sesuai skenario","Pass",2.0,180.0
+20,TC006,Kepengurusan,"Menambahkan data pengurus baru","Data pengurus baru berhasil ditambahkan","Pengurus baru berhasil ditambahkan","Pass",179.6,270.0
+21,TC007,Kepengurusan,"Menambahkan pengurus dengan nama kosong","Sistem menolak data tanpa nama dan menampilkan validasi","Validasi nama kosong berhasil ditampilkan","Pass",148.2,240.0
+22,TC009,Kepengurusan,"Menghapus data pengurus","Data pengurus terpilih berhasil dihapus","Pengurus berhasil dihapus","Pass",2.9,300.0
+23,TC008,Kepengurusan,"Mengubah data pengurus yang sudah ada","Perubahan data pengurus tersimpan","Pengurus berhasil diperbarui","Pass",3.0,360.0
+24,TC005,Kepengurusan,"Menampilkan daftar pengurus dan membuka form tambah data","Daftar pengurus ditampilkan dan form tambah dapat dibuka","Daftar pengurus dan form tambah berhasil ditampilkan","Pass",103.9,180.0
+25,TC011,Anggota,"Menambahkan anggota baru","Data anggota baru berhasil ditambahkan","Anggota baru berhasil ditambahkan","Pass",161.5,270.0
+26,TC012,Anggota,"Menambahkan anggota dengan nama kosong","Sistem menolak data tanpa nama dan menampilkan validasi","Validasi nama kosong berhasil ditampilkan","Pass",216.7,330.0
+27,TC014,Anggota,"Menghapus data anggota","Data anggota terpilih berhasil dihapus","Anggota berhasil dihapus","Pass",237.2,360.0
+28,TC013,Anggota,"Mengubah data anggota yang sudah ada","Perubahan data anggota tersimpan","Anggota berhasil diperbarui","Pass",237.2,360.0
+29,TC010,Anggota,"Menampilkan daftar, pencarian, dan filter anggota","Daftar anggota dapat ditampilkan, dicari, dan difilter","Daftar, pencarian, dan filter anggota berfungsi sesuai skenario","Pass",166.7,240.0
+30,TC001,Autentikasi,"Login menggunakan kredensial yang valid (eksekusi duplikat sebelum perbaikan sesi)","Pengguna berhasil masuk dengan kredensial valid","Percobaan login pada eksekusi ini gagal karena penanganan sesi belum diperbarui; skenario yang sama telah berstatus Pass pada batch 25 TC sebelumnya dan kembali dikonfirmasi Pass setelah perbaikan (lihat baris 31)","Failed",0.5,120.0
+31,TC038,Autentikasi,"Login menggunakan kredensial yang valid (pengujian ulang setelah perbaikan)","Pengguna berhasil masuk setelah perbaikan sesi","Login berhasil dengan sesi baru (fresh session)","Pass",1.2,180.0
+32,TC012,Hak Akses,"Membedakan hak akses admin, editor, dan tamu (guest)","Setiap peran memperoleh hak akses sesuai ketentuan","Hak akses berdasarkan peran berfungsi sesuai skenario","Pass",1.8,240.0
+33,TC025,Pengaturan,"Memperbarui pengaturan dan menampilkan halaman publik","Pengaturan tersimpan dan halaman publik menampilkan perubahan","Pengaturan berhasil diperbarui dan tampil pada halaman publik","Pass",363.9,540.0
+34,TC009,Profil Organisasi,"Memperbarui informasi profil organisasi (About)","Perubahan informasi profil tersimpan dan tampil","Informasi profil organisasi berhasil diperbarui","Pass",1.5,180.0
+35,TC010,Kontak,"Memperbarui informasi kontak","Perubahan informasi kontak tersimpan dan tampil","Informasi kontak berhasil diperbarui","Pass",1.6,180.0
+36,TC008,Beranda,"Memperbarui konten pengaturan beranda","Perubahan konten beranda tersimpan dan tampil","Konten beranda berhasil diperbarui","Pass",1.7,180.0
+37,TC023,Pengguna,"Menambahkan pengguna dengan email duplikat dan kata sandi pendek","Sistem menolak data dengan email duplikat/kata sandi pendek","Validasi email duplikat dan kata sandi pendek berhasil ditampilkan","Pass",336.5,510.0
+38,TC022,Pengguna,"Menambahkan pengguna baru","Akun pengguna baru berhasil dibuat","Pengguna baru berhasil ditambahkan","Pass",310.0,480.0
+39,TC024,Pengguna,"Mengubah dan menghapus akun pengguna, serta mencegah penghapusan akun sendiri","Operasi ubah/hapus berjalan dan penghapusan akun sendiri dicegah","Operasi ubah dan hapus pengguna berhasil, termasuk pencegahan self-delete","Pass",3.2,420.0

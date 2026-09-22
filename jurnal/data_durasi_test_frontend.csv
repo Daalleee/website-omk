@@ -1,0 +1,16 @@
+test_case,status,created_utc,modified_utc,duration_seconds
+TC001-View the public home page overview,FAILED,2026-08-13 04:29:53,2026-08-13 04:34:45,292.0
+TC002-Review public organization information pages,PASSED,2026-08-13 04:29:53,2026-08-13 04:35:26,333.4
+TC003-View the home page highlights,PASSED,2026-08-13 04:29:53,2026-08-13 04:31:30,96.7
+TC004-Open an activity detail page and review its media,PASSED,2026-08-13 04:29:53,2026-08-13 04:41:29,696.1
+TC005-Search and filter activities,FAILED,2026-08-13 04:29:53,2026-08-13 04:37:21,447.6
+TC006-Search and filter members,FAILED,2026-08-13 04:29:53,2026-08-13 04:35:14,320.7
+TC007-Open gallery photos in the lightbox,PASSED,2026-08-13 04:29:53,2026-08-13 04:32:03,129.8
+TC008-Open an activity detail from the list,PASSED,2026-08-13 04:29:53,2026-08-13 04:32:32,159.0
+TC009-View contact information and location details,PASSED,2026-08-13 04:29:53,2026-08-13 04:31:53,119.5
+TC010-View contact information and map,PASSED,2026-08-13 04:29:54,2026-08-13 04:33:01,187.9
+TC011-Use the gallery lightbox,PASSED,2026-08-13 04:29:54,2026-08-13 04:32:55,181.1
+TC012-Open the gallery and enlarge a photo,PASSED,2026-08-13 04:29:54,2026-08-13 04:32:05,131.8
+TC013-View the leadership structure page,PASSED,2026-08-13 04:29:54,2026-08-13 04:33:28,214.2
+TC014-Browse and filter the activities list,FAILED,2026-08-13 04:29:54,2026-08-13 04:38:13,498.9
+TC015-View public contact channels,FAILED,2026-08-13 04:29:54,2026-08-13 04:33:08,194.1

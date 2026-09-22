@@ -1,0 +1,13 @@
+id,title,status,duration_ms,note
+TC001,Auth login & proteksi,PASS,542.6,valid=True invalid_rejected=True guest_blocked=True
+TC002,Dashboard statistik,PASS,18.8,GET /admin 200
+TC003,CRUD Leaders,PASS,266.2,create=True validasi_gagal=True update=True delete=True publik=200
+TC004,CRUD Members+search/filter,PASS,247.5,create=True search=True filter=True update=True delete=True
+TC005,CRUD Activities,PASS,290.2,create=True validasi=True update=True delete=True publik=200 search=200
+TC006,CRUD Gallery,PASS,187.0,upload=True delete=True publik=200
+TC007,CRUD Users,PASS,432.2,create=True duplikat_ditolak=True update=True delete=True
+TC008,Update HomeSettings,PASS,89.6,PUT 200 publik 200
+TC009,Update About,PASS,85.3,PUT 200 publik 200
+TC010,Update Contact,PASS,85.3,PUT 200 phone=True email=True
+TC011,Publik & search,PASS,199.8,bad=[] search_kegiatan=200 notfound=404
+TC012,Role access,PASS,44.9,guest_get=302 guest_post=419 admin=True
