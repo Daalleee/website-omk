@@ -39,7 +39,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::put('/about', [AboutController::class, 'update'])->name('about.update');
 
     Route::resource('/leaders', LeaderController::class);
+    Route::delete('/leaders/{leader}/photo', [LeaderController::class, 'destroyPhoto'])->name('leaders.photo.destroy');
     Route::resource('/members', MemberController::class);
+    Route::delete('/members/{member}/photo', [MemberController::class, 'destroyPhoto'])->name('members.photo.destroy');
     Route::resource('/activities', ActivityController::class);
 
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');

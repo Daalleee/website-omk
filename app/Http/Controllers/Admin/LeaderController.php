@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Leader;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LeaderController extends Controller
 {
@@ -58,6 +59,9 @@ class LeaderController extends Controller
         $data['status'] = $request->boolean('status', true);
 
         if ($request->hasFile('photo')) {
+            if ($leader->photo) {
+                Storage::disk('public')->delete($leader->photo);
+            }
             $data['photo'] = $request->file('photo')->store('leaders', 'public');
         }
 
@@ -67,7 +71,20 @@ class LeaderController extends Controller
 
     public function destroy(Leader $leader)
     {
+        if ($leader->photo) {
+            Storage::disk('public')->delete($leader->photo);
+        }
         $leader->delete();
         return redirect()->route('admin.leaders.index')->with('success', 'Pengurus berhasil dihapus.');
+    }
+
+    public function destroyPhoto(Leader $leader)
+    {
+        if ($leader->photo) {
+            Storage::disk('public')->delete($leader->photo);
+            $leader->photo = null;
+            $leader->save();
+        }
+        return redirect()->route('admin.leaders.edit', $leader->id)->with('success', 'Foto pengurus berhasil dihapus.');
     }
 }

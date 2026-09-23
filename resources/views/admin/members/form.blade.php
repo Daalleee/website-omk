@@ -12,17 +12,23 @@
         <h2>Form Data Anggota</h2>
     </div>
     <div class="admin-card-body">
+        @if($member->photo)
+        <div style="margin-bottom:1.5rem; position:relative; display:inline-block;">
+            <img src="{{ Storage::url($member->photo) }}" alt="Foto" style="width:120px;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:3px solid var(--green-300);">
+            <form action="{{ route('admin.members.photo.destroy', $member->id) }}" method="POST" style="position:absolute; top:-8px; right:-8px; margin:0;" onsubmit="return confirm('Yakin ingin menghapus foto ini?')">
+                @csrf @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm" title="Hapus Foto" style="border-radius:50%; width:28px; height:28px; padding:0; display:flex; align-items:center; justify-content:center;">
+                    <i class="bi bi-x-lg" style="font-size:0.8rem;"></i>
+                </button>
+            </form>
+        </div>
+        @endif
         <form action="{{ $member->exists ? route('admin.members.update', $member->id) : route('admin.members.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             @if($member->exists) @method('PUT') @endif
 
             <div class="form-group">
                 <label class="form-label">Foto Anggota</label>
-                @if($member->photo)
-                <div style="margin-bottom:12px;">
-                    <img src="{{ Storage::url($member->photo) }}" alt="Foto" style="width:120px;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:3px solid var(--green-300);">
-                </div>
-                @endif
                 <input type="file" name="photo" class="form-input" accept="image/*" data-crop="0.75">
                 <div class="form-hint">Setelah memilih foto, Anda dapat memotongnya (rasio 3:4).</div>
                 <div class="form-hint">Format: JPG, PNG. Disarankan foto potret (vertikal).</div>

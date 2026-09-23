@@ -12,6 +12,17 @@
         <h2>Form Pengurus</h2>
     </div>
     <div class="admin-card-body">
+        @if($leader->photo)
+        <div style="margin-bottom:1rem; position:relative; display:inline-block;">
+            <img src="{{ Storage::url($leader->photo) }}" alt="Foto" style="height:100px;border-radius:8px;object-fit:cover;">
+            <form action="{{ route('admin.leaders.photo.destroy', $leader->id) }}" method="POST" style="position:absolute; top:-8px; right:-8px; margin:0;" onsubmit="return confirm('Yakin ingin menghapus foto ini?')">
+                @csrf @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm" title="Hapus Foto" style="border-radius:50%; width:28px; height:28px; padding:0; display:flex; align-items:center; justify-content:center;">
+                    <i class="bi bi-x-lg" style="font-size:0.8rem;"></i>
+                </button>
+            </form>
+        </div>
+        @endif
         <form action="{{ $leader->exists ? route('admin.leaders.update', $leader->id) : route('admin.leaders.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             @if($leader->exists) @method('PUT') @endif
@@ -148,11 +159,6 @@
 
             <div class="form-group">
                 <label class="form-label">Foto</label>
-                @if($leader->photo)
-                <div style="margin-bottom:10px;">
-                    <img src="{{ Storage::url($leader->photo) }}" alt="Foto" style="height:100px;border-radius:8px;object-fit:cover;">
-                </div>
-                @endif
                 <input type="file" name="photo" class="form-input" accept="image/*" data-crop="0.75">
                 <div class="form-hint">Setelah memilih foto, Anda dapat memotongnya (rasio 3:4).</div>
             </div>

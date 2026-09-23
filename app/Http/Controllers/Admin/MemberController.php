@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MemberController extends Controller
 {
@@ -58,6 +59,9 @@ class MemberController extends Controller
 
         $data = ['name' => $request->name, 'period' => $request->period, 'status' => 'aktif'];
         if ($request->hasFile('photo')) {
+            if ($member->photo) {
+                Storage::disk('public')->delete($member->photo);
+            }
             $data['photo'] = $request->file('photo')->store('members', 'public');
         }
 
@@ -67,7 +71,20 @@ class MemberController extends Controller
 
     public function destroy(Member $member)
     {
+        if ($member->photo) {
+            Storage::disk('public')->delete($member->photo);
+        }
         $member->delete();
         return redirect()->route('admin.members.index')->with('success', 'Anggota berhasil dihapus.');
+    }
+
+    public function destroyPhoto(Member $member)
+    {
+        if ($member->photo) {
+            Storage::disk('public')->delete($member->photo);
+            $member->photo = null;
+            $member->save();
+        }
+        return redirect()->route('admin.members.edit', $member->id)->with('success', 'Foto anggota berhasil dihapus.');
     }
 }
